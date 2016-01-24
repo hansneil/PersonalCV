@@ -1,0 +1,352 @@
+/* line 8, ../sass/partials/_layout.scss */
+#my-cv .basic-info-container {
+  *zoom: 1;
+  max-width: 73em;
+  _width: 73em;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 1px solid #00c3ab;
+  /*@include susy-grid-background;*/
+}
+/* line 38, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+#my-cv .basic-info-container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media (min-width: 47em) {
+  /* line 14, ../sass/partials/_layout.scss */
+  .basic-info {
+    width: 23.94366%;
+    float: left;
+    margin-right: 1.40845%;
+  }
+}
+@media (min-width: 75em) {
+  /* line 14, ../sass/partials/_layout.scss */
+  .basic-info {
+    width: 15.49296%;
+    float: left;
+    margin-right: 1.40845%;
+  }
+}
+/* line 21, ../sass/partials/_layout.scss */
+.basic-info img {
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  display: block;
+  margin: 1em auto;
+  border: 5px solid #f6fffe;
+}
+
+/* line 28, ../sass/partials/_layout.scss */
+.basic-info-name {
+  text-align: center;
+  margin-top: 1em;
+}
+@media (min-width: 47em) {
+  /* line 28, ../sass/partials/_layout.scss */
+  .basic-info-name {
+    text-align: right;
+    margin-top: 2.5em;
+    width: 23.94366%;
+    float: left;
+    margin-right: 1.40845%;
+  }
+}
+@media (min-width: 75em) {
+  /* line 28, ../sass/partials/_layout.scss */
+  .basic-info-name {
+    text-align: right;
+    margin-top: 2.5em;
+    width: 15.49296%;
+    float: left;
+    margin-right: 1.40845%;
+  }
+}
+/* line 41, ../sass/partials/_layout.scss */
+.basic-info-name span {
+  display: block;
+  color: #00c3ab;
+  font-size: 2em;
+  font-family: 'axis';
+}
+/* line 47, ../sass/partials/_layout.scss */
+.basic-info-name .screen-resp {
+  display: none;
+  font-size: 1.5em;
+  margin-top: .1em;
+}
+@media (min-width: 47em) {
+  /* line 47, ../sass/partials/_layout.scss */
+  .basic-info-name .screen-resp {
+    display: block;
+  }
+}
+
+/* line 56, ../sass/partials/_layout.scss */
+.basic-info-career {
+  text-align: center;
+  margin-top: .5em;
+}
+@media (min-width: 47em) {
+  /* line 56, ../sass/partials/_layout.scss */
+  .basic-info-career {
+    text-align: left;
+    margin-top: 3em;
+    width: 49.29577%;
+    float: right;
+    margin-right: 0;
+  }
+}
+@media (min-width: 75em) {
+  /* line 56, ../sass/partials/_layout.scss */
+  .basic-info-career {
+    text-align: left;
+    margin-top: 3em;
+    width: 66.19718%;
+    float: right;
+    margin-right: 0;
+  }
+}
+/* line 69, ../sass/partials/_layout.scss */
+.basic-info-career span {
+  display: block;
+  color: #00c3ab;
+  font-size: 1em;
+  font-family: 'axis';
+  vertical-align: bottom;
+}
+/* line 76, ../sass/partials/_layout.scss */
+.basic-info-career .screen-resp {
+  display: none;
+  margin-top: .75em;
+}
+@media (min-width: 47em) {
+  /* line 76, ../sass/partials/_layout.scss */
+  .basic-info-career .screen-resp {
+    display: block;
+  }
+}
+
+/* line 84, ../sass/partials/_layout.scss */
+* {
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+@font-face {
+  font-family: 'axis';
+  src: url("../css/fonts/axis.otf");
+}
+/* line 9, ../sass/style.scss */
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #6e6e6e;
+  overflow: hidden;
+}
+
+/* line 15, ../sass/style.scss */
+.main-page, .circle-shadow, .circle, .img-circle.active, .gray-circle.active, #my-cv {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+@-webkit-keyframes larger {
+  from {
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+  }
+  90% {
+    -moz-transform: scale(28);
+    -ms-transform: scale(28);
+    -webkit-transform: scale(28);
+    transform: scale(28);
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+  }
+  to {
+    -moz-transform: scale(30);
+    -ms-transform: scale(30);
+    -webkit-transform: scale(30);
+    transform: scale(30);
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+  }
+}
+@-webkit-keyframes shadow {
+  100% {
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 0;
+  }
+  0% {
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes gray-larger {
+  100% {
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+  0% {
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 0.5;
+  }
+}
+@-webkit-keyframes circle-trans {
+  100% {
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    top: -20em;
+  }
+  0% {
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+}
+/* line 66, ../sass/style.scss */
+.main-page {
+  color: #00c3ab;
+  width: 4em;
+  height: 2em;
+  font-size: 2em;
+  font-family: 'axis';
+  text-align: center;
+  top: 7em;
+}
+/* line 75, ../sass/style.scss */
+.main-page span {
+  color: #ffffff;
+}
+/* line 78, ../sass/style.scss */
+.main-page.gray {
+  color: #ffffff;
+}
+
+/* line 82, ../sass/style.scss */
+.circle-shadow {
+  width: 8.2em;
+  height: 8.2em;
+  background-color: #00c3ab;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  -moz-animation: shadow 1.2s infinite ease-out;
+  -webkit-animation: shadow 1.2s infinite ease-out;
+  animation: shadow 1.2s infinite ease-out;
+}
+
+/* line 90, ../sass/style.scss */
+.circle {
+  width: 6em;
+  height: 6em;
+  background-color: #00c3ab;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  cursor: pointer;
+}
+/* line 97, ../sass/style.scss */
+.circle.active {
+  -moz-animation: larger 0.2s ease-out;
+  -webkit-animation: larger 0.2s ease-out;
+  animation: larger 0.2s ease-out;
+  -moz-animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  cursor: default;
+}
+
+/* line 103, ../sass/style.scss */
+.img-circle.active {
+  width: 6em;
+  height: 6em;
+  background-image: url("../img/photo.png");
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  -moz-animation: gray-larger 0.2s ease-out;
+  -webkit-animation: gray-larger 0.2s ease-out;
+  animation: gray-larger 0.2s ease-out;
+}
+
+/* line 111, ../sass/style.scss */
+.gray-circle.active {
+  width: 3em;
+  height: 3em;
+  border: #6e6e6e 0.2em solid;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  -moz-animation: circle-trans 0.2s ease-out;
+  -webkit-animation: circle-trans 0.2s ease-out;
+  animation: circle-trans 0.2s ease-out;
+  -moz-animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+/* line 120, ../sass/style.scss */
+#my-cv {
+  width: 90%;
+  height: 90%;
+  background-color: #ffffff;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-animation: gray-larger 0.2s ease-out;
+  -webkit-animation: gray-larger 0.2s ease-out;
+  animation: gray-larger 0.2s ease-out;
+  -moz-box-shadow: 1px 1px 10px #636363;
+  -webkit-box-shadow: 1px 1px 10px #636363;
+  box-shadow: 1px 1px 10px #636363;
+}
+@media (min-width: 47em) {
+  /* line 120, ../sass/style.scss */
+  #my-cv {
+    width: 80%;
+    height: 80%;
+  }
+}
+@media (min-width: 75em) {
+  /* line 120, ../sass/style.scss */
+  #my-cv {
+    width: 80%;
+    height: 80%;
+  }
+}

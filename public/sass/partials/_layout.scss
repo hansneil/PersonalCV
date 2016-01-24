@@ -1,0 +1,86 @@
+@import "variables";
+@import "susyone";
+$total-column: 12;
+$column-width: 5em;
+$gutter-width: 1em;
+$border-box-sizing: true;
+
+#my-cv .basic-info-container{
+  @include container;
+  border-bottom: 1px solid $color3;
+  /*@include susy-grid-background;*/
+}
+
+.basic-info {
+  @include at-breakpoint($M) {
+    @include span-columns(3, 12);
+  }
+  @include at-breakpoint($L) {
+    @include span-columns(2, 12);
+  }
+  & img {
+    @include border-radius(50%);
+    display: block;
+    margin: 1em auto;
+    border: 5px solid lighten($color3, 60%);
+  }
+}
+.basic-info-name {
+  text-align: center;
+  margin-top: 1em;
+  @include at-breakpoint($M){
+    text-align: right;
+    margin-top: 2.5em;
+    @include span-columns(3, 12);
+  }
+  @include at-breakpoint($L) {
+    text-align: right;
+    margin-top: 2.5em;
+    @include span-columns(2, 12);
+  }
+  & span {
+    display: block;
+    color: $color3;
+    font-size: 2em;
+    font-family: 'axis';
+  }
+  & .screen-resp {
+    display: none;
+    font-size: 1.5em;
+    margin-top: .1em;
+    @include at-breakpoint($M){
+      display: block;
+    }
+  }
+}
+.basic-info-career {
+  text-align: center;
+  margin-top: .5em;
+  @include at-breakpoint($M){
+    text-align: left;
+    margin-top: 3em;
+    @include span-columns(6 omega, 12);
+  }
+  @include at-breakpoint($L) {
+    text-align: left;
+    margin-top: 3em;
+    @include span-columns(8 omega, 12);
+  }
+  & span {
+    display: block;
+    color: $color3;
+    font-size: 1em;
+    font-family: 'axis';
+    vertical-align: bottom;
+  }
+  & .screen-resp {
+    display: none;
+    margin-top: .75em;
+    @include at-breakpoint($M){
+      display: block;
+    }
+  }
+}
+* {
+  @include transition(all .2s ease);
+}

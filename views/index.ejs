@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="ownPage" ng-controller="neilOwnPage">
+  <head>
+    <title ng-bind="title"></title>
+    <link rel='stylesheet' href='/css/style.css' />
+  </head>
+  <body>
+    <div class="circle-shadow"></div>
+    <div class="circle" ng-class="{'active': active}" ng-click="click()"></div>
+    <p class="main-page" ng-show="!active">PRESS <span>TO</span> ENTER...</p>
+    <!--<div ng-class="{'active': active}" class="img-circle"></div>
+    <p ng-show="active" class="gray">Yu Neil</p>
+    <div ng-show="active" ng-class="{'active': active}" class="gray-circle"></div>-->
+    <div ng-if="!!active" id="my-cv">
+      <div class="basic-info-container">
+        <div class="basic-info">
+          <img src="/img/photo.png">
+        </div>
+        <div class="basic-info-name">
+          <span>Yu,Xianbo</span>
+          <span class="screen-resp">Master of</span>
+          <span class="screen-resp">Bachelor of</span>
+        </div>
+        <div class="basic-info-career">
+          <span>Web Front-end Designer & Developer</span>
+          <span class="screen-resp">Shanghai Jiaotong University</span>
+          <span class="screen-resp">Zhejiang University</span>
+        </div>
+      </div>
+    </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+  <script src="/js/page_app.js"></script>
+  </body>
+</html>

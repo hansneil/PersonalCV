@@ -1,0 +1,136 @@
+@import "./partials/variables";
+@import "compass";
+@import "susyone";
+@import "./partials/layout";
+@font-face {
+  font-family: 'axis';
+  src: url('../css/fonts/axis.otf');
+}
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: $color2;
+  overflow: hidden;
+}
+%middle {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+@-webkit-keyframes larger {
+  from {
+    @include transform(scale(1));
+    @include border-radius(50%);
+  }
+  90% {
+    @include transform(scale(28));
+    @include border-radius(50%);
+  }
+  to {
+    @include transform(scale(30));
+    @include border-radius(0);
+  }
+}
+@-webkit-keyframes shadow {
+  100% {
+    @include transform(scale(1));
+    opacity: 0;
+  }
+  0% {
+    @include transform(scale(0));
+    opacity: 1;
+  }
+}
+@-webkit-keyframes gray-larger {
+  100% {
+    @include transform(scale(1));
+    opacity: 1;
+  }
+  0% {
+    @include transform(scale(0));
+    opacity: 0.5;
+  }
+}
+@-webkit-keyframes circle-trans {
+  100% {
+    @include transform(scale(1));
+    top: -20em;
+  }
+  0% {
+    @include transform(scale(0));
+  }
+}
+.main-page {
+  color: $color3;
+  width: 4em;
+  height: 2em;
+  font-size: 2em;
+  font-family: 'axis';
+  text-align: center;
+  @extend %middle;
+  top: 7em;
+  & span {
+    color: #ffffff;
+  }
+  &.gray {
+    color: #ffffff;
+  }
+}
+.circle-shadow {
+  width: 8.2em;
+  height: 8.2em;
+  background-color: $color3;
+  @extend %middle;
+  @include border-radius(50%);
+  @include animation(shadow 1.2s infinite ease-out);
+}
+.circle {
+  width: 6em;
+  height: 6em;
+  background-color: $color3;
+  @extend %middle;
+  @include border-radius(50%);
+  cursor: pointer;
+  &.active {
+    @include animation(larger 0.2s ease-out);
+    @include animation-fill-mode(forwards);
+    cursor: default;
+  }
+}
+.img-circle.active {
+  width: 6em;
+  height: 6em;
+  background-image: url('../img/photo.png');
+  @extend %middle;
+  @include border-radius(50%);
+  @include animation(gray-larger 0.2s ease-out);
+}
+.gray-circle.active {
+  width: 3em;
+  height: 3em;
+  border: $color2 .2em solid;
+  @extend %middle;
+  @include border-radius(50%);
+  @include animation(circle-trans 0.2s ease-out);
+  @include animation-fill-mode(forwards);
+}
+#my-cv {
+  width: 90%;
+  height: 90%;
+  @include at-breakpoint($M) {
+    width: 80%;
+    height: 80%;
+  }
+  @include at-breakpoint($L) {
+    width: 80%;
+    height: 80%;
+  }
+  @extend %middle;
+  background-color: #ffffff;
+  @include border-radius(10px);
+  @include animation(gray-larger 0.2s ease-out);
+  @include box-shadow(1px 1px 10px lighten($color1, 20%));
+}
