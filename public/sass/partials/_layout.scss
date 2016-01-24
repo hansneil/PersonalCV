@@ -10,6 +10,14 @@ $border-box-sizing: true;
   border-bottom: 1px solid $color3;
   /*@include susy-grid-background;*/
 }
+#my-cv .skill-container{
+  @include container;
+  border-bottom: 1px solid $color3;
+  position: relative;
+  width: 100%;
+  height: 40%;
+  /*@include susy-grid-background;*/
+}
 
 .basic-info {
   @include at-breakpoint($M) {
@@ -79,6 +87,16 @@ $border-box-sizing: true;
     @include at-breakpoint($M){
       display: block;
     }
+  }
+}
+#my-skill {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  @include at-breakpoint($M) {
+    width: 50%;
+    height: 100%;
+    @include span-columns(5 omega, 12);
   }
 }
 * {

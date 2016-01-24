@@ -134,3 +134,11 @@ body {
   @include animation(gray-larger 0.2s ease-out);
   @include box-shadow(1px 1px 10px lighten($color1, 20%));
 }
+/*#my-skill {
+  width: 50%;
+  height: 100%;
+  margin-top: 1em;
+  background-color: $color3;
+  @extend %middle;
+  z-index: 1000;
+}*/

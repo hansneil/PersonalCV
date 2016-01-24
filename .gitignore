@@ -3,3 +3,6 @@
 
 # WebStorm
 .idea/
+
+# SASS
+**/.sass-cache/

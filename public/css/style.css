@@ -17,8 +17,30 @@
   clear: both;
 }
 
+/* line 13, ../sass/partials/_layout.scss */
+#my-cv .skill-container {
+  *zoom: 1;
+  max-width: 73em;
+  _width: 73em;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 1px solid #00c3ab;
+  position: relative;
+  width: 100%;
+  height: 40%;
+  /*@include susy-grid-background;*/
+}
+/* line 38, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+#my-cv .skill-container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 @media (min-width: 47em) {
-  /* line 14, ../sass/partials/_layout.scss */
+  /* line 22, ../sass/partials/_layout.scss */
   .basic-info {
     width: 23.94366%;
     float: left;
@@ -26,14 +48,14 @@
   }
 }
 @media (min-width: 75em) {
-  /* line 14, ../sass/partials/_layout.scss */
+  /* line 22, ../sass/partials/_layout.scss */
   .basic-info {
     width: 15.49296%;
     float: left;
     margin-right: 1.40845%;
   }
 }
-/* line 21, ../sass/partials/_layout.scss */
+/* line 29, ../sass/partials/_layout.scss */
 .basic-info img {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
@@ -43,13 +65,13 @@
   border: 5px solid #f6fffe;
 }
 
-/* line 28, ../sass/partials/_layout.scss */
+/* line 36, ../sass/partials/_layout.scss */
 .basic-info-name {
   text-align: center;
   margin-top: 1em;
 }
 @media (min-width: 47em) {
-  /* line 28, ../sass/partials/_layout.scss */
+  /* line 36, ../sass/partials/_layout.scss */
   .basic-info-name {
     text-align: right;
     margin-top: 2.5em;
@@ -59,7 +81,7 @@
   }
 }
 @media (min-width: 75em) {
-  /* line 28, ../sass/partials/_layout.scss */
+  /* line 36, ../sass/partials/_layout.scss */
   .basic-info-name {
     text-align: right;
     margin-top: 2.5em;
@@ -68,33 +90,33 @@
     margin-right: 1.40845%;
   }
 }
-/* line 41, ../sass/partials/_layout.scss */
+/* line 49, ../sass/partials/_layout.scss */
 .basic-info-name span {
   display: block;
   color: #00c3ab;
   font-size: 2em;
   font-family: 'axis';
 }
-/* line 47, ../sass/partials/_layout.scss */
+/* line 55, ../sass/partials/_layout.scss */
 .basic-info-name .screen-resp {
   display: none;
   font-size: 1.5em;
   margin-top: .1em;
 }
 @media (min-width: 47em) {
-  /* line 47, ../sass/partials/_layout.scss */
+  /* line 55, ../sass/partials/_layout.scss */
   .basic-info-name .screen-resp {
     display: block;
   }
 }
 
-/* line 56, ../sass/partials/_layout.scss */
+/* line 64, ../sass/partials/_layout.scss */
 .basic-info-career {
   text-align: center;
   margin-top: .5em;
 }
 @media (min-width: 47em) {
-  /* line 56, ../sass/partials/_layout.scss */
+  /* line 64, ../sass/partials/_layout.scss */
   .basic-info-career {
     text-align: left;
     margin-top: 3em;
@@ -104,7 +126,7 @@
   }
 }
 @media (min-width: 75em) {
-  /* line 56, ../sass/partials/_layout.scss */
+  /* line 64, ../sass/partials/_layout.scss */
   .basic-info-career {
     text-align: left;
     margin-top: 3em;
@@ -113,7 +135,7 @@
     margin-right: 0;
   }
 }
-/* line 69, ../sass/partials/_layout.scss */
+/* line 77, ../sass/partials/_layout.scss */
 .basic-info-career span {
   display: block;
   color: #00c3ab;
@@ -121,19 +143,36 @@
   font-family: 'axis';
   vertical-align: bottom;
 }
-/* line 76, ../sass/partials/_layout.scss */
+/* line 84, ../sass/partials/_layout.scss */
 .basic-info-career .screen-resp {
   display: none;
   margin-top: .75em;
 }
 @media (min-width: 47em) {
-  /* line 76, ../sass/partials/_layout.scss */
+  /* line 84, ../sass/partials/_layout.scss */
   .basic-info-career .screen-resp {
     display: block;
   }
 }
 
-/* line 84, ../sass/partials/_layout.scss */
+/* line 92, ../sass/partials/_layout.scss */
+#my-skill {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+@media (min-width: 47em) {
+  /* line 92, ../sass/partials/_layout.scss */
+  #my-skill {
+    width: 50%;
+    height: 100%;
+    width: 40.84507%;
+    float: right;
+    margin-right: 0;
+  }
+}
+
+/* line 102, ../sass/partials/_layout.scss */
 * {
   -moz-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
@@ -350,3 +389,12 @@ body {
     height: 80%;
   }
 }
+
+/*#my-skill {
+  width: 50%;
+  height: 100%;
+  margin-top: 1em;
+  background-color: $color3;
+  @extend %middle;
+  z-index: 1000;
+}*/
