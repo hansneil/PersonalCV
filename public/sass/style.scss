@@ -182,8 +182,24 @@
     @include transform(scale(0));
   }
 }
+.name {
+  color: $color3;
+  font-family: 'axis';
+  font-size: 3em;
+  text-align: center;
+  width: 6em;
+  height: 1em;
+  @extend %middle;
+  top: -5em;
+  padding: 3px 0;
+  border: 2px solid #ffffff;
+  background-color: #ffffff;
+  @include border-radius(8px);
+  text-shadow: 3px 3px 2px $color4;
+  @include box-shadow(3px 3px 2px $color4);
+}
 .main-page {
-  color: $color2;
+  color: #ffffff;
   width: 4em;
   height: 2em;
   font-size: 2em;
@@ -192,16 +208,16 @@
   @extend %middle;
   top: 7em;
   & span {
-    color: #ffffff;
+    color: $color4;
   }
   &.gray {
-    color: #ffffff;
+    color: $color4;
   }
 }
 .circle-shadow {
-  width: 8.2em;
-  height: 8.2em;
-  background-color: $color2;
+  width: 6em;
+  height: 6em;
+  background-color: $color4;
   @extend %middle;
   @include border-radius(50%);
   @include animation(shadow 1.2s infinite ease-out);
@@ -209,9 +225,10 @@
 .circle {
   width: 6em;
   height: 6em;
-  background-color: $color2;
+  /*background-color: $color2;*/
   @extend %middle;
   @include border-radius(50%);
+  border: 2px solid #ffffff;
   cursor: pointer;
   &.active {
     @include animation(larger 0.2s ease-out);
