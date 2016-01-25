@@ -320,6 +320,7 @@ progress-group.right {
     font-family: 'axis';
     padding: .5em .5em;
     margin-bottom: .5em;
+    margin-right: .5em;
     @include border-radius(5px);
     @include at-breakpoint($S) {
       font-size: 1em;

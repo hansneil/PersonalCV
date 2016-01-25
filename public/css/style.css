@@ -504,6 +504,7 @@ progress-group.right .bar-container {
   font-family: 'axis';
   padding: .5em .5em;
   margin-bottom: .5em;
+  margin-right: .5em;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -514,24 +515,24 @@ progress-group.right .bar-container {
     font-size: 1em;
   }
 }
-/* line 327, ../sass/partials/_layout.scss */
+/* line 328, ../sass/partials/_layout.scss */
 .tags span.web-develop {
   background-color: #469d8a;
 }
-/* line 330, ../sass/partials/_layout.scss */
+/* line 331, ../sass/partials/_layout.scss */
 .tags span.flat-design {
   background-color: #9dce63;
 }
-/* line 333, ../sass/partials/_layout.scss */
+/* line 334, ../sass/partials/_layout.scss */
 .tags span.photoshop {
   background-color: #84ce7d;
 }
-/* line 336, ../sass/partials/_layout.scss */
+/* line 337, ../sass/partials/_layout.scss */
 .tags span.illustrate {
   background-color: #6fe4c2;
 }
 
-/* line 341, ../sass/partials/_layout.scss */
+/* line 342, ../sass/partials/_layout.scss */
 * {
   -moz-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
