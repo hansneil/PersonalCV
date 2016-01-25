@@ -24,7 +24,79 @@
     @include border-radius(0);
   }
 }
+@-moz-keyframes larger {
+  from {
+    @include transform(scale(1));
+    @include border-radius(50%);
+  }
+  90% {
+    @include transform(scale(28));
+    @include border-radius(50%);
+  }
+  to {
+    @include transform(scale(30));
+    @include border-radius(0);
+  }
+}
+@-ms-keyframes larger {
+  from {
+    @include transform(scale(1));
+    @include border-radius(50%);
+  }
+  90% {
+    @include transform(scale(28));
+    @include border-radius(50%);
+  }
+  to {
+    @include transform(scale(30));
+    @include border-radius(0);
+  }
+}
+@keyframes larger {
+  from {
+    @include transform(scale(1));
+    @include border-radius(50%);
+  }
+  90% {
+    @include transform(scale(28));
+    @include border-radius(50%);
+  }
+  to {
+    @include transform(scale(30));
+    @include border-radius(0);
+  }
+}
 @-webkit-keyframes shadow {
+  100% {
+    @include transform(scale(1));
+    opacity: 0;
+  }
+  0% {
+    @include transform(scale(0));
+    opacity: 1;
+  }
+}
+@-moz-keyframes shadow {
+  100% {
+    @include transform(scale(1));
+    opacity: 0;
+  }
+  0% {
+    @include transform(scale(0));
+    opacity: 1;
+  }
+}
+@-ms-keyframes shadow {
+  100% {
+    @include transform(scale(1));
+    opacity: 0;
+  }
+  0% {
+    @include transform(scale(0));
+    opacity: 1;
+  }
+}
+@keyframes shadow {
   100% {
     @include transform(scale(1));
     opacity: 0;
@@ -44,7 +116,64 @@
     opacity: 0.5;
   }
 }
+@-moz-keyframes gray-larger {
+  100% {
+    @include transform(scale(1));
+    opacity: 1;
+  }
+  0% {
+    @include transform(scale(0));
+    opacity: 0.5;
+  }
+}
+@-ms-keyframes gray-larger {
+  100% {
+    @include transform(scale(1));
+    opacity: 1;
+  }
+  0% {
+    @include transform(scale(0));
+    opacity: 0.5;
+  }
+}
+@keyframes gray-larger {
+  100% {
+    @include transform(scale(1));
+    opacity: 1;
+  }
+  0% {
+    @include transform(scale(0));
+    opacity: 0.5;
+  }
+}
 @-webkit-keyframes circle-trans {
+  100% {
+    @include transform(scale(1));
+    top: -20em;
+  }
+  0% {
+    @include transform(scale(0));
+  }
+}
+@-moz-keyframes circle-trans {
+  100% {
+    @include transform(scale(1));
+    top: -20em;
+  }
+  0% {
+    @include transform(scale(0));
+  }
+}
+@-ms-keyframes circle-trans {
+  100% {
+    @include transform(scale(1));
+    top: -20em;
+  }
+  0% {
+    @include transform(scale(0));
+  }
+}
+@keyframes circle-trans {
   100% {
     @include transform(scale(1));
     top: -20em;
