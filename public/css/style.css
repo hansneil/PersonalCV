@@ -367,35 +367,41 @@ progress-group.right .bar-container {
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   display: inline-block;
-  margin: 0 1em;
+  margin: 0 .5em;
   background-color: #00c3ab;
   background-image: url("/img/social.png");
 }
-/* line 232, ../sass/partials/_layout.scss */
+@media (min-width: 23em) {
+  /* line 223, ../sass/partials/_layout.scss */
+  .social .round {
+    margin: 0 1em;
+  }
+}
+/* line 235, ../sass/partials/_layout.scss */
 .social .round.github {
   background-position: -160px 40px;
 }
-/* line 235, ../sass/partials/_layout.scss */
+/* line 238, ../sass/partials/_layout.scss */
 .social .round.weibo {
   background-position: -160px 0px;
 }
-/* line 238, ../sass/partials/_layout.scss */
+/* line 241, ../sass/partials/_layout.scss */
 .social .round.linkedin {
   background-position: -120px 0px;
 }
-/* line 241, ../sass/partials/_layout.scss */
+/* line 244, ../sass/partials/_layout.scss */
 .social .round.google {
   background-position: -80px 0px;
 }
-/* line 244, ../sass/partials/_layout.scss */
+/* line 247, ../sass/partials/_layout.scss */
 .social .round.stackoverflow {
   background-position: -200px 40px;
 }
-/* line 247, ../sass/partials/_layout.scss */
+/* line 250, ../sass/partials/_layout.scss */
 .social .round.facebook {
   background-position: -40px 0px;
 }
-/* line 250, ../sass/partials/_layout.scss */
+/* line 253, ../sass/partials/_layout.scss */
 .social .round:hover {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -403,7 +409,7 @@ progress-group.right .bar-container {
 }
 
 @media (min-width: 47em) {
-  /* line 255, ../sass/partials/_layout.scss */
+  /* line 258, ../sass/partials/_layout.scss */
   .cv-left {
     width: 49.29577%;
     float: left;
@@ -412,7 +418,7 @@ progress-group.right .bar-container {
 }
 
 @media (min-width: 47em) {
-  /* line 260, ../sass/partials/_layout.scss */
+  /* line 263, ../sass/partials/_layout.scss */
   .cv-right {
     width: 49.29577%;
     float: right;
@@ -420,7 +426,7 @@ progress-group.right .bar-container {
   }
 }
 
-/* line 265, ../sass/partials/_layout.scss */
+/* line 268, ../sass/partials/_layout.scss */
 .cv-link {
   display: block;
   width: 100%;
@@ -437,46 +443,46 @@ progress-group.right .bar-container {
   transition: all 0.5s ease;
 }
 @media (min-width: 23em) {
-  /* line 265, ../sass/partials/_layout.scss */
+  /* line 268, ../sass/partials/_layout.scss */
   .cv-link {
     font-size: 2em;
   }
 }
-/* line 278, ../sass/partials/_layout.scss */
+/* line 281, ../sass/partials/_layout.scss */
 .cv-link:hover {
   color: #00c3ab;
 }
-/* line 279, ../sass/partials/_layout.scss */
+/* line 282, ../sass/partials/_layout.scss */
 .cv-link:hover:before {
   width: 1em;
   opacity: 1;
 }
-/* line 283, ../sass/partials/_layout.scss */
+/* line 286, ../sass/partials/_layout.scss */
 .cv-link:hover:after {
   width: 1em;
   opacity: 1;
 }
 
-/* line 291, ../sass/partials/_layout.scss */
+/* line 294, ../sass/partials/_layout.scss */
 .cv-link:before {
   content: '[';
   display: inline-block;
   opacity: 0;
 }
 
-/* line 296, ../sass/partials/_layout.scss */
+/* line 299, ../sass/partials/_layout.scss */
 .cv-link:after {
   content: ']';
   display: inline-block;
   opacity: 0;
 }
 
-/* line 302, ../sass/partials/_layout.scss */
+/* line 305, ../sass/partials/_layout.scss */
 .tags div {
   margin: 0 auto;
   width: 70%;
 }
-/* line 306, ../sass/partials/_layout.scss */
+/* line 309, ../sass/partials/_layout.scss */
 .tags span {
   display: inline-block;
   background-color: #00c3ab;
@@ -490,29 +496,29 @@ progress-group.right .bar-container {
   border-radius: 5px;
 }
 @media (min-width: 23em) {
-  /* line 306, ../sass/partials/_layout.scss */
+  /* line 309, ../sass/partials/_layout.scss */
   .tags span {
     font-size: 1em;
   }
 }
-/* line 318, ../sass/partials/_layout.scss */
+/* line 321, ../sass/partials/_layout.scss */
 .tags span.web-develop {
   background-color: #469d8a;
 }
-/* line 321, ../sass/partials/_layout.scss */
+/* line 324, ../sass/partials/_layout.scss */
 .tags span.flat-design {
   background-color: #9dce63;
 }
-/* line 324, ../sass/partials/_layout.scss */
+/* line 327, ../sass/partials/_layout.scss */
 .tags span.photoshop {
   background-color: #84ce7d;
 }
-/* line 327, ../sass/partials/_layout.scss */
+/* line 330, ../sass/partials/_layout.scss */
 .tags span.illustrate {
   background-color: #6fe4c2;
 }
 
-/* line 332, ../sass/partials/_layout.scss */
+/* line 335, ../sass/partials/_layout.scss */
 * {
   -moz-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;

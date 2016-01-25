@@ -226,7 +226,10 @@ progress-group.right {
     @include border-radius(50%);
     @include transition(all .5s ease);
     display: inline-block;
-    margin: 0 1em;
+    margin: 0 .5em;
+    @include at-breakpoint($S) {
+      margin: 0 1em;
+    }
     background-color: $color3;
     background-image: url("/img/social.png");
     &.github {
