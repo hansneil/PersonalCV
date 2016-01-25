@@ -54,7 +54,7 @@
   }
 }
 .main-page {
-  color: $color3;
+  color: $color2;
   width: 4em;
   height: 2em;
   font-size: 2em;
@@ -72,7 +72,7 @@
 .circle-shadow {
   width: 8.2em;
   height: 8.2em;
-  background-color: $color3;
+  background-color: $color2;
   @extend %middle;
   @include border-radius(50%);
   @include animation(shadow 1.2s infinite ease-out);
@@ -80,7 +80,7 @@
 .circle {
   width: 6em;
   height: 6em;
-  background-color: $color3;
+  background-color: $color2;
   @extend %middle;
   @include border-radius(50%);
   cursor: pointer;
@@ -108,18 +108,21 @@
   @include animation-fill-mode(forwards);
 }
 #my-cv {
-  width: 90%;
-  height: 90%;
-  overflow: scroll;
+  width: 100%;
+  overflow: visible;
+  min-height: 90%;
   @include at-breakpoint($M) {
-    width: 80%;
-    height: 80%;
+    width: 90%;
   }
   @include at-breakpoint($L) {
-    width: 80%;
-    height: 80%;
+    width: 90%;
   }
-  @extend %middle;
+  @include at-breakpoint($XL) {
+    width: 80%;
+  }
+  //@extend %middle;
+  margin: 5% auto;
+  padding-bottom: 2em;
   background-color: #ffffff;
   @include border-radius(10px);
   @include animation(gray-larger 0.2s ease-out);

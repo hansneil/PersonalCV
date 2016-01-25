@@ -7,8 +7,8 @@
     <script src="/js/echarts.min.js"></script>
   </head>
   <body>
-    <div class="circle-shadow"></div>
-    <div class="circle" ng-class="{'active': active}" ng-click="click()"></div>
+    <div class="circle-shadow" ng-show="!active"></div>
+    <div class="circle" ng-show="!active" ng-class="{'active': active}" ng-click="click()"></div>
     <p class="main-page" ng-show="!active">PRESS <span>TO</span> ENTER...</p>
     <!--<div ng-class="{'active': active}" class="img-circle"></div>
     <p ng-show="active" class="gray">Yu Neil</p>
