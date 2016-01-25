@@ -539,7 +539,18 @@ progress-group.right .bar-container {
   transition: all 0.2s ease;
 }
 
-/* line 5, ../sass/style.scss */
+/* line 8, ../sass/style.scss */
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak],
+.ng-cloak, .x-ng-cloak, .ng-hide:not(.ng-hide-animate) {
+  display: none !important;
+}
+
+/* line 13, ../sass/style.scss */
+ng\:form {
+  display: block;
+}
+
+/* line 17, ../sass/style.scss */
 .name, .main-page, .circle-shadow, .circle, .img-circle.active, .gray-circle.active {
   position: absolute;
   margin: auto;
@@ -853,7 +864,7 @@ progress-group.right .bar-container {
     transform: scale(0);
   }
 }
-/* line 185, ../sass/style.scss */
+/* line 197, ../sass/style.scss */
 .name {
   color: #00c3ab;
   font-family: 'axis';
@@ -874,7 +885,7 @@ progress-group.right .bar-container {
   box-shadow: 3px 3px 2px #c7fa5a;
 }
 
-/* line 201, ../sass/style.scss */
+/* line 213, ../sass/style.scss */
 .main-page {
   color: #ffffff;
   width: 4em;
@@ -884,16 +895,16 @@ progress-group.right .bar-container {
   text-align: center;
   top: 7em;
 }
-/* line 210, ../sass/style.scss */
+/* line 222, ../sass/style.scss */
 .main-page span {
   color: #c7fa5a;
 }
-/* line 213, ../sass/style.scss */
+/* line 225, ../sass/style.scss */
 .main-page.gray {
   color: #c7fa5a;
 }
 
-/* line 217, ../sass/style.scss */
+/* line 229, ../sass/style.scss */
 .circle-shadow {
   width: 6em;
   height: 6em;
@@ -906,7 +917,7 @@ progress-group.right .bar-container {
   animation: shadow 1.2s infinite ease-out;
 }
 
-/* line 225, ../sass/style.scss */
+/* line 237, ../sass/style.scss */
 .circle {
   width: 6em;
   height: 6em;
@@ -917,7 +928,7 @@ progress-group.right .bar-container {
   border: 2px solid #ffffff;
   cursor: pointer;
 }
-/* line 233, ../sass/style.scss */
+/* line 245, ../sass/style.scss */
 .circle.active {
   -moz-animation: larger 0.2s ease-out;
   -webkit-animation: larger 0.2s ease-out;
@@ -928,7 +939,7 @@ progress-group.right .bar-container {
   cursor: default;
 }
 
-/* line 239, ../sass/style.scss */
+/* line 251, ../sass/style.scss */
 .img-circle.active {
   width: 6em;
   height: 6em;
@@ -941,7 +952,7 @@ progress-group.right .bar-container {
   animation: gray-larger 0.2s ease-out;
 }
 
-/* line 247, ../sass/style.scss */
+/* line 259, ../sass/style.scss */
 .gray-circle.active {
   width: 3em;
   height: 3em;
@@ -957,7 +968,7 @@ progress-group.right .bar-container {
   animation-fill-mode: forwards;
 }
 
-/* line 256, ../sass/style.scss */
+/* line 268, ../sass/style.scss */
 #my-cv {
   width: 100%;
   overflow: visible;
@@ -976,19 +987,19 @@ progress-group.right .bar-container {
   box-shadow: 1px 1px 10px #636363;
 }
 @media (min-width: 47em) {
-  /* line 256, ../sass/style.scss */
+  /* line 268, ../sass/style.scss */
   #my-cv {
     width: 90%;
   }
 }
 @media (min-width: 64em) {
-  /* line 256, ../sass/style.scss */
+  /* line 268, ../sass/style.scss */
   #my-cv {
     width: 90%;
   }
 }
 @media (min-width: 75em) {
-  /* line 256, ../sass/style.scss */
+  /* line 268, ../sass/style.scss */
   #my-cv {
     width: 80%;
   }
