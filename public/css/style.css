@@ -345,15 +345,16 @@ progress-group.right .bar-container {
   border-radius: 3px;
 }
 
-@media (min-width: 47em) {
-  /* line 218, ../sass/partials/_layout.scss */
-  .social {
-    width: 66.19718%;
-    float: left;
-    margin-right: 1.40845%;
-    padding-left: 16.90141%;
-    padding-right: 16.90141%;
-  }
+/* line 218, ../sass/partials/_layout.scss */
+.social {
+  /*@include at-breakpoint($S) {*/
+  width: 66.19718%;
+  float: left;
+  margin-right: 1.40845%;
+  display: inline;
+  padding-left: 16.90141%;
+  padding-right: 16.90141%;
+  /*}*/
 }
 /* line 223, ../sass/partials/_layout.scss */
 .social .round {
@@ -482,7 +483,19 @@ progress-group.right .bar-container {
   margin: 0 auto;
   width: 70%;
 }
-/* line 309, ../sass/partials/_layout.scss */
+@media (min-width: 32em) {
+  /* line 305, ../sass/partials/_layout.scss */
+  .tags div {
+    width: 50%;
+  }
+}
+@media (min-width: 47em) {
+  /* line 305, ../sass/partials/_layout.scss */
+  .tags div {
+    width: 70%;
+  }
+}
+/* line 315, ../sass/partials/_layout.scss */
 .tags span {
   display: inline-block;
   background-color: #00c3ab;
@@ -496,29 +509,29 @@ progress-group.right .bar-container {
   border-radius: 5px;
 }
 @media (min-width: 23em) {
-  /* line 309, ../sass/partials/_layout.scss */
+  /* line 315, ../sass/partials/_layout.scss */
   .tags span {
     font-size: 1em;
   }
 }
-/* line 321, ../sass/partials/_layout.scss */
+/* line 327, ../sass/partials/_layout.scss */
 .tags span.web-develop {
   background-color: #469d8a;
 }
-/* line 324, ../sass/partials/_layout.scss */
+/* line 330, ../sass/partials/_layout.scss */
 .tags span.flat-design {
   background-color: #9dce63;
 }
-/* line 327, ../sass/partials/_layout.scss */
+/* line 333, ../sass/partials/_layout.scss */
 .tags span.photoshop {
   background-color: #84ce7d;
 }
-/* line 330, ../sass/partials/_layout.scss */
+/* line 336, ../sass/partials/_layout.scss */
 .tags span.illustrate {
   background-color: #6fe4c2;
 }
 
-/* line 335, ../sass/partials/_layout.scss */
+/* line 341, ../sass/partials/_layout.scss */
 * {
   -moz-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;

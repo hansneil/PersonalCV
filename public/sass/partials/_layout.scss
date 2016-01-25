@@ -216,10 +216,10 @@ progress-group.right {
   }
 }
 .social {
-  @include at-breakpoint($M) {
+  /*@include at-breakpoint($S) {*/
     @include span-columns(8, 12);
     @include pad(2,2,12);
-  }
+  /*}*/
   & .round {
     width: 3em;
     height: 3em;
@@ -305,6 +305,12 @@ progress-group.right {
   & div {
     margin: 0 auto;
     width: 70%;
+    @include at-breakpoint($SPlus) {
+      width: 50%;
+    }
+    @include at-breakpoint($M) {
+      width: 70%;
+    }
   }
   & span {
     display: inline-block;
