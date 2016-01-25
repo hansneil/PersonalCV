@@ -2,16 +2,6 @@
 @import "compass";
 @import "susyone";
 @import "./partials/layout";
-@font-face {
-  font-family: 'axis';
-  src: url('../css/fonts/axis.otf');
-}
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: $color2;
-  overflow: hidden;
-}
 %middle {
   position: absolute;
   margin: auto;
@@ -120,6 +110,7 @@ body {
 #my-cv {
   width: 90%;
   height: 90%;
+  overflow: scroll;
   @include at-breakpoint($M) {
     width: 80%;
     height: 80%;

@@ -4,18 +4,35 @@ $total-column: 12;
 $column-width: 5em;
 $gutter-width: 1em;
 $border-box-sizing: true;
-
+@font-face {
+  font-family: 'axis';
+  src: url('/css/fonts/axis.otf');
+}
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: $color2;
+  overflow: hidden;
+}
 #my-cv .basic-info-container{
   @include container;
   border-bottom: 1px solid $color3;
   /*@include susy-grid-background;*/
 }
-#my-cv .skill-container{
+#my-cv .skill-container, #my-cv .link-container, #my-cv .cv-container{
   @include container;
   border-bottom: 1px solid $color3;
-  position: relative;
-  width: 100%;
-  height: 40%;
+  padding-bottom: 1em;
+  & p {
+    font-family: 'axis';
+    color: $color3;
+    font-size: 1.5em;
+    text-align: center;
+    margin: 1em auto .5em auto;
+    @include at-breakpoint($M) {
+      text-align: left;
+    }
+  }
   /*@include susy-grid-background;*/
 }
 
@@ -89,7 +106,7 @@ $border-box-sizing: true;
     }
   }
 }
-#my-skill {
+/*#my-skill {
   width: 100%;
   height: 100%;
   margin: 0 auto;
@@ -97,6 +114,218 @@ $border-box-sizing: true;
     width: 50%;
     height: 100%;
     @include span-columns(5 omega, 12);
+  }
+}*/
+progress-group.left {
+  margin: 0 auto;
+  @include at-breakpoint($M) {
+    @include span-columns(6, 12);
+  }
+  & span {
+    color: $color3;
+    font-family: 'axis';
+    font-size: .8em;
+    @include at-breakpoint($L) {
+      font-size: 1em;
+    }
+  }
+  & .bar-container {
+    width: 65%;
+    @include at-breakpoint($M) {
+      width: 70%;
+    }
+    height: .6em;
+    display: inline-block;
+    background-color: $color2;
+    @include border-radius(3px);
+  }
+}
+progress-group.right {
+  @include at-breakpoint($M) {
+    @include span-columns(6 omega, 12);
+  }
+  & span {
+    color: $color3;
+    font-family: 'axis';
+    font-size: .8em;
+    @include at-breakpoint($L) {
+      font-size: 1em;
+    }
+  }
+  & .bar-container {
+    width: 65%;
+    @include at-breakpoint($M) {
+      width: 70%;
+    }
+    height: .6em;
+    display: inline-block;
+    background-color: $color2;
+    @include border-radius(3px);
+  }
+}
+.progress-bar {
+  padding: .5em 0;
+  &.bar-1 .bar-body {
+    width: 85%;
+    height: .6em;
+    background-color: $color3;
+    @include border-radius(3px);
+  }
+  &.bar-2 .bar-body {
+    width: 80%;
+    height: .6em;
+    background-color: $color3;
+    @include border-radius(3px);
+  }
+  &.bar-3 .bar-body {
+    width: 65%;
+    height: .6em;
+    background-color: $color3;
+    @include border-radius(3px);
+  }
+  &.bar-4 .bar-body {
+    width: 75%;
+    height: .6em;
+    background-color: $color3;
+    @include border-radius(3px);
+  }
+  &.bar-5 .bar-body {
+    width: 75%;
+    height: .6em;
+    background-color: $color3;
+    @include border-radius(3px);
+  }
+  &.bar-6 .bar-body {
+    width: 65%;
+    height: .6em;
+    background-color: $color3;
+    @include border-radius(3px);
+  }
+  &.bar-7 .bar-body {
+    width: 85%;
+    height: .6em;
+    background-color: $color3;
+    @include border-radius(3px);
+  }
+  &.bar-8 .bar-body {
+    width: 55%;
+    height: .6em;
+    background-color: $color3;
+    @include border-radius(3px);
+  }
+}
+.social {
+  @include at-breakpoint($M) {
+    @include span-columns(8, 12);
+    @include pad(2,2,12);
+  }
+  & .round {
+    width: 3em;
+    height: 3em;
+    @include border-radius(50%);
+    @include transition(all .5s ease);
+    display: inline-block;
+    margin: 0 1em;
+    background-color: $color3;
+    background-image: url("/img/social.png");
+    &.github {
+      background-position: -160px 40px;
+    }
+    &.weibo {
+      background-position: -160px 0px;
+    }
+    &.linkedin {
+      background-position: -120px 0px;
+    }
+    &.google {
+      background-position: -80px 0px;
+    }
+    &.stackoverflow {
+      background-position: -200px 40px;
+    }
+    &.facebook {
+      background-position: -40px 0px;
+    }
+    &:hover {
+      @include border-radius(5px);
+    }
+  }
+}
+.cv-left {
+  @include at-breakpoint($M) {
+    @include  span-columns(6, 12);
+  }
+}
+.cv-right {
+  @include at-breakpoint($M) {
+    @include  span-columns(6 omega, 12);
+  }
+}
+.cv-link {
+  display: block;
+  width: 100%;
+  height: 2em;
+  color: $color2;
+  text-align: center;
+  margin: 1em auto 0 auto;
+  font-family: 'axis';
+  font-size: 1em;
+  @include at-breakpoint($S) {
+    font-size: 2em;
+  }
+  text-decoration: none;
+  &:hover {
+    &:before {
+      width: 1em;
+      opacity: 1;
+    }
+    &:after {
+      width: 1em;
+      opacity: 1;
+    }
+    color: $color3;
+  }
+  @include transition(all .5s ease);
+}
+.cv-link:before {
+  content: '[';
+  display: inline-block;
+  opacity: 0;
+}
+.cv-link:after {
+  content: ']';
+  display: inline-block;
+  opacity: 0;
+}
+.tags {
+  & div {
+    margin: 0 auto;
+    width: 70%;
+  }
+  & span {
+    display: inline-block;
+    background-color: $color3;
+    font-size: .8em;
+    color: #ffffff;
+    font-family: 'axis';
+    padding: .5em .5em;
+    margin-bottom: .5em;
+    @include border-radius(5px);
+    @include at-breakpoint($S) {
+      font-size: 1em;
+    }
+    &.web-develop {
+      background-color: rgb(70, 157, 138);
+    }
+    &.flat-design {
+      background-color: rgb(157, 206, 99);
+    }
+    &.photoshop {
+      background-color: rgb(132, 206, 125);
+    }
+    &.illustrate {
+      background-color: rgb(111, 228, 194);
+    }
   }
 }
 * {
