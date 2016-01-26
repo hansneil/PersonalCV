@@ -33,27 +33,30 @@
       <div class="skill-container">
         <p>My Skill</p>
         <progress-group class="left">
-          <progress-bar number='1' skill="HTML5"></progress-bar>
+          <!--<progress-bar number='1' skill="HTML5"></progress-bar>
           <progress-bar number='2' skill="CSS"></progress-bar>
           <progress-bar number='3' skill="SCSS"></progress-bar>
-          <progress-bar number='4' skill="JavaScript"></progress-bar>
+          <progress-bar number='4' skill="JavaScript"></progress-bar>-->
+          <progress-bar ng-class="'bar-'+ item.number" number="item.number" skill="item.skill" ng-repeat="item in progressLeft"></progress-bar>
         </progress-group>
         <progress-group class="right">
-          <progress-bar number='5' skill="JQuery"></progress-bar>
+          <!--<progress-bar number='5' skill="JQuery"></progress-bar>
           <progress-bar number='6' skill="Bootstrap"></progress-bar>
           <progress-bar number='7' skill="AngularJS"></progress-bar>
-          <progress-bar number='8' skill="NodeJs"></progress-bar>
+          <progress-bar number='8' skill="NodeJs"></progress-bar>-->
+          <progress-bar ng-class="'bar-'+ item.number" number="item.number" skill="item.skill" ng-repeat="item in progressRight"></progress-bar>
         </progress-group>
       </div>
       <div class="link-container">
         <p>More About Me</p>
         <div class="social">
-          <a class="round github" href="https://github.com/hansneil"></a>
+          <!--<a class="round github" href="https://github.com/hansneil"></a>
           <a class="round weibo" href="http://weibo.com/2434892144/profile?rightmod=1&wvr=6&mod=personinfo"></a>
           <a class="round linkedin" href="http://www.linkedin.com/in/先波-余-8b658695?trk=nav_responsive_tab_profile_pic"></a>
           <a class="round google" href="https://plus.google.com/109007860879929993270"></a>
           <a class="round stackoverflow" href="http://stackoverflow.com/users/5835253/hansneil"></a>
-          <a class="round facebook" href="https://www.facebook.com/profile.php?id=100004108532958"></a>
+          <a class="round facebook" href="https://www.facebook.com/profile.php?id=100004108532958"></a>-->
+          <a class="round" ng-class="hype.name" ng-href="{{hype.link}}" ng-repeat="hype in webLink"></a>
         </div>
       </div>
       <div class="cv-container">
@@ -61,13 +64,10 @@
           <p>My Tags</p>
           <div class="tags">
             <div>
-              <span>Web Design</span>
-              <span class="web-develop">Web Develop</span>
+              <span ng-class="tag.style" ng-repeat="tag in tags_le">{{tag.area}}</span>
             </div>
             <div>
-              <span class="flat-design">Flat Design</span>
-              <span class="photoshop">Photoshop</span>
-              <span class="illustrate">Illustrate</span>
+              <span ng-class="tag.style" ng-repeat="tag in tags">{{tag.area}}</span>
             </div>
           </div>
         </div>
