@@ -107,20 +107,12 @@ body {
     }
   }
 }
-/*#my-skill {
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-  @include at-breakpoint($M) {
-    width: 50%;
-    height: 100%;
-    @include span-columns(5 omega, 12);
-  }
-}*/
 progress-group.left {
-  margin: 0 auto;
+  @include span-columns(11, 12);
+  @include prefix(1, 12);
   @include at-breakpoint($M) {
     @include span-columns(6, 12);
+    @include prefix(0, 12);
   }
   & span {
     color: $color3;
@@ -142,8 +134,11 @@ progress-group.left {
   }
 }
 progress-group.right {
+  @include span-columns(11, 12);
+  @include prefix(1, 12);
   @include at-breakpoint($M) {
     @include span-columns(6 omega, 12);
+    @include prefix(0, 12);
   }
   & span {
     color: $color3;
@@ -164,55 +159,337 @@ progress-group.right {
     @include border-radius(3px);
   }
 }
+@-webkit-keyframes bar-ani-1 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 85%;
+  }
+}
+@-moz-keyframes bar-ani-1 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 85%;
+  }
+}
+@-ms-keyframes bar-ani-1 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 85%;
+  }
+}
+@-o-keyframes bar-ani-1 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 85%;
+  }
+}
+@keyframes bar-ani-1 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 85%;
+  }
+}
+@-webkit-keyframes bar-ani-2 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80%;
+  }
+}
+@-moz-keyframes bar-ani-2 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80%;
+  }
+}
+@-ms-keyframes bar-ani-2 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80%;
+  }
+}
+@-o-keyframes bar-ani-2 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80%;
+  }
+}
+@keyframes bar-ani-2 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80%;
+  }
+}
+@-webkit-keyframes bar-ani-3 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 65%;
+  }
+}
+@-moz-keyframes bar-ani-3 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 65%;
+  }
+}
+@-ms-keyframes bar-ani-3 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 65%;
+  }
+}
+@-o-keyframes bar-ani-3 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 65%;
+  }
+}
+@keyframes bar-ani-3 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 65%;
+  }
+}
+@-webkit-keyframes bar-ani-4 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 75%;
+  }
+}
+@-moz-keyframes bar-ani-4 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 75%;
+  }
+}
+@-ms-keyframes bar-ani-4 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 75%;
+  }
+}
+@-o-keyframes bar-ani-4 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 75%;
+  }
+}
+@keyframes bar-ani-4 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 75%;
+  }
+}
+@-webkit-keyframes bar-ani-5 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 75%;
+  }
+}
+@-moz-keyframes bar-ani-5 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 75%;
+  }
+}
+@-ms-keyframes bar-ani-5 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 75%;
+  }
+}
+@-o-keyframes bar-ani-5 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 75%;
+  }
+}
+@keyframes bar-ani-5 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 75%;
+  }
+}
+@-webkit-keyframes bar-ani-6 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 65%;
+  }
+}
+@-moz-keyframes bar-ani-6 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 65%;
+  }
+}
+@-ms-keyframes bar-ani-6 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 65%;
+  }
+}
+@-o-keyframes bar-ani-6 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 65%;
+  }
+}
+@keyframes bar-ani-6 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 65%;
+  }
+}
+@-webkit-keyframes bar-ani-7 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 85%;
+  }
+}
+@-moz-keyframes bar-ani-7 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 85%;
+  }
+}
+@-ms-keyframes bar-ani-7 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 85%;
+  }
+}
+@-o-keyframes bar-ani-7 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 85%;
+  }
+}
+@keyframes bar-ani-7 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 85%;
+  }
+}
+@-webkit-keyframes bar-ani-8 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 55%;
+  }
+}
+@-moz-keyframes bar-ani-8 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 55%;
+  }
+}
+@-ms-keyframes bar-ani-8 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 55%;
+  }
+}
+@-o-keyframes bar-ani-8 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 55%;
+  }
+}
+@keyframes bar-ani-8 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 55%;
+  }
+}
 .progress-bar {
   padding: .5em 0;
-  &.bar-1 .bar-body {
-    width: 85%;
-    height: .6em;
-    background-color: $color3;
-    @include border-radius(3px);
-  }
-  &.bar-2 .bar-body {
-    width: 80%;
-    height: .6em;
-    background-color: $color3;
-    @include border-radius(3px);
-  }
-  &.bar-3 .bar-body {
-    width: 65%;
-    height: .6em;
-    background-color: $color3;
-    @include border-radius(3px);
-  }
-  &.bar-4 .bar-body {
-    width: 75%;
-    height: .6em;
-    background-color: $color3;
-    @include border-radius(3px);
-  }
-  &.bar-5 .bar-body {
-    width: 75%;
-    height: .6em;
-    background-color: $color3;
-    @include border-radius(3px);
-  }
-  &.bar-6 .bar-body {
-    width: 65%;
-    height: .6em;
-    background-color: $color3;
-    @include border-radius(3px);
-  }
-  &.bar-7 .bar-body {
-    width: 85%;
-    height: .6em;
-    background-color: $color3;
-    @include border-radius(3px);
-  }
-  &.bar-8 .bar-body {
-    width: 55%;
-    height: .6em;
-    background-color: $color3;
-    @include border-radius(3px);
+  @for $i from 1 through 8 {
+    &.bar-#{$i} .bar-body {
+      width: 0;
+      height: .6em;
+      background-color: $color3;
+      @include border-radius(3px);
+      @include animation(bar-ani-#{$i} 1s ease-in-out -.5s);
+      @include animation-fill-mode(forwards);
+    }
   }
 }
 .social {

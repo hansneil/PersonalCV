@@ -11,9 +11,6 @@
     <div class="circle-shadow" ng-show="!active"></div>
     <div class="circle" ng-show="!active" ng-class="{'active': active}" ng-click="click()"></div>
     <p class="main-page" ng-show="!active">PRESS <span>TO</span> ENTER...</p>
-    <!--<div ng-class="{'active': active}" class="img-circle"></div>
-    <p ng-show="active" class="gray">Yu Neil</p>
-    <div ng-show="active" ng-class="{'active': active}" class="gray-circle"></div>-->
     <div ng-if="!!active" id="my-cv" ng-cloak>
       <div class="basic-info-container">
         <div class="basic-info">
@@ -33,29 +30,15 @@
       <div class="skill-container">
         <p>My Skill</p>
         <progress-group class="left">
-          <!--<progress-bar number='1' skill="HTML5"></progress-bar>
-          <progress-bar number='2' skill="CSS"></progress-bar>
-          <progress-bar number='3' skill="SCSS"></progress-bar>
-          <progress-bar number='4' skill="JavaScript"></progress-bar>-->
           <progress-bar ng-class="'bar-'+ item.number" number="item.number" skill="item.skill" ng-repeat="item in progressLeft"></progress-bar>
         </progress-group>
         <progress-group class="right">
-          <!--<progress-bar number='5' skill="JQuery"></progress-bar>
-          <progress-bar number='6' skill="Bootstrap"></progress-bar>
-          <progress-bar number='7' skill="AngularJS"></progress-bar>
-          <progress-bar number='8' skill="NodeJs"></progress-bar>-->
           <progress-bar ng-class="'bar-'+ item.number" number="item.number" skill="item.skill" ng-repeat="item in progressRight"></progress-bar>
         </progress-group>
       </div>
       <div class="link-container">
         <p>More About Me</p>
         <div class="social">
-          <!--<a class="round github" href="https://github.com/hansneil"></a>
-          <a class="round weibo" href="http://weibo.com/2434892144/profile?rightmod=1&wvr=6&mod=personinfo"></a>
-          <a class="round linkedin" href="http://www.linkedin.com/in/先波-余-8b658695?trk=nav_responsive_tab_profile_pic"></a>
-          <a class="round google" href="https://plus.google.com/109007860879929993270"></a>
-          <a class="round stackoverflow" href="http://stackoverflow.com/users/5835253/hansneil"></a>
-          <a class="round facebook" href="https://www.facebook.com/profile.php?id=100004108532958"></a>-->
           <a class="round" ng-class="hype.name" ng-href="{{hype.link}}" ng-repeat="hype in webLink"></a>
         </div>
       </div>
@@ -77,64 +60,6 @@
         </div>
       </div>
     </div>
-    <!--<script type="text/javascript">
-      // 基于准备好的dom，初始化echarts实例
-      var myChart = echarts.init(document.getElementById('my-skill'));
-      console.log(myChart);
-      console.log(document.getElementById('my-skill'));
-
-      // 指定图表的配置项和数据
-      option = {
-        tooltip: {
-          trigger: 'item',
-          formatter: "{a} <br/>{b}: {c} ({d}%)"
-        },
-        series: [
-          {
-            name:'Skill',
-            type:'pie',
-            selectedMode: 'single',
-            radius: [0, '30%'],
-
-            label: {
-              normal: {
-                position: 'inner'
-              }
-            },
-            labelLine: {
-              normal: {
-                show: false
-              }
-            },
-            data:[
-              {value:335, name:'Design', itemStyle: {normal:{color: 'rgb(110, 110, 110)'}}},
-              {value:679, name:'Back', itemStyle: {normal:{color: 'rgb(135, 135, 135)'}}},
-              {value:1548, name:'Web', itemStyle: {normal:{color: 'rgb(160, 160, 160)'}}}
-            ]
-          },
-          {
-            name:'访问来源',
-            type:'pie',
-            radius: ['40%', '55%'],
-
-            data:[
-              {value:225, name:'Photoshop', itemStyle: {normal:{color: 'rgb(145, 255, 218)'}}},
-              {value:115, name:'Illustrate', itemStyle: {normal:{color: 'rgb(199, 220, 217)'}}},
-              {value:445, name:'Node.js', itemStyle: {normal:{color: 'rgb(2, 166, 163)'}}},
-              {value:234, name:'MongoDB', itemStyle: {normal:{color: 'rgb(2, 180, 176)'}}},
-              {value:548, name:'HTML', itemStyle: {normal:{color: 'rgb(0, 185, 158)'}}},
-              {value:251, name:'CSS&SCSS', itemStyle: {normal:{color: 'rgb(0, 200, 171)'}}},
-              {value:102, name:'Bootstrap', itemStyle: {normal:{color: 'rgb(0, 213, 182)'}}},
-              {value:300, name:'JavaScript&JQuery', itemStyle: {normal:{color: 'rgb(0, 227, 194)'}}},
-              {value:347, name:'AngularJS', itemStyle: {normal:{color: 'rgb(0, 243, 208)'}}}
-            ]
-          }
-        ]
-      };
-
-      // 使用刚指定的配置项和数据显示图表。
-      myChart.setOption(option);
-    </script>-->
   <script src="/js/angular.js"></script>
   <script src="/js/page_app.js"></script>
   </body>
