@@ -14,6 +14,9 @@ body {
   background-color: $color3;
   overflow: scroll;
 }
+* {
+  @include transition(all .2s ease-in-out);
+}
 #my-cv .basic-info-container{
   @include container;
   border-bottom: 1px solid $color3;
@@ -616,6 +619,4 @@ progress-group.right {
     }
   }
 }
-* {
-  @include transition(all .2s ease);
-}
+

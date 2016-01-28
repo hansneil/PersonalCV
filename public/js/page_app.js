@@ -30,7 +30,7 @@ page.controller('neilOwnPage', ['$scope', '$http', function($scope, $http){
         {name: 'weibo', link: 'http://weibo.com/2434892144/profile?rightmod=1&wvr=6&mod=personinfo'},
         {name: 'linkedin', link: 'http://www.linkedin.com/in/先波-余-8b658695?trk=nav_responsive_tab_profile_pic'},
         {name: 'google', link: 'https://plus.google.com/109007860879929993270'},
-        {name: 'stackoveflow', link: 'http://stackoverflow.com/users/5835253/hansneil'},
+        {name: 'stackoverflow', link: 'http://stackoverflow.com/users/5835253/hansneil'},
         {name: 'facebook', link: 'https://www.facebook.com/profile.php?id=100004108532958'}
     ];
     $scope.click = function(){
