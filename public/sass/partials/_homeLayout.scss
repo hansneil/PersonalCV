@@ -52,21 +52,53 @@ a {
   & p {
     font-family: 'axis';
     color: $color5;
-    @include at-breakpoint($M) {
-      padding-left: 1em;
+    &.title {
+      @include at-breakpoint($M) {
+        padding-left: 1em;
+      }
+      font-size: 3em;
     }
-    font-size: 3em;
   }
-  & li {
+}
+
+.footer {
+  @include at-breakpoint($M) {
+    position: fixed;
+  }
+  bottom: 1em;
+  & p {
+    font-family: 'axis';
+    font-size: 1.5em;
+    color: $color1;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
     @include at-breakpoint($M) {
       display: inline-block;
     }
-    font-family: 'axis';
-    color: $color5;
+  }
+}
+ul {
+  @include at-breakpoint($M) {
+    display: inline-block;
+    width: auto;
+  }
+  width: 60%;
+  text-align: center;
+  margin: .5em auto;
+}
+
+li {
+  font-family: 'axis';
+  color: $color5;
+  padding-right: 1em;
+  padding-bottom: 1em;
+  list-style: none;
+  .page & {
+    @include at-breakpoint($M) {
+      display: inline-block;
+    }
     font-size: 1.5em;
-    padding-right: 1em;
-    padding-bottom: 1em;
-    list-style: none;
     &:hover {
       color: $color6;
     }
@@ -86,5 +118,8 @@ a {
       content: '>';
       padding-left: 1em;
     }
+  }
+  .footer & {
+    display: inline-block;
   }
 }
