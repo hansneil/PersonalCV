@@ -738,7 +738,7 @@ a {
   height: 18em;
   vertical-align: top;
   text-align: center;
-  margin-top: 2em; }
+  margin-top: 1em; }
   @media (min-width: 47em) {
     /* line 39, ../sass/partials/_homeLayout.scss */
     .info-wrapper {
