@@ -124,6 +124,7 @@ li {
   }
   .footer & {
     display: inline-block;
+    
     @include at-breakpoint($M) {
       padding-right: 1em;
     }
