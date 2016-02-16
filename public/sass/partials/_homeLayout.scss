@@ -82,10 +82,12 @@ ul {
   @include at-breakpoint($M) {
     display: inline-block;
     width: auto;
+    margin-left: 2em;
   }
   width: 80%;
   text-align: center;
   margin: .5em auto;
+  padding-left: .5em;
 }
 
 li {
@@ -109,7 +111,7 @@ li {
         padding-right: 0;
       }
       content: '<';
-      padding-right: 1em;
+      padding-right: 1.5em;
     }
     &:after {
       @include at-breakpoint($M) {
@@ -117,7 +119,7 @@ li {
         padding-left: 0;
       }
       content: '>';
-      padding-left: 1em;
+      padding-left: 1.5em;
     }
   }
   .footer & {

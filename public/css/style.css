@@ -784,54 +784,56 @@ a {
 ul {
   width: 80%;
   text-align: center;
-  margin: .5em auto; }
+  margin: .5em auto;
+  padding-left: .5em; }
   @media (min-width: 47em) {
     /* line 81, ../sass/partials/_homeLayout.scss */
     ul {
       display: inline-block;
-      width: auto; } }
+      width: auto;
+      margin-left: 2em; } }
 
-/* line 91, ../sass/partials/_homeLayout.scss */
+/* line 93, ../sass/partials/_homeLayout.scss */
 li {
   font-family: 'axis';
   color: #ffffff;
   padding-right: .5em;
   padding-bottom: 1em;
   list-style: none; }
-  /* line 97, ../sass/partials/_homeLayout.scss */
+  /* line 99, ../sass/partials/_homeLayout.scss */
   .page li {
     font-size: 1.5em; }
     @media (min-width: 47em) {
-      /* line 97, ../sass/partials/_homeLayout.scss */
+      /* line 99, ../sass/partials/_homeLayout.scss */
       .page li {
         display: inline-block;
         padding-right: 1em; } }
-    /* line 103, ../sass/partials/_homeLayout.scss */
+    /* line 105, ../sass/partials/_homeLayout.scss */
     .page li:hover {
       color: #461d45; }
-    /* line 106, ../sass/partials/_homeLayout.scss */
+    /* line 108, ../sass/partials/_homeLayout.scss */
     .page li:before {
       content: '<';
-      padding-right: 1em; }
+      padding-right: 1.5em; }
       @media (min-width: 47em) {
-        /* line 106, ../sass/partials/_homeLayout.scss */
+        /* line 108, ../sass/partials/_homeLayout.scss */
         .page li:before {
           content: '';
           padding-right: 0; } }
-    /* line 114, ../sass/partials/_homeLayout.scss */
+    /* line 116, ../sass/partials/_homeLayout.scss */
     .page li:after {
       content: '>';
-      padding-left: 1em; }
+      padding-left: 1.5em; }
       @media (min-width: 47em) {
-        /* line 114, ../sass/partials/_homeLayout.scss */
+        /* line 116, ../sass/partials/_homeLayout.scss */
         .page li:after {
           content: '';
           padding-left: 0; } }
-  /* line 123, ../sass/partials/_homeLayout.scss */
+  /* line 125, ../sass/partials/_homeLayout.scss */
   .footer li {
     display: inline-block; }
     @media (min-width: 47em) {
-      /* line 123, ../sass/partials/_homeLayout.scss */
+      /* line 125, ../sass/partials/_homeLayout.scss */
       .footer li {
         padding-right: 1em; } }
 
