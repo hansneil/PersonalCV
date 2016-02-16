@@ -288,6 +288,10 @@ ng\:form{
   @include animation(gray-larger 0.2s ease-out);
   @include box-shadow(1px 1px 10px lighten($color1, 20%));
 }
+.view-container {
+  width: 100%;
+  height: 100%;
+}
 /*#my-skill {
   width: 50%;
   height: 100%;

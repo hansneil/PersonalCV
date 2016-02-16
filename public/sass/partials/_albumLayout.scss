@@ -15,3 +15,64 @@
   color: $color5;
   text-align: center;
 }
+
+.header {
+  font-family: 'axis';
+  margin-top: 1em;
+  & p {
+    font-size: 3em;
+    color: $color5;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+.content {
+  margin-top: 3em;
+  padding-top: 1em;
+  padding-bottom: 2em;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: $color5;
+  border-radius: 10px;
+  & ul {
+    display: block;
+    clear: both;
+    & li {
+      color: $color2;
+      display: inline-block;
+      padding-left: .5em;
+      &:hover, &.selected {
+        color: $color3;
+        text-decoration: underline;
+      }
+    }
+  }
+  & img {
+    @include at-breakpoint($S) {
+      width: 48%;
+      padding-left: .5%;
+    }
+    @include at-breakpoint($SPlus) {
+      width: 31%;
+      padding-left: 1.5%;
+    }
+    @include at-breakpoint($M) {
+      width: 24%;
+      padding-left: .5%;
+    }
+    width: 98%;
+    padding-left: 1%;
+  }
+  & p {
+    margin-top: 2em;
+    text-align: center;
+    font-family: 'axis';
+    color: $color3;
+    & a {
+      color: $color2;
+      text-decoration: underline;
+    }
+  }
+}

@@ -850,6 +850,70 @@ li {
   color: #ffffff;
   text-align: center; }
 
+/* line 19, ../sass/partials/_albumLayout.scss */
+.header {
+  font-family: 'axis';
+  margin-top: 1em; }
+  /* line 22, ../sass/partials/_albumLayout.scss */
+  .header p {
+    font-size: 3em;
+    color: #ffffff;
+    margin: 0 auto;
+    text-align: center; }
+
+/* line 30, ../sass/partials/_albumLayout.scss */
+.content {
+  margin-top: 3em;
+  padding-top: 1em;
+  padding-bottom: 2em;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ffffff;
+  border-radius: 10px; }
+  /* line 39, ../sass/partials/_albumLayout.scss */
+  .content ul {
+    display: block;
+    clear: both; }
+    /* line 42, ../sass/partials/_albumLayout.scss */
+    .content ul li {
+      color: #6e6e6e;
+      display: inline-block;
+      padding-left: .5em; }
+      /* line 46, ../sass/partials/_albumLayout.scss */
+      .content ul li:hover, .content ul li.selected {
+        color: #00c3ab;
+        text-decoration: underline; }
+  /* line 52, ../sass/partials/_albumLayout.scss */
+  .content img {
+    width: 98%;
+    padding-left: 1%; }
+    @media (min-width: 23em) {
+      /* line 52, ../sass/partials/_albumLayout.scss */
+      .content img {
+        width: 48%;
+        padding-left: .5%; } }
+    @media (min-width: 32em) {
+      /* line 52, ../sass/partials/_albumLayout.scss */
+      .content img {
+        width: 31%;
+        padding-left: 1.5%; } }
+    @media (min-width: 47em) {
+      /* line 52, ../sass/partials/_albumLayout.scss */
+      .content img {
+        width: 24%;
+        padding-left: .5%; } }
+  /* line 68, ../sass/partials/_albumLayout.scss */
+  .content p {
+    margin-top: 2em;
+    text-align: center;
+    font-family: 'axis';
+    color: #00c3ab; }
+    /* line 73, ../sass/partials/_albumLayout.scss */
+    .content p a {
+      color: #6e6e6e;
+      text-decoration: underline; }
+
 /* line 10, ../sass/style.scss */
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak],
 .ng-cloak, .x-ng-cloak, .ng-hide:not(.ng-hide-animate) {
@@ -1244,6 +1308,11 @@ ng\:form {
     /* line 270, ../sass/style.scss */
     #my-cv {
       width: 80%; } }
+
+/* line 291, ../sass/style.scss */
+.view-container {
+  width: 100%;
+  height: 100%; }
 
 /*#my-skill {
   width: 50%;
