@@ -1,0 +1,90 @@
+@import "variables";
+@import "susyone";
+
+@font-face {
+  font-family: 'axis';
+  src: url('/css/fonts/axis.otf');
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.home-wrapper {
+  @include at-breakpoint($M) {
+    position: absolute;
+    width: 45em;
+    height: 20em;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  margin-top: 5em;
+}
+.photo-wrapper {
+  @include at-breakpoint($M) {
+    display: inline-block;
+  }
+  width: 15em;
+  height: 15em;
+  border-radius: 50%;
+  background-image: url('/img/home_photo.jpg');
+  border: 10px solid rgb(255, 255, 255);
+  margin: 0 auto;
+}
+
+.info-wrapper {
+  @include at-breakpoint($M) {
+    display: inline-block;
+    border-left: 2px solid white;
+    border-top: none;
+    text-align: left;
+    margin-left: 2em;
+    margin-top: 0em;
+  }
+  height: 18em;
+  vertical-align: top;
+  text-align: center;
+  margin-top: 2em;
+  & p {
+    font-family: 'axis';
+    color: $color5;
+    @include at-breakpoint($M) {
+      padding-left: 1em;
+    }
+    font-size: 3em;
+  }
+  & li {
+    @include at-breakpoint($M) {
+      display: inline-block;
+    }
+    font-family: 'axis';
+    color: $color5;
+    font-size: 1.5em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+    list-style: none;
+    &:hover {
+      color: $color6;
+    }
+    &:before {
+      @include at-breakpoint($M) {
+        content: '';
+        padding-right: 0;
+      }
+      content: '<';
+      padding-right: 1em;
+    }
+    &:after {
+      @include at-breakpoint($M) {
+        content: '';
+        padding-left: 0;
+      }
+      content: '>';
+      padding-left: 1em;
+    }
+  }
+}

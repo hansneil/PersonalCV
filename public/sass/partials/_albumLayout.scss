@@ -1,0 +1,17 @@
+@import "variables";
+@import "susyone";
+
+.wrapper {
+  position: absolute;
+  width: 10em;
+  height: 1em;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  font-family: 'axis';
+  font-size: 4em;
+  color: $color5;
+  text-align: center;
+}

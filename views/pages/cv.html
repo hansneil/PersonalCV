@@ -1,0 +1,49 @@
+<div id="my-cv" ng-cloak>
+    <div class="basic-info-container">
+        <div class="basic-info">
+            <img src="/img/photo.png">
+        </div>
+        <div class="basic-info-name">
+            <span>Yu,Xianbo</span>
+            <span class="screen-resp">Master of</span>
+            <span class="screen-resp">Bachelor of</span>
+        </div>
+        <div class="basic-info-career">
+            <span>Web Front-end Designer & Developer</span>
+            <span class="screen-resp">Shanghai Jiaotong University</span>
+            <span class="screen-resp">Zhejiang University</span>
+        </div>
+    </div>
+    <div class="skill-container">
+        <p>My Skill</p>
+        <progress-group class="left">
+            <progress-bar ng-class="'bar-'+ item.number" number="item.number" skill="item.skill" ng-repeat="item in progressLeft"></progress-bar>
+        </progress-group>
+        <progress-group class="right">
+            <progress-bar ng-class="'bar-'+ item.number" number="item.number" skill="item.skill" ng-repeat="item in progressRight"></progress-bar>
+        </progress-group>
+    </div>
+    <div class="link-container">
+        <p>More About Me</p>
+        <div class="social">
+            <a class="round" ng-class="hype.name" ng-href="{{hype.link}}" ng-repeat="hype in webLink"></a>
+        </div>
+    </div>
+    <div class="cv-container">
+        <div class="cv-left">
+            <p>My Tags</p>
+            <div class="tags">
+                <div>
+                    <span ng-class="tag.style" ng-repeat="tag in tags_le">{{tag.area}}</span>
+                </div>
+                <div>
+                    <span ng-class="tag.style" ng-repeat="tag in tags">{{tag.area}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="cv-right">
+            <p>My CV</p>
+            <a class="cv-link" ng-href="/img/YXB_WEB_CV.pdf" target="_blank"> Download CV </a>
+        </div>
+    </div>
+</div>

@@ -1,8 +1,26 @@
 /**
  * Created by hansneil on 18/1/16.
  */
-var page = angular.module('ownPage', []);
-page.controller('neilOwnPage', ['$scope', '$http', function($scope, $http){
+var page = angular.module('ownPage', ['ngRoute']);
+page.config(['$routeProvider', function($routeProvider){
+    $routeProvider
+        .when('/', {
+            templateUrl: '/pages/home.html'
+        })
+        .when('/cv', {
+            templateUrl: '/pages/cv.html'
+        })
+        .when('/album', {
+            templateUrl: '/pages/album.html'
+        })
+        .when('/blog', {
+            templateUrl: '/pages/album.html'
+        })
+        .otherwise({
+            redirectTo: '/'
+        })
+}]);
+page.controller('neilOwnPage', ['$scope', '$http', '$location', function($scope, $http, $location){
     $scope.title = "Hansneil";
     $scope.tags_le = [
         {area: 'Web Design', style: 'web-design'},
@@ -35,6 +53,8 @@ page.controller('neilOwnPage', ['$scope', '$http', function($scope, $http){
     ];
     $scope.click = function(){
         $scope.active = 1;
+        $location.path('/cv');
+
     };
     /*console.log(echarts.init);*/
 }]);

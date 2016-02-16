@@ -697,16 +697,125 @@ progress-group.right {
   .tags span.illustrate {
     background-color: #6fe4c2; }
 
-/* line 8, ../sass/style.scss */
+@font-face {
+  font-family: 'axis';
+  src: url("/css/fonts/axis.otf"); }
+/* line 9, ../sass/partials/_homeLayout.scss */
+a {
+  text-decoration: none;
+  color: inherit; }
+
+/* line 14, ../sass/partials/_homeLayout.scss */
+.home-wrapper {
+  margin-top: 5em; }
+  @media (min-width: 47em) {
+    /* line 14, ../sass/partials/_homeLayout.scss */
+    .home-wrapper {
+      position: absolute;
+      width: 45em;
+      height: 20em;
+      margin: auto;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0; } }
+
+/* line 27, ../sass/partials/_homeLayout.scss */
+.photo-wrapper {
+  width: 15em;
+  height: 15em;
+  border-radius: 50%;
+  background-image: url("/img/home_photo.jpg");
+  border: 10px solid white;
+  margin: 0 auto; }
+  @media (min-width: 47em) {
+    /* line 27, ../sass/partials/_homeLayout.scss */
+    .photo-wrapper {
+      display: inline-block; } }
+
+/* line 39, ../sass/partials/_homeLayout.scss */
+.info-wrapper {
+  height: 18em;
+  vertical-align: top;
+  text-align: center;
+  margin-top: 2em; }
+  @media (min-width: 47em) {
+    /* line 39, ../sass/partials/_homeLayout.scss */
+    .info-wrapper {
+      display: inline-block;
+      border-left: 2px solid white;
+      border-top: none;
+      text-align: left;
+      margin-left: 2em;
+      margin-top: 0em; } }
+  /* line 52, ../sass/partials/_homeLayout.scss */
+  .info-wrapper p {
+    font-family: 'axis';
+    color: #ffffff;
+    font-size: 3em; }
+    @media (min-width: 47em) {
+      /* line 52, ../sass/partials/_homeLayout.scss */
+      .info-wrapper p {
+        padding-left: 1em; } }
+  /* line 60, ../sass/partials/_homeLayout.scss */
+  .info-wrapper li {
+    font-family: 'axis';
+    color: #ffffff;
+    font-size: 1.5em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+    list-style: none; }
+    @media (min-width: 47em) {
+      /* line 60, ../sass/partials/_homeLayout.scss */
+      .info-wrapper li {
+        display: inline-block; } }
+    /* line 70, ../sass/partials/_homeLayout.scss */
+    .info-wrapper li:hover {
+      color: #461d45; }
+    /* line 73, ../sass/partials/_homeLayout.scss */
+    .info-wrapper li:before {
+      content: '<';
+      padding-right: 1em; }
+      @media (min-width: 47em) {
+        /* line 73, ../sass/partials/_homeLayout.scss */
+        .info-wrapper li:before {
+          content: '';
+          padding-right: 0; } }
+    /* line 81, ../sass/partials/_homeLayout.scss */
+    .info-wrapper li:after {
+      content: '>';
+      padding-left: 1em; }
+      @media (min-width: 47em) {
+        /* line 81, ../sass/partials/_homeLayout.scss */
+        .info-wrapper li:after {
+          content: '';
+          padding-left: 0; } }
+
+/* line 4, ../sass/partials/_albumLayout.scss */
+.wrapper {
+  position: absolute;
+  width: 10em;
+  height: 1em;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  font-family: 'axis';
+  font-size: 4em;
+  color: #ffffff;
+  text-align: center; }
+
+/* line 10, ../sass/style.scss */
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak],
 .ng-cloak, .x-ng-cloak, .ng-hide:not(.ng-hide-animate) {
   display: none !important; }
 
-/* line 13, ../sass/style.scss */
+/* line 15, ../sass/style.scss */
 ng\:form {
   display: block; }
 
-/* line 17, ../sass/style.scss */
+/* line 19, ../sass/style.scss */
 .name, .main-page, .circle-shadow, .circle, .img-circle.active, .gray-circle.active {
   position: absolute;
   margin: auto;
@@ -967,7 +1076,7 @@ ng\:form {
     -ms-transform: scale(0);
     -webkit-transform: scale(0);
     transform: scale(0); } }
-/* line 197, ../sass/style.scss */
+/* line 199, ../sass/style.scss */
 .name {
   color: #00c3ab;
   font-family: 'axis';
@@ -987,7 +1096,7 @@ ng\:form {
   -webkit-box-shadow: 3px 3px 2px #c7fa5a;
   box-shadow: 3px 3px 2px #c7fa5a; }
 
-/* line 213, ../sass/style.scss */
+/* line 215, ../sass/style.scss */
 .main-page {
   color: #ffffff;
   width: 4em;
@@ -996,14 +1105,14 @@ ng\:form {
   font-family: 'axis';
   text-align: center;
   top: 7em; }
-  /* line 222, ../sass/style.scss */
+  /* line 224, ../sass/style.scss */
   .main-page span {
     color: #c7fa5a; }
-  /* line 225, ../sass/style.scss */
+  /* line 227, ../sass/style.scss */
   .main-page.gray {
     color: #c7fa5a; }
 
-/* line 229, ../sass/style.scss */
+/* line 231, ../sass/style.scss */
 .circle-shadow {
   width: 6em;
   height: 6em;
@@ -1015,7 +1124,7 @@ ng\:form {
   -webkit-animation: shadow 1.2s infinite ease-out;
   animation: shadow 1.2s infinite ease-out; }
 
-/* line 237, ../sass/style.scss */
+/* line 239, ../sass/style.scss */
 .circle {
   width: 6em;
   height: 6em;
@@ -1025,7 +1134,7 @@ ng\:form {
   border-radius: 50%;
   border: 2px solid #ffffff;
   cursor: pointer; }
-  /* line 245, ../sass/style.scss */
+  /* line 247, ../sass/style.scss */
   .circle.active {
     -moz-animation: larger 0.2s ease-out;
     -webkit-animation: larger 0.2s ease-out;
@@ -1035,7 +1144,7 @@ ng\:form {
     animation-fill-mode: forwards;
     cursor: default; }
 
-/* line 251, ../sass/style.scss */
+/* line 253, ../sass/style.scss */
 .img-circle.active {
   width: 6em;
   height: 6em;
@@ -1047,7 +1156,7 @@ ng\:form {
   -webkit-animation: gray-larger 0.2s ease-out;
   animation: gray-larger 0.2s ease-out; }
 
-/* line 259, ../sass/style.scss */
+/* line 261, ../sass/style.scss */
 .gray-circle.active {
   width: 3em;
   height: 3em;
@@ -1062,7 +1171,7 @@ ng\:form {
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards; }
 
-/* line 268, ../sass/style.scss */
+/* line 270, ../sass/style.scss */
 #my-cv {
   width: 100%;
   overflow: visible;
@@ -1080,15 +1189,15 @@ ng\:form {
   -webkit-box-shadow: 1px 1px 10px #636363;
   box-shadow: 1px 1px 10px #636363; }
   @media (min-width: 47em) {
-    /* line 268, ../sass/style.scss */
+    /* line 270, ../sass/style.scss */
     #my-cv {
       width: 90%; } }
   @media (min-width: 64em) {
-    /* line 268, ../sass/style.scss */
+    /* line 270, ../sass/style.scss */
     #my-cv {
       width: 90%; } }
   @media (min-width: 75em) {
-    /* line 268, ../sass/style.scss */
+    /* line 270, ../sass/style.scss */
     #my-cv {
       width: 80%; } }
 
