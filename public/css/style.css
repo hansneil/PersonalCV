@@ -707,7 +707,7 @@ a {
 
 /* line 14, ../sass/partials/_homeLayout.scss */
 .home-wrapper {
-  margin-top: 5em; }
+  margin-top: 2em; }
   @media (min-width: 47em) {
     /* line 14, ../sass/partials/_homeLayout.scss */
     .home-wrapper {
@@ -738,7 +738,7 @@ a {
   height: 18em;
   vertical-align: top;
   text-align: center;
-  margin-top: 1em; }
+  margin-top: 2em; }
   @media (min-width: 47em) {
     /* line 39, ../sass/partials/_homeLayout.scss */
     .info-wrapper {
