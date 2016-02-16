@@ -83,7 +83,7 @@ ul {
     display: inline-block;
     width: auto;
   }
-  width: 60%;
+  width: 80%;
   text-align: center;
   margin: .5em auto;
 }
@@ -91,12 +91,13 @@ ul {
 li {
   font-family: 'axis';
   color: $color5;
-  padding-right: 1em;
+  padding-right: .5em;
   padding-bottom: 1em;
   list-style: none;
   .page & {
     @include at-breakpoint($M) {
       display: inline-block;
+      padding-right: 1em;
     }
     font-size: 1.5em;
     &:hover {
@@ -121,5 +122,8 @@ li {
   }
   .footer & {
     display: inline-block;
+    @include at-breakpoint($M) {
+      padding-right: 1em;
+    }
   }
 }

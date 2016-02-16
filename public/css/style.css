@@ -782,7 +782,7 @@ a {
 
 /* line 81, ../sass/partials/_homeLayout.scss */
 ul {
-  width: 60%;
+  width: 80%;
   text-align: center;
   margin: .5em auto; }
   @media (min-width: 47em) {
@@ -795,7 +795,7 @@ ul {
 li {
   font-family: 'axis';
   color: #ffffff;
-  padding-right: 1em;
+  padding-right: .5em;
   padding-bottom: 1em;
   list-style: none; }
   /* line 97, ../sass/partials/_homeLayout.scss */
@@ -804,31 +804,36 @@ li {
     @media (min-width: 47em) {
       /* line 97, ../sass/partials/_homeLayout.scss */
       .page li {
-        display: inline-block; } }
-    /* line 102, ../sass/partials/_homeLayout.scss */
+        display: inline-block;
+        padding-right: 1em; } }
+    /* line 103, ../sass/partials/_homeLayout.scss */
     .page li:hover {
       color: #461d45; }
-    /* line 105, ../sass/partials/_homeLayout.scss */
+    /* line 106, ../sass/partials/_homeLayout.scss */
     .page li:before {
       content: '<';
       padding-right: 1em; }
       @media (min-width: 47em) {
-        /* line 105, ../sass/partials/_homeLayout.scss */
+        /* line 106, ../sass/partials/_homeLayout.scss */
         .page li:before {
           content: '';
           padding-right: 0; } }
-    /* line 113, ../sass/partials/_homeLayout.scss */
+    /* line 114, ../sass/partials/_homeLayout.scss */
     .page li:after {
       content: '>';
       padding-left: 1em; }
       @media (min-width: 47em) {
-        /* line 113, ../sass/partials/_homeLayout.scss */
+        /* line 114, ../sass/partials/_homeLayout.scss */
         .page li:after {
           content: '';
           padding-left: 0; } }
-  /* line 122, ../sass/partials/_homeLayout.scss */
+  /* line 123, ../sass/partials/_homeLayout.scss */
   .footer li {
     display: inline-block; }
+    @media (min-width: 47em) {
+      /* line 123, ../sass/partials/_homeLayout.scss */
+      .footer li {
+        padding-right: 1em; } }
 
 /* line 4, ../sass/partials/_albumLayout.scss */
 .wrapper {
