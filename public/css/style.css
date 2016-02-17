@@ -878,21 +878,22 @@ li {
           padding-left: .5em;
           font-size: 1em; } }
       /* line 39, ../sass/partials/_albumLayout.scss */
-      .content ul li:hover, .content ul li.selected {
+      .content ul li:hover, .content ul li .selected {
         color: #00c3ab;
-        text-decoration: underline; }
-  /* line 45, ../sass/partials/_albumLayout.scss */
+        text-decoration: underline;
+        cursor: pointer; }
+  /* line 46, ../sass/partials/_albumLayout.scss */
   .content p {
     margin-top: 2em;
     text-align: center;
     font-family: 'axis';
     color: #00c3ab; }
-    /* line 50, ../sass/partials/_albumLayout.scss */
+    /* line 51, ../sass/partials/_albumLayout.scss */
     .content p a {
       color: #6e6e6e;
       text-decoration: underline; }
 
-/* line 57, ../sass/partials/_albumLayout.scss */
+/* line 58, ../sass/partials/_albumLayout.scss */
 .album-wrapper {
   position: relative;
   overflow: hidden;
@@ -901,34 +902,34 @@ li {
   padding-left: 1%;
   font-size: .5em; }
   @media (min-width: 23em) {
-    /* line 57, ../sass/partials/_albumLayout.scss */
+    /* line 58, ../sass/partials/_albumLayout.scss */
     .album-wrapper {
       width: 48%;
       padding-left: .5%;
       font-size: .5em; } }
   @media (min-width: 32em) {
-    /* line 57, ../sass/partials/_albumLayout.scss */
+    /* line 58, ../sass/partials/_albumLayout.scss */
     .album-wrapper {
       width: 31%;
       padding-left: 1%;
       font-size: .5em; } }
   @media (min-width: 47em) {
-    /* line 57, ../sass/partials/_albumLayout.scss */
+    /* line 58, ../sass/partials/_albumLayout.scss */
     .album-wrapper {
       width: 24%;
       padding-left: .5%;
       font-size: 1em; } }
-  /* line 79, ../sass/partials/_albumLayout.scss */
+  /* line 80, ../sass/partials/_albumLayout.scss */
   .album-wrapper img {
     width: 100%; }
-    /* line 81, ../sass/partials/_albumLayout.scss */
+    /* line 82, ../sass/partials/_albumLayout.scss */
     .album-wrapper img:hover {
       -moz-transform: translateY(-20%);
       -ms-transform: translateY(-20%);
       -webkit-transform: translateY(-20%);
       transform: translateY(-20%);
       cursor: pointer; }
-  /* line 86, ../sass/partials/_albumLayout.scss */
+  /* line 87, ../sass/partials/_albumLayout.scss */
   .album-wrapper p {
     position: absolute;
     bottom: 5%;
@@ -939,26 +940,41 @@ li {
     z-index: -1;
     color: #6e6e6e; }
     @media (min-width: 23em) {
-      /* line 86, ../sass/partials/_albumLayout.scss */
+      /* line 87, ../sass/partials/_albumLayout.scss */
       .album-wrapper p {
         bottom: 0; } }
-    /* line 98, ../sass/partials/_albumLayout.scss */
+    /* line 99, ../sass/partials/_albumLayout.scss */
     .album-wrapper p span {
       color: #00c3ab; }
-  /* line 102, ../sass/partials/_albumLayout.scss */
+  /* line 103, ../sass/partials/_albumLayout.scss */
   .album-wrapper:hover p {
     z-index: 1; }
 
-/* line 10, ../sass/style.scss */
+/* line 3, ../sass/partials/_blogLayout.scss */
+.wrapper {
+  position: absolute;
+  width: 10em;
+  height: 1em;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  font-family: 'axis';
+  font-size: 4em;
+  color: #ffffff;
+  text-align: center; }
+
+/* line 11, ../sass/style.scss */
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak],
 .ng-cloak, .x-ng-cloak, .ng-hide:not(.ng-hide-animate) {
   display: none !important; }
 
-/* line 15, ../sass/style.scss */
+/* line 16, ../sass/style.scss */
 ng\:form {
   display: block; }
 
-/* line 19, ../sass/style.scss */
+/* line 20, ../sass/style.scss */
 .name, .main-page, .circle-shadow, .circle, .img-circle.active, .gray-circle.active {
   position: absolute;
   margin: auto;
@@ -1219,7 +1235,7 @@ ng\:form {
     -ms-transform: scale(0);
     -webkit-transform: scale(0);
     transform: scale(0); } }
-/* line 199, ../sass/style.scss */
+/* line 200, ../sass/style.scss */
 .name {
   color: #00c3ab;
   font-family: 'axis';
@@ -1239,7 +1255,7 @@ ng\:form {
   -webkit-box-shadow: 3px 3px 2px #c7fa5a;
   box-shadow: 3px 3px 2px #c7fa5a; }
 
-/* line 215, ../sass/style.scss */
+/* line 216, ../sass/style.scss */
 .main-page {
   color: #ffffff;
   width: 4em;
@@ -1248,14 +1264,14 @@ ng\:form {
   font-family: 'axis';
   text-align: center;
   top: 7em; }
-  /* line 224, ../sass/style.scss */
+  /* line 225, ../sass/style.scss */
   .main-page span {
     color: #c7fa5a; }
-  /* line 227, ../sass/style.scss */
+  /* line 228, ../sass/style.scss */
   .main-page.gray {
     color: #c7fa5a; }
 
-/* line 231, ../sass/style.scss */
+/* line 232, ../sass/style.scss */
 .circle-shadow {
   width: 6em;
   height: 6em;
@@ -1267,7 +1283,7 @@ ng\:form {
   -webkit-animation: shadow 1.2s infinite ease-out;
   animation: shadow 1.2s infinite ease-out; }
 
-/* line 239, ../sass/style.scss */
+/* line 240, ../sass/style.scss */
 .circle {
   width: 6em;
   height: 6em;
@@ -1277,7 +1293,7 @@ ng\:form {
   border-radius: 50%;
   border: 2px solid #ffffff;
   cursor: pointer; }
-  /* line 247, ../sass/style.scss */
+  /* line 248, ../sass/style.scss */
   .circle.active {
     -moz-animation: larger 0.2s ease-out;
     -webkit-animation: larger 0.2s ease-out;
@@ -1287,7 +1303,7 @@ ng\:form {
     animation-fill-mode: forwards;
     cursor: default; }
 
-/* line 253, ../sass/style.scss */
+/* line 254, ../sass/style.scss */
 .img-circle.active {
   width: 6em;
   height: 6em;
@@ -1299,7 +1315,7 @@ ng\:form {
   -webkit-animation: gray-larger 0.2s ease-out;
   animation: gray-larger 0.2s ease-out; }
 
-/* line 261, ../sass/style.scss */
+/* line 262, ../sass/style.scss */
 .gray-circle.active {
   width: 3em;
   height: 3em;
@@ -1314,7 +1330,7 @@ ng\:form {
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards; }
 
-/* line 270, ../sass/style.scss */
+/* line 271, ../sass/style.scss */
 #my-cv {
   width: 100%;
   overflow: visible;
@@ -1332,19 +1348,19 @@ ng\:form {
   -webkit-box-shadow: 1px 1px 10px #636363;
   box-shadow: 1px 1px 10px #636363; }
   @media (min-width: 47em) {
-    /* line 270, ../sass/style.scss */
+    /* line 271, ../sass/style.scss */
     #my-cv {
       width: 90%; } }
   @media (min-width: 64em) {
-    /* line 270, ../sass/style.scss */
+    /* line 271, ../sass/style.scss */
     #my-cv {
       width: 90%; } }
   @media (min-width: 75em) {
-    /* line 270, ../sass/style.scss */
+    /* line 271, ../sass/style.scss */
     #my-cv {
       width: 80%; } }
 
-/* line 291, ../sass/style.scss */
+/* line 292, ../sass/style.scss */
 .view-container {
   width: 100%;
   height: 100%; }

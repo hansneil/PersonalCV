@@ -1,44 +1,38 @@
 <div class="header">
     <p><span>P</span>hotography</p>
 </div>
-<div class="content">
+<div class="content" ng-controller="AlbumController">
     <ul>
-        <li class="selected"><a href="#/album">ALL</a></li>
-        <li><a href="#/album">PORTRAIT</a></li>
-        <li><a href="#/album">SCENERY</a></li>
-        <li><a href="#/album">TRAVEL</a></li>
+        <li><a ng-class="{'selected': photography.active1}" ng-click="chooseAlbum('all')">ALL</a></li>
+        <li><a ng-class="{'selected': photography.active2}" ng-click="chooseAlbum('portrait')">PORTRAIT</a></li>
+        <li><a ng-class="{'selected': photography.active3}" ng-click="chooseAlbum('scenery')">SCENERY</a></li>
+        <li><a ng-class="{'selected': photography.active4}" ng-click="chooseAlbum('travel')">TRAVEL</a></li>
     </ul>
-    <div class="album-wrapper">
-        <p><span>Metasequoia</span> Shanghai</p>
-        <img src="/img/album/10.jpg">
-    </div>
-    <div class="album-wrapper">
-        <p><span>Droplight</span> Xiamen</p>
-        <img src="/img/album/9.jpg">
-    </div>
-    <div class="album-wrapper">
-        <p><span>Cityscape</span> Shanghai</p>
-        <img src="/img/album/11.jpg">
-    </div>
-    <div class="album-wrapper">
-        <p><span>Cityscape</span> Cixi</p>
-        <img src="/img/album/14.jpg">
-    </div>
-    <div class="album-wrapper">
-        <p><span>Cityscape</span> Shanghai</p>
-        <img src="/img/album/13.jpg">
-    </div>
-    <div class="album-wrapper">
-        <p><span>Lyudao</span> Taiwan</p>
-        <img src="/img/album/12.jpg">
-    </div>
-    <div class="album-wrapper">
-        <p><span>Clover</span> Xiamen</p>
-        <img src="/img/album/15.jpg">
-    </div>
-    <div class="album-wrapper">
-        <p><span>Cityscape</span> Xiamen</p>
-        <img src="/img/album/16.jpg">
+    <div ng-switch on="photography.type">
+        <div ng-switch-when="all">
+            <div class="album-wrapper" ng-repeat="photo in album">
+                <p><span>{{photo.type}}</span> {{photo.city}}</p>
+                <img ng-src="{{photo.src}}">
+            </div>
+        </div>
+        <div ng-switch-when="portrait">
+            <div class="album-wrapper" ng-repeat="photo in portrait">
+                <p><span>{{photo.type}}</span> {{photo.city}}</p>
+                <img ng-src="{{photo.src}}">
+            </div>
+        </div>
+        <div ng-switch-when="scenery">
+            <div class="album-wrapper" ng-repeat="photo in scenery">
+                <p><span>{{photo.type}}</span> {{photo.city}}</p>
+                <img ng-src="{{photo.src}}">
+            </div>
+        </div>
+        <div ng-switch-when="travel">
+            <div class="album-wrapper" ng-repeat="photo in travel">
+                <p><span>{{photo.type}}</span> {{photo.city}}</p>
+                <img ng-src="{{photo.src}}">
+            </div>
+        </div>
     </div>
     <p>FOR MORE PHOTOS : <a href="http://hansneil.lofter.com">LOFTER</a></p>
 </div>

@@ -72,6 +72,77 @@ page.controller('ProgressController', ['$scope', '$attrs', function($scope, $att
         {number: '8', skill: 'NodeJs'}
     ];*/
 }]);
+page.controller('AlbumController', ['$scope', function($scope){
+    $scope.photography = {
+        type: "all",
+        active1: true,
+        active2: false,
+        active3: false,
+        active4: false
+    };
+    $scope.album = [
+        {type: "Metasequoia", city: "Shanghai", src: "/img/album/10.jpg"},
+        {type: "Droplight", city: "Xiamen", src: "/img/album/9.jpg"},
+        {type: "Cityscape", city: "Shanghai", src: "/img/album/11.jpg"},
+        {type: "Cityscape", city: "Cixi", src: "/img/album/14.jpg"},
+        {type: "Cityscape", city: "Shanghai", src: "/img/album/13.jpg"},
+        {type: "Lyudao", city: "Taiwan", src: "/img/album/12.jpg"},
+        {type: "Clover", city: "Xiamen", src: "/img/album/15.jpg"},
+        {type: "Cityscape", city: "Xiamen", src: "/img/album/16.jpg"}
+    ];
+    $scope.portrait = [
+        {type: "A Man", city: "Kaohsiung", src: "/img/album/17.jpg"},
+        {type: "Portrait", city: "Kending", src: "/img/album/18.jpg"},
+        {type: "Portrait", city: "Hualien", src: "/img/album/19.jpg"},
+        {type: "Portrait", city: "Xiamen", src: "/img/album/20.jpg"},
+        {type: "The bartender", city: "Kending", src: "/img/album/21.jpg"},
+        {type: "Portrait", city: "Cixi", src: "/img/album/22.jpg"},
+        {type: "Portrait", city: "Cixi", src: "/img/album/23.jpg"}
+    ];
+    $scope.scenery = [
+        {type: "Metasequoia", city: "Shanghai", src: "/img/album/10.jpg"},
+        {type: "Cityscape", city: "Shanghai", src: "/img/album/11.jpg"},
+        {type: "Cityscape", city: "Cixi", src: "/img/album/14.jpg"},
+        {type: "Cityscape", city: "Shanghai", src: "/img/album/13.jpg"},
+        {type: "Library", city: "Shanghai", src: "/img/album/24.jpg"},
+        {type: "Cityscape", city: "Shanghai", src: "/img/album/25.jpg"},
+        {type: "Sunset", city: "Shanghai", src: "/img/album/26.jpg"}
+    ];
+    $scope.travel = [
+        {type: "Droplight", city: "Xiamen", src: "/img/album/9.jpg"},
+        {type: "Jiufen", city: "Taiwan", src: "/img/album/6.jpg"},
+        {type: "Building", city: "Xiamen", src: "/img/album/28.jpg"},
+        {type: "Clover", city: "Xiamen", src: "/img/album/15.jpg"},
+        {type: "Cityscape", city: "Xiamen", src: "/img/album/16.jpg"},
+        {type: "Ocean", city: "Xiamen", src: "/img/album/27.jpg"},
+        {type: "Cityscape", city: "Xiamen", src: "/img/album/29.jpg"},
+        {type: "Cityscape", city: "Xiamen", src: "/img/album/30.jpg"},
+    ];
+    $scope.chooseAlbum = function (albumType) {
+        $scope.photography.type = albumType;
+        if (albumType == 'all') {
+            $scope.photography.active1 = true;
+            $scope.photography.active2 = false;
+            $scope.photography.active3 = false;
+            $scope.photography.active4 = false;
+        } else if (albumType == 'portrait') {
+            $scope.photography.active1 = false;
+            $scope.photography.active2 = true;
+            $scope.photography.active3 = false;
+            $scope.photography.active4 = false;
+        } else if (albumType == 'scenery') {
+            $scope.photography.active1 = false;
+            $scope.photography.active2 = false;
+            $scope.photography.active3 = true;
+            $scope.photography.active4 = false;
+        } else if (albumType == 'travel') {
+            $scope.photography.active1 = false;
+            $scope.photography.active2 = false;
+            $scope.photography.active3 = false;
+            $scope.photography.active4 = true;
+        }
+    }
+}]);
 page.directive('progressGroup', function(){
     return {
         restrict: 'E',

@@ -36,9 +36,10 @@
         padding-left: .5em;
         font-size: 1em;
       }
-      &:hover, &.selected {
+      &:hover, & .selected {
         color: $color3;
         text-decoration: underline;
+        cursor: pointer;
       }
     }
   }
