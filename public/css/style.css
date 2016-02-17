@@ -838,32 +838,17 @@ li {
         padding-right: 1em; } }
 
 /* line 4, ../sass/partials/_albumLayout.scss */
-.wrapper {
-  position: absolute;
-  width: 10em;
-  height: 1em;
-  margin: auto;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  font-family: 'axis';
-  font-size: 4em;
-  color: #ffffff;
-  text-align: center; }
-
-/* line 19, ../sass/partials/_albumLayout.scss */
 .header {
   font-family: 'axis';
   margin-top: 1em; }
-  /* line 22, ../sass/partials/_albumLayout.scss */
+  /* line 7, ../sass/partials/_albumLayout.scss */
   .header p {
     font-size: 3em;
     color: #ffffff;
     margin: 0 auto;
     text-align: center; }
 
-/* line 30, ../sass/partials/_albumLayout.scss */
+/* line 15, ../sass/partials/_albumLayout.scss */
 .content {
   margin-top: 3em;
   padding-top: 1em;
@@ -874,57 +859,95 @@ li {
   background-color: #ffffff;
   border-radius: 10px; }
   @media (min-width: 32em) {
-    /* line 30, ../sass/partials/_albumLayout.scss */
+    /* line 15, ../sass/partials/_albumLayout.scss */
     .content {
       width: 90%; } }
-  /* line 42, ../sass/partials/_albumLayout.scss */
+  /* line 27, ../sass/partials/_albumLayout.scss */
   .content ul {
     display: block;
     clear: both; }
-    /* line 45, ../sass/partials/_albumLayout.scss */
+    /* line 30, ../sass/partials/_albumLayout.scss */
     .content ul li {
       color: #6e6e6e;
       display: inline-block;
       padding-left: .2em;
       font-size: .8em; }
       @media (min-width: 32em) {
-        /* line 45, ../sass/partials/_albumLayout.scss */
+        /* line 30, ../sass/partials/_albumLayout.scss */
         .content ul li {
           padding-left: .5em;
           font-size: 1em; } }
-      /* line 54, ../sass/partials/_albumLayout.scss */
+      /* line 39, ../sass/partials/_albumLayout.scss */
       .content ul li:hover, .content ul li.selected {
         color: #00c3ab;
         text-decoration: underline; }
-  /* line 60, ../sass/partials/_albumLayout.scss */
-  .content img {
-    width: 98%;
-    padding-left: 1%; }
-    @media (min-width: 23em) {
-      /* line 60, ../sass/partials/_albumLayout.scss */
-      .content img {
-        width: 48%;
-        padding-left: .5%; } }
-    @media (min-width: 32em) {
-      /* line 60, ../sass/partials/_albumLayout.scss */
-      .content img {
-        width: 31%;
-        padding-left: 1.5%; } }
-    @media (min-width: 47em) {
-      /* line 60, ../sass/partials/_albumLayout.scss */
-      .content img {
-        width: 24%;
-        padding-left: .5%; } }
-  /* line 76, ../sass/partials/_albumLayout.scss */
+  /* line 45, ../sass/partials/_albumLayout.scss */
   .content p {
     margin-top: 2em;
     text-align: center;
     font-family: 'axis';
     color: #00c3ab; }
-    /* line 81, ../sass/partials/_albumLayout.scss */
+    /* line 50, ../sass/partials/_albumLayout.scss */
     .content p a {
       color: #6e6e6e;
       text-decoration: underline; }
+
+/* line 57, ../sass/partials/_albumLayout.scss */
+.album-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  width: 98%;
+  padding-left: 1%;
+  font-size: .5em; }
+  @media (min-width: 23em) {
+    /* line 57, ../sass/partials/_albumLayout.scss */
+    .album-wrapper {
+      width: 48%;
+      padding-left: .5%;
+      font-size: .5em; } }
+  @media (min-width: 32em) {
+    /* line 57, ../sass/partials/_albumLayout.scss */
+    .album-wrapper {
+      width: 31%;
+      padding-left: 1%;
+      font-size: .5em; } }
+  @media (min-width: 47em) {
+    /* line 57, ../sass/partials/_albumLayout.scss */
+    .album-wrapper {
+      width: 24%;
+      padding-left: .5%;
+      font-size: 1em; } }
+  /* line 79, ../sass/partials/_albumLayout.scss */
+  .album-wrapper img {
+    width: 100%; }
+    /* line 81, ../sass/partials/_albumLayout.scss */
+    .album-wrapper img:hover {
+      -moz-transform: translateY(-20%);
+      -ms-transform: translateY(-20%);
+      -webkit-transform: translateY(-20%);
+      transform: translateY(-20%);
+      cursor: pointer; }
+  /* line 86, ../sass/partials/_albumLayout.scss */
+  .album-wrapper p {
+    position: absolute;
+    bottom: 5%;
+    right: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: -1;
+    color: #6e6e6e; }
+    @media (min-width: 23em) {
+      /* line 86, ../sass/partials/_albumLayout.scss */
+      .album-wrapper p {
+        bottom: 0; } }
+    /* line 98, ../sass/partials/_albumLayout.scss */
+    .album-wrapper p span {
+      color: #00c3ab; }
+  /* line 102, ../sass/partials/_albumLayout.scss */
+  .album-wrapper:hover p {
+    z-index: 1; }
 
 /* line 10, ../sass/style.scss */
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak],

@@ -1,21 +1,6 @@
 @import "variables";
 @import "susyone";
 
-.wrapper {
-  position: absolute;
-  width: 10em;
-  height: 1em;
-  margin: auto;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  font-family: 'axis';
-  font-size: 4em;
-  color: $color5;
-  text-align: center;
-}
-
 .header {
   font-family: 'axis';
   margin-top: 1em;
@@ -57,22 +42,6 @@
       }
     }
   }
-  & img {
-    @include at-breakpoint($S) {
-      width: 48%;
-      padding-left: .5%;
-    }
-    @include at-breakpoint($SPlus) {
-      width: 31%;
-      padding-left: 1.5%;
-    }
-    @include at-breakpoint($M) {
-      width: 24%;
-      padding-left: .5%;
-    }
-    width: 98%;
-    padding-left: 1%;
-  }
   & p {
     margin-top: 2em;
     text-align: center;
@@ -82,5 +51,55 @@
       color: $color2;
       text-decoration: underline;
     }
+  }
+}
+
+.album-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  width: 98%;
+  padding-left: 1%;
+  font-size: .5em;
+  @include at-breakpoint($S) {
+    width: 48%;
+    padding-left: .5%;
+    font-size: .5em;
+  }
+  @include at-breakpoint($SPlus) {
+    width: 31%;
+    padding-left: 1%;
+    font-size: .5em;
+  }
+  @include at-breakpoint($M) {
+    width: 24%;
+    padding-left: .5%;
+    font-size: 1em;
+  }
+  & img {
+    width: 100%;
+    &:hover {
+      @include transform(translateY(-20%));
+      cursor: pointer;
+    }
+  }
+  & p {
+    position: absolute;
+    @include at-breakpoint($S) {
+      bottom: 0;
+    }
+    bottom: 5%;
+    right: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: -1;
+    color: $color2;
+    & span {
+      color: $color3;
+    }
+  }
+  &:hover p {
+    z-index: 1;
   }
 }

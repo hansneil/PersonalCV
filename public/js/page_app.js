@@ -14,7 +14,7 @@ page.config(['$routeProvider', function($routeProvider){
             templateUrl: '/pages/album.html'
         })
         .when('/blog', {
-            templateUrl: '/pages/album.html'
+            templateUrl: '/pages/blog.html'
         })
         .otherwise({
             redirectTo: '/'
