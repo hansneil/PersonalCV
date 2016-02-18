@@ -23,30 +23,33 @@ page.config(['$routeProvider', function($routeProvider){
             redirectTo: '/'
         })
 }]);
-page.controller('neilOwnPage', ['$scope', '$http', '$location', function($scope, $http, $location){
-    $scope.title = "Hansneil";
-    $scope.tags_le = [
+page.controller('homeController', ['$scope', function($scope){
+
+}]);
+page.factory('cvInfo', function(){
+    var title = "Hansneil";
+    var left_tags = [
         {area: 'Web Design', style: 'web-design'},
         {area: 'Web Develop', style: 'web-develop'}
     ];
-    $scope.tags = [
+    var right_tags = [
         {area: 'Flat Design', style: 'flat-design'},
         {area: 'Photoshop', style: 'photoshop'},
         {area: 'Illustrate', style: 'illustrate'},
     ];
-    $scope.progressLeft = [
+    var progressLeft = [
         {number: '1', skill: 'HTML5'},
         {number: '2', skill: 'CSS'},
         {number: '3', skill: 'SCSS'},
         {number: '4', skill: 'JavaScript'}
     ];
-    $scope.progressRight = [
+    var progressRight = [
         {number: '5', skill: 'JQuery'},
         {number: '6', skill: 'Bootstrap'},
         {number: '7', skill: 'AngularJS'},
         {number: '8', skill: 'NodeJs'}
     ];
-    $scope.webLink = [
+    var webLink = [
         {name: 'github', link: 'https://github.com/hansneil'},
         {name: 'weibo', link: 'http://weibo.com/2434892144/profile?rightmod=1&wvr=6&mod=personinfo'},
         {name: 'linkedin', link: 'http://www.linkedin.com/in/先波-余-8b658695?trk=nav_responsive_tab_profile_pic'},
@@ -54,13 +57,28 @@ page.controller('neilOwnPage', ['$scope', '$http', '$location', function($scope,
         {name: 'stackoverflow', link: 'http://stackoverflow.com/users/5835253/hansneil'},
         {name: 'facebook', link: 'https://www.facebook.com/profile.php?id=100004108532958'}
     ];
+    return {
+       cvInfo: {
+           title: title,
+           leftTags: left_tags,
+           rightTags: right_tags,
+           progressLeft: progressLeft,
+           progressRight: progressRight,
+           webLink: webLink
+       },
+       enableClass: function(){
+           return true;
+       }
+    }
+});
+page.controller('cvController', ['$scope', 'cvInfo', function($scope, cvInfo){
+    $scope.cvInfo = cvInfo.cvInfo;
     $scope.click = function(){
-        $scope.active = 1;
+        $scope.active = cvInfo.enableClass();
     };
-    /*console.log(echarts.init);*/
 }]);
-page.controller('AlbumController', ['$scope', '$filter', function($scope, $filter){
-    $scope.all = [
+page.factory('albumInfo', function(){
+    var all = [
         {type: "Metasequoia", city: "Shanghai", src: "/img/album/10.jpg"},
         {type: "Droplight", city: "Xiamen", src: "/img/album/9.jpg"},
         {type: "Cityscape", city: "Shanghai", src: "/img/album/11.jpg"},
@@ -70,7 +88,7 @@ page.controller('AlbumController', ['$scope', '$filter', function($scope, $filte
         {type: "Clover", city: "Xiamen", src: "/img/album/15.jpg"},
         {type: "Cityscape", city: "Xiamen", src: "/img/album/16.jpg"}
     ];
-    $scope.portrait = [
+    var portrait = [
         {type: "A Man", city: "Kaohsiung", src: "/img/album/17.jpg"},
         {type: "Portrait", city: "Kending", src: "/img/album/18.jpg"},
         {type: "Portrait", city: "Hualien", src: "/img/album/19.jpg"},
@@ -79,7 +97,7 @@ page.controller('AlbumController', ['$scope', '$filter', function($scope, $filte
         {type: "Portrait", city: "Cixi", src: "/img/album/22.jpg"},
         {type: "Portrait", city: "Cixi", src: "/img/album/23.jpg"}
     ];
-    $scope.scenery = [
+    var scenery = [
         {type: "Metasequoia", city: "Shanghai", src: "/img/album/10.jpg"},
         {type: "Cityscape", city: "Shanghai", src: "/img/album/11.jpg"},
         {type: "Cityscape", city: "Cixi", src: "/img/album/14.jpg"},
@@ -88,7 +106,7 @@ page.controller('AlbumController', ['$scope', '$filter', function($scope, $filte
         {type: "Cityscape", city: "Shanghai", src: "/img/album/25.jpg"},
         {type: "Sunset", city: "Shanghai", src: "/img/album/26.jpg"}
     ];
-    $scope.travel = [
+    var travel = [
         {type: "Droplight", city: "Xiamen", src: "/img/album/9.jpg"},
         {type: "Jiufen", city: "Taiwan", src: "/img/album/6.jpg"},
         {type: "Building", city: "Xiamen", src: "/img/album/28.jpg"},
@@ -98,30 +116,39 @@ page.controller('AlbumController', ['$scope', '$filter', function($scope, $filte
         {type: "Cityscape", city: "Xiamen", src: "/img/album/29.jpg"},
         {type: "Cityscape", city: "Xiamen", src: "/img/album/30.jpg"},
     ];
-
-    $scope.photography = {
+    var photography = {
         activeType: "all",
-        selectedAlbum: $scope.all,
+        selectedAlbum: all,
         types:[
-            { type: "all", active: true},
-            { type: "portrait", active: false},
-            { type: "scenery", active: false},
-            { type: "travel", active: false}
+            { type: "all", active: true, album: all},
+            { type: "portrait", active: false, album: portrait},
+            { type: "scenery", active: false, album: scenery},
+            { type: "travel", active: false, album: travel}
         ]
     };
+    return {
+        photography: photography,
+        setActive: function (album, albums) {
+            var selectedAlbum;
+            for (var i in albums){
+                if (albums[i].type == album.type) {
+                    albums[i].active = true;
+                    selectedAlbum = albums[i].album;
+                } else {
+                    albums[i].active = false;
+                }
+            }
+            return selectedAlbum;
+        }
+    }
+})
+page.controller('AlbumController', ['$scope', 'albumInfo', function($scope, albumInfo){
+    $scope.photography = albumInfo.photography;
 
     $scope.chooseAlbum = function (albumType) {
         console.log($scope.photography.selectedAlbum);
         $scope.photography.activeType = albumType.type;
-        $scope.photography.selectedAlbum = $scope[albumType.type];
-        var temp = $scope.photography.types;
-        for (var i in temp) {
-            if (temp[i].type == albumType.type) {
-                temp[i].active = true;
-            } else {
-                temp[i].active = false;
-            }
-        }
+        $scope.photography.selectedAlbum = albumInfo.setActive(albumType, $scope.photography.types);
     }
 }]);
 page.directive('progressGroup', function(){
