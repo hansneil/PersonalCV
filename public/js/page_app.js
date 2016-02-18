@@ -16,6 +16,9 @@ page.config(['$routeProvider', function($routeProvider){
         .when('/blog', {
             templateUrl: '/pages/blog.html'
         })
+        .when('/wechat', {
+            templateUrl: '/pages/wechat.html'
+        })
         .otherwise({
             redirectTo: '/'
         })
