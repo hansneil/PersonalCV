@@ -636,13 +636,13 @@ progress-group.right {
     font-family: 'axis';
     margin: auto;
     top: 0;
-    bottom: 70%;
+    bottom: 75%;
     text-align: center;
     color: $color5;
     font-size: 3em;
     &.footer {
       font-size: 1em;
-      bottom: -70%;
+      bottom: -75%;
       & a {
         color: $color2;
         text-decoration: underline;
@@ -658,8 +658,11 @@ progress-group.right {
     bottom: 0;
     left: 0;
     border-radius: 15px;
-    width: 80%;
+    width: 15em;
     @include at-breakpoint($M){
+      width: 25em;
+    }
+    @include at-breakpoint($L){
       width: auto;
     }
   }
