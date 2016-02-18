@@ -3,12 +3,11 @@
 </div>
 <div class="content" ng-controller="AlbumController">
     <ul>
-        <li><a ng-class="{'selected': photography.active1}" ng-click="chooseAlbum('all')">ALL</a></li>
-        <li><a ng-class="{'selected': photography.active2}" ng-click="chooseAlbum('portrait')">PORTRAIT</a></li>
-        <li><a ng-class="{'selected': photography.active3}" ng-click="chooseAlbum('scenery')">SCENERY</a></li>
-        <li><a ng-class="{'selected': photography.active4}" ng-click="chooseAlbum('travel')">TRAVEL</a></li>
+        <li ng-repeat="photo in photography.types">
+            <a ng-class="{'selected': photo.active}" ng-click="chooseAlbum(photo)">{{photo.type | uppercase}}</a>
+        </li>
     </ul>
-    <div ng-switch on="photography.type">
+    <div ng-switch on="photography.activeType">
         <div ng-switch-when="all">
             <div class="album-wrapper" ng-repeat="photo in album">
                 <p><span>{{photo.type}}</span> {{photo.city}}</p>
@@ -35,4 +34,5 @@
         </div>
     </div>
     <p>FOR MORE PHOTOS : <a href="http://hansneil.lofter.com">LOFTER</a></p>
+    <p>GO BACK: <a href="#/home">HOME</a></p>
 </div>

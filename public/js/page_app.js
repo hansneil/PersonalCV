@@ -59,26 +59,17 @@ page.controller('neilOwnPage', ['$scope', '$http', '$location', function($scope,
     /*console.log(echarts.init);*/
 }]);
 page.controller('ProgressController', ['$scope', '$attrs', function($scope, $attrs) {
-    /*$scope.progressLeft = [
-        {number: '1', skill: 'HTML5'},
-        {number: '2', skill: 'CSS'},
-        {number: '3', skill: 'SCSS'},
-        {number: '4', skill: 'JavaScript'}
-    ];
-    $scope.progressRight = [
-        {number: '5', skill: 'JQuery'},
-        {number: '6', skill: 'Bootstrap'},
-        {number: '7', skill: 'AngularJS'},
-        {number: '8', skill: 'NodeJs'}
-    ];*/
+
 }]);
-page.controller('AlbumController', ['$scope', function($scope){
+page.controller('AlbumController', ['$scope', '$filter', function($scope, $filter){
     $scope.photography = {
-        type: "all",
-        active1: true,
-        active2: false,
-        active3: false,
-        active4: false
+        activeType: "all",
+        types:[
+            { type: "all", active: true},
+            { type: "portrait", active: false},
+            { type: "scenery", active: false},
+            { type: "travel", active: false}
+        ]
     };
     $scope.album = [
         {type: "Metasequoia", city: "Shanghai", src: "/img/album/10.jpg"},
@@ -119,27 +110,14 @@ page.controller('AlbumController', ['$scope', function($scope){
         {type: "Cityscape", city: "Xiamen", src: "/img/album/30.jpg"},
     ];
     $scope.chooseAlbum = function (albumType) {
-        $scope.photography.type = albumType;
-        if (albumType == 'all') {
-            $scope.photography.active1 = true;
-            $scope.photography.active2 = false;
-            $scope.photography.active3 = false;
-            $scope.photography.active4 = false;
-        } else if (albumType == 'portrait') {
-            $scope.photography.active1 = false;
-            $scope.photography.active2 = true;
-            $scope.photography.active3 = false;
-            $scope.photography.active4 = false;
-        } else if (albumType == 'scenery') {
-            $scope.photography.active1 = false;
-            $scope.photography.active2 = false;
-            $scope.photography.active3 = true;
-            $scope.photography.active4 = false;
-        } else if (albumType == 'travel') {
-            $scope.photography.active1 = false;
-            $scope.photography.active2 = false;
-            $scope.photography.active3 = false;
-            $scope.photography.active4 = true;
+        $scope.photography.activeType = albumType.type;
+        var temp = $scope.photography.types;
+        for (var i in temp) {
+            if (temp[i].type == albumType.type) {
+                temp[i].active = true;
+            } else {
+                temp[i].active = false;
+            }
         }
     }
 }]);
