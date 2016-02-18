@@ -639,7 +639,10 @@ progress-group.right {
     bottom: 75%;
     text-align: center;
     color: $color5;
-    font-size: 3em;
+    font-size: 2em;
+    @include at-breakpoint($M) {
+      font-size: 3em;
+    }
     &.footer {
       font-size: 1em;
       bottom: -75%;

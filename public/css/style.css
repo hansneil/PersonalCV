@@ -718,16 +718,20 @@ progress-group.right {
   bottom: 75%;
   text-align: center;
   color: #ffffff;
-  font-size: 3em; }
-  /* line 643, ../sass/partials/_layout.scss */
+  font-size: 2em; }
+  @media (min-width: 47em) {
+    /* line 632, ../sass/partials/_layout.scss */
+    .wechat p {
+      font-size: 3em; } }
+  /* line 646, ../sass/partials/_layout.scss */
   .wechat p.footer {
     font-size: 1em;
     bottom: -75%; }
-    /* line 646, ../sass/partials/_layout.scss */
+    /* line 649, ../sass/partials/_layout.scss */
     .wechat p.footer a {
       color: #6e6e6e;
       text-decoration: underline; }
-/* line 652, ../sass/partials/_layout.scss */
+/* line 655, ../sass/partials/_layout.scss */
 .wechat img {
   display: block;
   position: absolute;
@@ -739,11 +743,11 @@ progress-group.right {
   border-radius: 15px;
   width: 15em; }
   @media (min-width: 47em) {
-    /* line 652, ../sass/partials/_layout.scss */
+    /* line 655, ../sass/partials/_layout.scss */
     .wechat img {
       width: 25em; } }
   @media (min-width: 64em) {
-    /* line 652, ../sass/partials/_layout.scss */
+    /* line 655, ../sass/partials/_layout.scss */
     .wechat img {
       width: auto; } }
 
