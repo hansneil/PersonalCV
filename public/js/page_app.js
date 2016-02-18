@@ -53,25 +53,11 @@ page.controller('neilOwnPage', ['$scope', '$http', '$location', function($scope,
     ];
     $scope.click = function(){
         $scope.active = 1;
-        $location.path('/cv');
-
     };
     /*console.log(echarts.init);*/
 }]);
-page.controller('ProgressController', ['$scope', '$attrs', function($scope, $attrs) {
-
-}]);
 page.controller('AlbumController', ['$scope', '$filter', function($scope, $filter){
-    $scope.photography = {
-        activeType: "all",
-        types:[
-            { type: "all", active: true},
-            { type: "portrait", active: false},
-            { type: "scenery", active: false},
-            { type: "travel", active: false}
-        ]
-    };
-    $scope.album = [
+    $scope.all = [
         {type: "Metasequoia", city: "Shanghai", src: "/img/album/10.jpg"},
         {type: "Droplight", city: "Xiamen", src: "/img/album/9.jpg"},
         {type: "Cityscape", city: "Shanghai", src: "/img/album/11.jpg"},
@@ -109,8 +95,22 @@ page.controller('AlbumController', ['$scope', '$filter', function($scope, $filte
         {type: "Cityscape", city: "Xiamen", src: "/img/album/29.jpg"},
         {type: "Cityscape", city: "Xiamen", src: "/img/album/30.jpg"},
     ];
+
+    $scope.photography = {
+        activeType: "all",
+        selectedAlbum: $scope.all,
+        types:[
+            { type: "all", active: true},
+            { type: "portrait", active: false},
+            { type: "scenery", active: false},
+            { type: "travel", active: false}
+        ]
+    };
+
     $scope.chooseAlbum = function (albumType) {
+        console.log($scope.photography.selectedAlbum);
         $scope.photography.activeType = albumType.type;
+        $scope.photography.selectedAlbum = $scope[albumType.type];
         var temp = $scope.photography.types;
         for (var i in temp) {
             if (temp[i].type == albumType.type) {
@@ -124,7 +124,6 @@ page.controller('AlbumController', ['$scope', '$filter', function($scope, $filte
 page.directive('progressGroup', function(){
     return {
         restrict: 'E',
-        controller: 'ProgressController',
         link: function(scope, element, attrs) {
             element.addClass('progress');
         }
@@ -132,16 +131,10 @@ page.directive('progressGroup', function(){
 });
 page.directive('progressBar', function() {
     return {
-        require: '^progressGroup',
         restrict: 'E',
         transclude: true,
         replace: true,
         templateUrl: '/tpls/progress.html',
         scope: {skill: '=', number: '='},
-        link: function(scope, element, attrs, ProgressController) {
-            /*var num = attrs['number'];
-            console.log(element);
-            element.addClass('bar-' + num);*/
-        }
     }
 });

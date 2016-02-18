@@ -697,6 +697,16 @@ progress-group.right {
   .tags span.illustrate {
     background-color: #6fe4c2; }
 
+/* line 622, ../sass/partials/_layout.scss */
+.home-container {
+  margin: 2em auto 0 auto;
+  text-align: center;
+  color: #00c3ab;
+  font-family: 'axis'; }
+  /* line 627, ../sass/partials/_layout.scss */
+  .home-container a {
+    text-decoration: underline; }
+
 @font-face {
   font-family: 'axis';
   src: url("/css/fonts/axis.otf"); }

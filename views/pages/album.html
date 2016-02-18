@@ -7,31 +7,9 @@
             <a ng-class="{'selected': photo.active}" ng-click="chooseAlbum(photo)">{{photo.type | uppercase}}</a>
         </li>
     </ul>
-    <div ng-switch on="photography.activeType">
-        <div ng-switch-when="all">
-            <div class="album-wrapper" ng-repeat="photo in album">
-                <p><span>{{photo.type}}</span> {{photo.city}}</p>
-                <img ng-src="{{photo.src}}">
-            </div>
-        </div>
-        <div ng-switch-when="portrait">
-            <div class="album-wrapper" ng-repeat="photo in portrait">
-                <p><span>{{photo.type}}</span> {{photo.city}}</p>
-                <img ng-src="{{photo.src}}">
-            </div>
-        </div>
-        <div ng-switch-when="scenery">
-            <div class="album-wrapper" ng-repeat="photo in scenery">
-                <p><span>{{photo.type}}</span> {{photo.city}}</p>
-                <img ng-src="{{photo.src}}">
-            </div>
-        </div>
-        <div ng-switch-when="travel">
-            <div class="album-wrapper" ng-repeat="photo in travel">
-                <p><span>{{photo.type}}</span> {{photo.city}}</p>
-                <img ng-src="{{photo.src}}">
-            </div>
-        </div>
+    <div class="album-wrapper" ng-repeat="photo in photography.selectedAlbum">
+        <p><span>{{photo.type}}</span> {{photo.city}}</p>
+        <img ng-src="{{photo.src}}">
     </div>
     <p>FOR MORE PHOTOS : <a href="http://hansneil.lofter.com">LOFTER</a></p>
     <p>GO BACK: <a href="#/home">HOME</a></p>

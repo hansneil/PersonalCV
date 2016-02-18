@@ -619,4 +619,13 @@ progress-group.right {
     }
   }
 }
+.home-container {
+  margin: 2em auto 0 auto;
+  text-align: center;
+  color: $color3;
+  font-family: 'axis';
+  & a {
+    text-decoration: underline;
+  }
+}
 
