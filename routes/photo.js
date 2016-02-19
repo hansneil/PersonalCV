@@ -15,6 +15,11 @@ exports.getLikes = function(req, res) {
 };
 exports.addLikes = function(req, res) {
     var id = 'p' + req.param('id');
+    //console.log(req.client._readableState.highWaterMark);
+    console.log(req.headers['x-forwarded-for'] ||
+        req.connection.remoteAddress ||
+        req.socket.remoteAddress ||
+        req.connection.socket.remoteAddress);
     if (!photos[id]) {
         var o = {
             likes: 1
