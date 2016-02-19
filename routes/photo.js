@@ -2,6 +2,7 @@
  * Created by hansneil on 19/2/16.
  */
 var photos = {};
+var ips = {};
 
 exports.getLikes = function(req, res) {
     var id = 'p' + req.param('id');
@@ -20,14 +21,39 @@ exports.addLikes = function(req, res) {
         req.connection.remoteAddress ||
         req.socket.remoteAddress ||
         req.connection.socket.remoteAddress);
+
+    var ip = req.headers['x-forwarded-for'] ||
+        req.connection.remoteAddress ||
+        req.socket.remoteAddress ||
+        req.connection.socket.remoteAddress;
+
     if (!photos[id]) {
         var o = {
             likes: 1
         };
         photos[id] = o;
-    } else {
-        photos[id].likes += 1;
     }
+
+    if (!ips[ip]) {
+        ips[ip] = {
+            visit: true,
+            likes: [id]
+        }
+        photos[id].likes += 1;
+    } else {
+        var tmp = ips[ip];
+        for (var i in tmp.likes) {
+            console.log(i);
+            if (tmp.likes[i] == id) {
+                break;
+            }
+        }
+        if (i >= tmp.likes.length-1) {
+            ips[ip].likes.push(id);
+            photos[id].likes += 1;
+        }
+    }
+
     console.log(photos);
     res.send(200, {likes: photos[id].likes});
 }
