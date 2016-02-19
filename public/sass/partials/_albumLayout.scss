@@ -61,20 +61,23 @@
   display: inline-block;
   width: 98%;
   padding-left: 1%;
-  font-size: .5em;
+  font-size: .8em;
   @include at-breakpoint($S) {
     width: 48%;
     padding-left: .5%;
-    font-size: .5em;
+    font-size: .6em;
   }
   @include at-breakpoint($SPlus) {
     width: 31%;
     padding-left: 1%;
-    font-size: .5em;
+    font-size: .6em;
   }
   @include at-breakpoint($M) {
     width: 24%;
     padding-left: .5%;
+    font-size: .6em;
+  }
+  @include at-breakpoint($XL) {
     font-size: 1em;
   }
   & img {
@@ -98,6 +101,13 @@
     color: $color2;
     & span {
       color: $color3;
+    }
+    & .likes {
+      color: $color7;
+      padding-left: 1em;
+    }
+    & small {
+      color: $color2;
     }
   }
   &:hover p {

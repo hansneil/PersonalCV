@@ -1,8 +1,32 @@
 /**
  * Created by hansneil on 18/1/16.
  */
-var page = angular.module('ownPage', ['ngRoute']);
-page.config(['$routeProvider', function($routeProvider){
+angular.module('security', [])
+    .provider('security', {
+        login: ['security',function(security) {
+            console.log('aaa');
+            security.login(123);
+        }],
+        $get: [
+            '$http', '$q',
+            function($http, $q){
+                var service = {
+                    login: function(password) {
+                        console.log('aaa');
+                        var request = $http.post('/login', {password: password});
+                        return request.then(function(response){
+                            service.user = response.data.user;
+                        });
+                    },
+                    user: null
+                };
+                return service;
+            }
+        ]
+    });
+
+var page = angular.module('ownPage', ['ngRoute','security']);
+page.config(['$routeProvider', 'securityProvider', function($routeProvider, security){
     $routeProvider
         .when('/', {
             templateUrl: '/pages/home.html'
@@ -14,7 +38,8 @@ page.config(['$routeProvider', function($routeProvider){
             templateUrl: '/pages/album.html'
         })
         .when('/blog', {
-            templateUrl: '/pages/blog.html'
+            templateUrl: '/pages/blog.html',
+            resolve: security.login
         })
         .when('/wechat', {
             templateUrl: '/pages/wechat.html'
@@ -166,5 +191,37 @@ page.directive('progressBar', function() {
         replace: true,
         templateUrl: '/tpls/progress.html',
         scope: {skill: '=', number: '='},
+    }
+});
+page.directive('like', function() {
+    return {
+        restrict: 'A',
+        controller: ['$scope', '$element', '$attrs', '$http', function($scope, $elemnt, $attrs, $http){
+            $elemnt.on('mouseover', function(){
+                var url = $attrs.ngSrc;
+                var urlArr = url.split('/');
+                var photoName = urlArr[urlArr.length - 1];
+                var id = photoName.match(/^\d+/);
+
+                $http.get('/photo/'+id)
+                    .then(function(resp){
+                        alert(resp.data.likes + ' people like this photo');
+                        $scope.likes = resp.data.likes;
+                    });
+            });
+            $elemnt.on('dblclick', function(){
+                //console.log();
+                var url = $attrs.ngSrc;
+                var urlArr = url.split('/');
+                var photoName = urlArr[urlArr.length - 1];
+                var id = photoName.match(/^\d+/);
+
+                $http.post('/photo/'+id)
+                    .then(function(resp){
+                        alert(resp.data.likes + ' people like this photo');
+                        $scope.likes = resp.data.likes;
+                    });
+            })
+        }]
     }
 });

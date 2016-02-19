@@ -954,13 +954,13 @@ li {
   display: inline-block;
   width: 98%;
   padding-left: 1%;
-  font-size: .5em; }
+  font-size: .8em; }
   @media (min-width: 23em) {
     /* line 58, ../sass/partials/_albumLayout.scss */
     .album-wrapper {
       width: 48%;
       padding-left: .5%;
-      font-size: .5em; } }
+      font-size: .6em; } }
   @media (min-width: 32em) {
     /* line 58, ../sass/partials/_albumLayout.scss */
     .album-wrapper {
@@ -972,18 +972,22 @@ li {
     .album-wrapper {
       width: 24%;
       padding-left: .5%;
+      font-size: .6em; } }
+  @media (min-width: 75em) {
+    /* line 58, ../sass/partials/_albumLayout.scss */
+    .album-wrapper {
       font-size: 1em; } }
-  /* line 80, ../sass/partials/_albumLayout.scss */
+  /* line 83, ../sass/partials/_albumLayout.scss */
   .album-wrapper img {
     width: 100%; }
-    /* line 82, ../sass/partials/_albumLayout.scss */
+    /* line 85, ../sass/partials/_albumLayout.scss */
     .album-wrapper img:hover {
       -moz-transform: translateY(-20%);
       -ms-transform: translateY(-20%);
       -webkit-transform: translateY(-20%);
       transform: translateY(-20%);
       cursor: pointer; }
-  /* line 87, ../sass/partials/_albumLayout.scss */
+  /* line 90, ../sass/partials/_albumLayout.scss */
   .album-wrapper p {
     position: absolute;
     bottom: 5%;
@@ -994,13 +998,20 @@ li {
     z-index: -1;
     color: #6e6e6e; }
     @media (min-width: 23em) {
-      /* line 87, ../sass/partials/_albumLayout.scss */
+      /* line 90, ../sass/partials/_albumLayout.scss */
       .album-wrapper p {
         bottom: 0; } }
-    /* line 99, ../sass/partials/_albumLayout.scss */
+    /* line 102, ../sass/partials/_albumLayout.scss */
     .album-wrapper p span {
       color: #00c3ab; }
-  /* line 103, ../sass/partials/_albumLayout.scss */
+    /* line 105, ../sass/partials/_albumLayout.scss */
+    .album-wrapper p .likes {
+      color: #da0760;
+      padding-left: 1em; }
+    /* line 109, ../sass/partials/_albumLayout.scss */
+    .album-wrapper p small {
+      color: #6e6e6e; }
+  /* line 113, ../sass/partials/_albumLayout.scss */
   .album-wrapper:hover p {
     z-index: 1; }
 
