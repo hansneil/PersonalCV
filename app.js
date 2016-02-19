@@ -7,6 +7,8 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var login = require('./routes/login');
+var photo = require('./routes/photo');
 
 var app = express();
 
@@ -30,6 +32,9 @@ app.use(require('node-sass-middleware')({
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'views')));
 
+app.post('/login', login.authen);
+app.get('/photo/:id', photo.getLikes);
+app.post('/photo/:id', photo.addLikes);
 app.use('/', routes);
 app.use('/users', users);
 
