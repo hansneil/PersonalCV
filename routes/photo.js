@@ -38,17 +38,18 @@ exports.addLikes = function(req, res) {
         ips[ip] = {
             visit: true,
             likes: [id]
-        }
+        };
         photos[id].likes += 1;
     } else {
         var tmp = ips[ip];
-        for (var i in tmp.likes) {
-            console.log(i);
+        for (var i = 0; i < tmp.likes.length; i++) {
             if (tmp.likes[i] == id) {
                 break;
             }
         }
-        if (i >= tmp.likes.length-1) {
+        console.log(i);
+        console.log(tmp.likes.length);
+        if (i >= tmp.likes.length) {
             ips[ip].likes.push(id);
             photos[id].likes += 1;
         }
