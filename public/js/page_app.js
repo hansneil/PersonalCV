@@ -205,7 +205,6 @@ page.directive('like', function() {
 
                 $http.get('/photo/'+id)
                     .then(function(resp){
-                        alert(resp.data.likes + ' people like this photo');
                         $scope.likes = resp.data.likes;
                     });
             });
@@ -218,7 +217,6 @@ page.directive('like', function() {
 
                 $http.post('/photo/'+id)
                     .then(function(resp){
-                        alert(resp.data.likes + ' people like this photo');
                         $scope.likes = resp.data.likes;
                     });
             })
