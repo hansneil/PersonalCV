@@ -10,7 +10,7 @@
     <div class="album-wrapper" ng-repeat="photo in photography.selectedAlbum">
         <p>
             <span>{{photo.type}}</span> {{photo.city}}
-            <span class="likes"><i class="glyphicon" ng-class="{'glyphicon-heart': active, 'glyphicon-heart-empty': !active}"></i> {{likes}}</span>
+            <span class="likes"><i class="glyphicon" ng-class="{'glyphicon-heart': active, 'glyphicon-heart-empty': !active}" source="{{photo.src}}" mobile-click=""></i> {{likes}}</span>
         </p>
         <img ng-src="{{photo.src}}" like>
     </div>

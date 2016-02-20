@@ -82,10 +82,10 @@
   }
   & img {
     width: 100%;
-    &:hover {
-      @include transform(translateY(-20%));
-      cursor: pointer;
-    }
+  }
+  &:hover img {
+    @include transform(translateY(-20%));
+    cursor: pointer;
   }
   & p {
     position: absolute;

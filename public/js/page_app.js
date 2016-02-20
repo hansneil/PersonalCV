@@ -257,7 +257,6 @@ page.directive('like', ['$http', '$timeout', function($http, $timeout) {
         }]
     }
 }]);
-/*
 page.directive('mobileClick', ['$http', function($http){
     return {
         restrict: 'A',
@@ -278,4 +277,4 @@ page.directive('mobileClick', ['$http', function($http){
             });
         }]
     }
-}])*/
+}])

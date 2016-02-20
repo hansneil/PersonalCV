@@ -980,13 +980,13 @@ li {
   /* line 83, ../sass/partials/_albumLayout.scss */
   .album-wrapper img {
     width: 100%; }
-    /* line 85, ../sass/partials/_albumLayout.scss */
-    .album-wrapper img:hover {
-      -moz-transform: translateY(-20%);
-      -ms-transform: translateY(-20%);
-      -webkit-transform: translateY(-20%);
-      transform: translateY(-20%);
-      cursor: pointer; }
+  /* line 86, ../sass/partials/_albumLayout.scss */
+  .album-wrapper:hover img {
+    -moz-transform: translateY(-20%);
+    -ms-transform: translateY(-20%);
+    -webkit-transform: translateY(-20%);
+    transform: translateY(-20%);
+    cursor: pointer; }
   /* line 90, ../sass/partials/_albumLayout.scss */
   .album-wrapper p {
     position: absolute;
