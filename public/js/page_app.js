@@ -215,10 +215,7 @@ page.directive('like', ['$http', '$timeout', function($http, $timeout) {
             });
             $element.on('mousedown', function () {
                 i++;
-                $timeout(function () {
-                    i = 0;
-                }, 1000);
-                if (i > 1) {
+                if (i == 2) {
                     var url = $attrs.ngSrc;
                     var urlArr = url.split('/');
                     var photoName = urlArr[urlArr.length - 1];
@@ -260,6 +257,7 @@ page.directive('like', ['$http', '$timeout', function($http, $timeout) {
         }]
     }
 }]);
+/*
 page.directive('mobileClick', ['$http', function($http){
     return {
         restrict: 'A',
@@ -280,4 +278,4 @@ page.directive('mobileClick', ['$http', function($http){
             });
         }]
     }
-}])
+}])*/
