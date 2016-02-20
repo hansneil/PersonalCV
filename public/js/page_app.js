@@ -196,10 +196,11 @@ page.directive('progressBar', function() {
         scope: {skill: '=', number: '='},
     }
 });
-page.directive('like', ['$http', function($http) {
+page.directive('like', ['$http', '$timeout', function($http, $timeout) {
     return {
         restrict: 'A',
         controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs){
+            var i = 0;
             $element.on('mouseover', function(){
                 var url = $attrs.ngSrc;
                 var urlArr = url.split('/');
@@ -212,12 +213,11 @@ page.directive('like', ['$http', function($http) {
                         $scope.active = resp.data.active;
                     });
             });
-            var i = 0;
-            $element.on('click', function () {
+            $element.on('mousedown', function () {
                 i++;
-                setTimeout(function () {
+                $timeout(function () {
                     i = 0;
-                }, 500);
+                }, 1000);
                 if (i > 1) {
                     var url = $attrs.ngSrc;
                     var urlArr = url.split('/');
@@ -233,7 +233,6 @@ page.directive('like', ['$http', function($http) {
                 }
             });
             $element.on('dblclick', function(){
-                //console.log();
                 var url = $attrs.ngSrc;
                 var urlArr = url.split('/');
                 var photoName = urlArr[urlArr.length - 1];
