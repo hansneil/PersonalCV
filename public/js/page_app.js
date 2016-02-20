@@ -212,6 +212,26 @@ page.directive('like', ['$http', function($http) {
                         $scope.active = resp.data.active;
                     });
             });
+            var i = 0;
+            $element.on('click', function () {
+                i++;
+                setTimeout(function () {
+                    i = 0;
+                }, 500);
+                if (i > 1) {
+                    var url = $attrs.ngSrc;
+                    var urlArr = url.split('/');
+                    var photoName = urlArr[urlArr.length - 1];
+                    var id = photoName.match(/^\d+/);
+
+                    $http.post('/photo/'+id)
+                        .then(function(resp){
+                            $scope.likes = resp.data.likes;
+                            $scope.active = true;
+                        });
+                    i = 0;
+                }
+            });
             $element.on('dblclick', function(){
                 //console.log();
                 var url = $attrs.ngSrc;
