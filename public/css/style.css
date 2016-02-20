@@ -966,7 +966,7 @@ li {
     .album-wrapper {
       width: 31%;
       padding-left: 1%;
-      font-size: .5em; } }
+      font-size: .6em; } }
   @media (min-width: 47em) {
     /* line 58, ../sass/partials/_albumLayout.scss */
     .album-wrapper {
@@ -1438,3 +1438,26 @@ ng\:form {
   @extend %middle;
   z-index: 1000;
 }*/
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url("/css/fonts/glyphicons-halflings-regular.eot");
+  src: url("/css/fonts/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("/css/fonts/glyphicons-halflings-regular.woff2") format("woff2"), url("/css/fonts/glyphicons-halflings-regular.woff") format("woff"), url("/css/fonts/glyphicons-halflings-regular.ttf") format("truetype"), url("/css/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg"); }
+/* line 311, ../sass/style.scss */
+.glyphicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+/* line 324, ../sass/style.scss */
+.glyphicon-heart:before {
+  content: "\e005"; }
+
+/* line 328, ../sass/style.scss */
+.glyphicon-heart-empty:before {
+  content: "\e143"; }

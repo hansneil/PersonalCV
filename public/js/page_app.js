@@ -196,8 +196,8 @@ page.directive('progressBar', function() {
 page.directive('like', function() {
     return {
         restrict: 'A',
-        controller: ['$scope', '$element', '$attrs', '$http', function($scope, $elemnt, $attrs, $http){
-            $elemnt.on('mouseover', function(){
+        controller: ['$scope', '$element', '$attrs', '$http', function($scope, $element, $attrs, $http){
+            $element.on('mouseover', function(){
                 var url = $attrs.ngSrc;
                 var urlArr = url.split('/');
                 var photoName = urlArr[urlArr.length - 1];
@@ -208,7 +208,7 @@ page.directive('like', function() {
                         $scope.likes = resp.data.likes;
                     });
             });
-            $elemnt.on('dblclick', function(){
+            $element.on('dblclick', function(){
                 //console.log();
                 var url = $attrs.ngSrc;
                 var urlArr = url.split('/');
@@ -218,6 +218,7 @@ page.directive('like', function() {
                 $http.post('/photo/'+id)
                     .then(function(resp){
                         $scope.likes = resp.data.likes;
+                        $scope.active = true;
                     });
             })
         }]
