@@ -213,22 +213,6 @@ page.directive('like', ['$http', '$timeout', function($http, $timeout) {
                         $scope.active = resp.data.active;
                     });
             });
-            $element.on('mousedown', function () {
-                i++;
-                if (i == 2) {
-                    var url = $attrs.ngSrc;
-                    var urlArr = url.split('/');
-                    var photoName = urlArr[urlArr.length - 1];
-                    var id = photoName.match(/^\d+/);
-
-                    $http.post('/photo/'+id)
-                        .then(function(resp){
-                            $scope.likes = resp.data.likes;
-                            $scope.active = true;
-                        });
-                    i = 0;
-                }
-            });
             $element.on('dblclick', function(){
                 var url = $attrs.ngSrc;
                 var urlArr = url.split('/');
