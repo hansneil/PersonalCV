@@ -48,7 +48,7 @@ page.config(['$routeProvider', 'securityProvider', 'hammerDefaultOptsProvider', 
             redirectTo: '/'
         });
     hammerDefaultOptsProvider.set({
-        recognizers: [[Hammer.Tap, {time: 250}], [Hammer.Press, {time: 250}]]
+        recognizers: [[Hammer.Tap, {time: 250}], [Hammer.Press, {time: 250}], [Hammer.Pinch, {time: 250}]]
     });
 }]);
 page.controller('homeController', ['$scope', function($scope){
