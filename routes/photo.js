@@ -3,10 +3,10 @@
  */
 var photos = {};
 var ips = {};
-var active = false;
 
 exports.getLikes = function(req, res) {
     var id = 'p' + req.param('id');
+    var active = false;
     var ip = req.headers['x-forwarded-for'] ||
         req.connection.remoteAddress ||
         req.socket.remoteAddress ||
@@ -22,8 +22,8 @@ exports.getLikes = function(req, res) {
     if (ips[ip]) {
         console.log('aaa');
         for (var i = 0; i < ips[ip].likes.length; i++) {
-            if (ips[ip].likes[i] == id) {
-                active = true;
+            if (ips[ip].likes[i].id == id) {
+                active = ips[ip].likes[i].active;
             }
         }
     }
@@ -40,18 +40,18 @@ exports.addLikes = function(req, res) {
     if (!ips[ip]) {
         ips[ip] = {
             visit: true,
-            likes: [id]
+            likes: [{id: id, active: true}]
         };
         photos[id].likes += 1;
     } else {
         var tmp = ips[ip];
         for (var i = 0; i < tmp.likes.length; i++) {
-            if (tmp.likes[i] == id) {
+            if (tmp.likes[i].id == id) {
                 break;
             }
         }
         if (i >= tmp.likes.length) {
-            ips[ip].likes.push(id);
+            ips[ip].likes.push({id: id, active: true});
             photos[id].likes += 1;
         }
     }

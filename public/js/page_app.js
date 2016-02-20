@@ -233,7 +233,7 @@ page.directive('like', ['$swipe', '$http', function($swipe, $http) {
                     console.log(pointX);
                 },
                 'move': function(coords){
-                    var delta = coords.x - startX;
+                    /*var delta = coords.x - startX;
                     console.log(delta);
                     if (delta) {
                         var url = attrs.ngSrc;
@@ -246,7 +246,7 @@ page.directive('like', ['$swipe', '$http', function($swipe, $http) {
                                 scope.likes = resp.data.likes;
                                 scope.active = true;
                             });
-                    }
+                    }*/
                 }
             });
         }
