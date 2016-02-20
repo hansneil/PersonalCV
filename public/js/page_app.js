@@ -25,7 +25,7 @@ angular.module('security', [])
         ]
     });
 
-var page = angular.module('ownPage', ['ngRoute','security']);
+var page = angular.module('ownPage', ['ngRoute', 'ngTouch', 'security']);
 page.config(['$routeProvider', 'securityProvider', function($routeProvider, security){
     $routeProvider
         .when('/', {
@@ -193,10 +193,10 @@ page.directive('progressBar', function() {
         scope: {skill: '=', number: '='},
     }
 });
-page.directive('like', function() {
+page.directive('like', ['$swipe', '$http', function($swipe, $http) {
     return {
         restrict: 'A',
-        controller: ['$scope', '$element', '$attrs', '$http', function($scope, $element, $attrs, $http){
+        controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs){
             $element.on('mouseover', function(){
                 var url = $attrs.ngSrc;
                 var urlArr = url.split('/');
@@ -221,7 +221,34 @@ page.directive('like', function() {
                         $scope.likes = resp.data.likes;
                         $scope.active = true;
                     });
-            })
-        }]
+            });
+        }],
+        link: function(scope, element, attrs){
+            var startX, pointX;
+            $swipe.bind(element, {
+                'start': function(coords){
+                    startX = coords.x;
+                    pointX = coords.y;
+                    console.log(startX);
+                    console.log(pointX);
+                },
+                'move': function(coords){
+                    var delta = coords.x - startX;
+                    console.log(delta);
+                    if (delta) {
+                        var url = attrs.ngSrc;
+                        var urlArr = url.split('/');
+                        var photoName = urlArr[urlArr.length - 1];
+                        var id = photoName.match(/^\d+/);
+
+                        $http.post('/photo/'+id)
+                            .then(function(resp){
+                                scope.likes = resp.data.likes;
+                                scope.active = true;
+                            });
+                    }
+                }
+            });
+        }
     }
-});
+}]);
