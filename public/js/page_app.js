@@ -260,3 +260,24 @@ page.directive('like', ['$http', '$timeout', function($http, $timeout) {
         }]
     }
 }]);
+page.directive('mobileClick', ['$http', function($http){
+    return {
+        restrict: 'A',
+        transclude: true,
+        scope: {source: '@'},
+        controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs){
+            $element.on('mousedown', function () {
+                var url = $attrs.source;
+                var urlArr = url.split('/');
+                var photoName = urlArr[urlArr.length - 1];
+                var id = photoName.match(/^\d+/);
+
+                $http.post('/photo/'+id)
+                    .then(function(resp){
+                        $scope.likes = resp.data.likes;
+                        $scope.active = true;
+                    });
+            });
+        }]
+    }
+}])
