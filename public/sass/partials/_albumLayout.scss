@@ -113,4 +113,7 @@
   &:hover p {
     z-index: 1;
   }
+  &:hover i {
+    cursor: pointer;
+  }
 }

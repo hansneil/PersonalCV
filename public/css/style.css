@@ -1014,6 +1014,9 @@ li {
   /* line 113, ../sass/partials/_albumLayout.scss */
   .album-wrapper:hover p {
     z-index: 1; }
+  /* line 116, ../sass/partials/_albumLayout.scss */
+  .album-wrapper:hover i {
+    cursor: pointer; }
 
 /* line 3, ../sass/partials/_blogLayout.scss */
 .wrapper {

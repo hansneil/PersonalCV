@@ -260,8 +260,8 @@ page.directive('like', ['$http', '$timeout', function($http, $timeout) {
 page.directive('mobileClick', ['$http', function($http){
     return {
         restrict: 'A',
-        transclude: true,
-        scope: {source: '@'},
+        /*transclude: true,
+        scope: {source: '@'},*/
         controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs){
             $element.on('mousedown', function () {
                 var url = $attrs.source;
