@@ -25,8 +25,8 @@ angular.module('security', [])
         ]
     });
 
-var page = angular.module('ownPage', ['ngRoute', 'angular-gestures', 'security']);
-page.config(['$routeProvider', 'securityProvider', 'hammerDefaultOptsProvider', function($routeProvider, security, hammerDefaultOptsProvider){
+var page = angular.module('ownPage', ['ngRoute', 'ngTouch', 'security']);
+page.config(['$routeProvider', 'securityProvider', function($routeProvider, security){
     $routeProvider
         .when('/', {
             templateUrl: '/pages/home.html'
@@ -46,10 +46,7 @@ page.config(['$routeProvider', 'securityProvider', 'hammerDefaultOptsProvider', 
         })
         .otherwise({
             redirectTo: '/'
-        });
-    hammerDefaultOptsProvider.set({
-        recognizers: [[Hammer.Tap, {time: 250}], [Hammer.Press, {time: 250}], [Hammer.Pinch, {time: 250}]]
-    });
+        })
 }]);
 page.controller('homeController', ['$scope', function($scope){
 
@@ -196,7 +193,7 @@ page.directive('progressBar', function() {
         scope: {skill: '=', number: '='},
     }
 });
-page.directive('like', ['$http', function($http) {
+page.directive('like', ['$swipe', '$http', function($swipe, $http) {
     return {
         restrict: 'A',
         controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs){
@@ -225,20 +222,31 @@ page.directive('like', ['$http', function($http) {
                         $scope.active = true;
                     });
             });
-            $scope.add_like = function($e){
-                console.log($attrs.ngSrc);
-                var url = $attrs.ngSrc;
-                var urlArr = url.split('/');
-                var photoName = urlArr[urlArr.length - 1];
-                var id = photoName.match(/^\d+/);
+            $swipe.bind($element, {
+                'start': function (coords) {
+                    startX = coords.x;
+                    pointX = coords.y;
+                    console.log(startX);
+                    console.log(pointX);
+                },
+                'move': function (coords) {
+                    var delta = coords.x - startX;
+                    console.log(delta);
+                    if (delta) {
+                        var url = attrs.ngSrc;
+                        var urlArr = url.split('/');
+                        var photoName = urlArr[urlArr.length - 1];
+                        var id = photoName.match(/^\d+/);
 
-                $http.post('/photo/'+id)
-                    .then(function(resp){
-                        $scope.likes = resp.data.likes;
-                        $scope.active = true;
-                    });
-                $e.preventDefault();
-            }
+                        $http.post('/photo/' + id)
+                            .then(function (resp) {
+                                scope.likes = resp.data.likes;
+                                scope.active = true;
+                            });
+                    }
+
+                }
+            })
         }]
     }
 }]);
