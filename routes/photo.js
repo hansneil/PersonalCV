@@ -3,25 +3,10 @@
  */
 var photos = {};
 var ips = {};
+var active = false;
 
 exports.getLikes = function(req, res) {
     var id = 'p' + req.param('id');
-    if (!photos[id]) {
-        var o = {
-            likes: 0
-        };
-        photos[id] = o;
-    }
-    res.send(200, {likes: photos[id].likes});
-};
-exports.addLikes = function(req, res) {
-    var id = 'p' + req.param('id');
-    //console.log(req.client._readableState.highWaterMark);
-    console.log(req.headers['x-forwarded-for'] ||
-        req.connection.remoteAddress ||
-        req.socket.remoteAddress ||
-        req.connection.socket.remoteAddress);
-
     var ip = req.headers['x-forwarded-for'] ||
         req.connection.remoteAddress ||
         req.socket.remoteAddress ||
@@ -29,10 +14,28 @@ exports.addLikes = function(req, res) {
 
     if (!photos[id]) {
         var o = {
-            likes: 1
+            likes: 0
         };
         photos[id] = o;
     }
+
+    if (ips[ip]) {
+        console.log('aaa');
+        for (var i = 0; i < ips[ip].likes.length; i++) {
+            if (ips[ip].likes[i] == id) {
+                active = true;
+            }
+        }
+    }
+
+    res.send(200, {likes: photos[id].likes, active: active});
+};
+exports.addLikes = function(req, res) {
+    var id = 'p' + req.param('id');
+    var ip = req.headers['x-forwarded-for'] ||
+        req.connection.remoteAddress ||
+        req.socket.remoteAddress ||
+        req.connection.socket.remoteAddress;
 
     if (!ips[ip]) {
         ips[ip] = {
@@ -47,14 +50,10 @@ exports.addLikes = function(req, res) {
                 break;
             }
         }
-        console.log(i);
-        console.log(tmp.likes.length);
         if (i >= tmp.likes.length) {
             ips[ip].likes.push(id);
             photos[id].likes += 1;
         }
     }
-
-    console.log(photos);
     res.send(200, {likes: photos[id].likes});
 }

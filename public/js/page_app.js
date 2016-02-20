@@ -206,6 +206,7 @@ page.directive('like', function() {
                 $http.get('/photo/'+id)
                     .then(function(resp){
                         $scope.likes = resp.data.likes;
+                        $scope.active = resp.data.active;
                     });
             });
             $element.on('dblclick', function(){
