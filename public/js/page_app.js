@@ -225,7 +225,7 @@ page.directive('like', ['$http', function($http) {
                         $scope.active = true;
                     });
             });
-            $scope.add_like = function($e){
+            /*$scope.add_like = function($e){
                 var url = $attrs.ngSrc;
                 var urlArr = url.split('/');
                 var photoName = urlArr[urlArr.length - 1];
@@ -237,7 +237,7 @@ page.directive('like', ['$http', function($http) {
                         $scope.likes = resp.data.likes;
                         $scope.active = true;
                     });
-            }
+            }*/
         }]
     }
 }]);
