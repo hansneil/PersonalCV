@@ -21,6 +21,7 @@ exports.getLikes = function(req, res) {
                 console.log('aaa');
                 var album = new Album({id: id, active: false});
                 var userIp = new Photo({ip: ip, visit: true, likes: [album]});
+                console.log(album.id);
                 album.save(function (err) {
                     if (err) {
                         console.log('err');
@@ -49,19 +50,21 @@ exports.getLikes = function(req, res) {
                     .exec(function(err, like){
                         if (!like) {
                             var like = new Like({id: id, likes: 0});
-                            like.save();
-                            res.send(200, {likes: 0, active: false});
+                            like.save(function(err){
+                                res.send(200, {likes: 0, active: false});
+                            });
                         } else {
+                            console.log('ccc');
+                            var active = false;
                             //res.send(200, {likes: like.likes, active: userIp.likes});
-                            Album.findOne({id: id})
-                                .exec(function(err, album){
-                                    if (!album) {
-                                        res.send(200, {likes: like.likes, active: false});
-                                    } else {
-                                        console.log('aaaaaaaaaaaa');
-                                        res.send(200, {likes: like.likes, active: album.active});
-                                    }
-                                })
+                            for (var i = 0; i < userIp.likes.length; i++) {
+                                if (userIp.likes[i].id == id) {
+                                    active = userIp.likes[i].active;
+                                }
+                            }
+
+                            res.send(200, {likes: like.likes, active: active});
+
                         }
                     })
             }
@@ -85,6 +88,7 @@ exports.addLikes = function(req, res) {
         req.connection.remoteAddress ||
         req.socket.remoteAddress ||
         req.connection.socket.remoteAddress;
+    console.log('post start');
 
     Photo.findOne({ip: ip})
         .exec(function(err, userIp){
@@ -94,11 +98,64 @@ exports.addLikes = function(req, res) {
                 Like.findOne({id: id})
                     .exec(function(err, like){
                         if (!like) {
+                            console.log('no like');
                             /*var like = new Like({id: id, likes: 0});
                             res.send(200, {likes: 0, active: false});*/
                         } else {
                             //res.send(200, {likes: like.likes, active: userIp.likes});
-                            Album.findOne({id: id})
+                            for (var i = 0; i < userIp.likes.length; i++) {
+                                console.log(userIp.likes[i].id);
+                                if (userIp.likes[i].id == id) {
+                                    if (userIp.likes[i].active == false) {
+                                        var album = new Album({id: id, active: true});
+                                        var likes = like.likes + 1;
+                                        userIp.likes.push(album);
+                                        like.set('likes', likes);
+                                        album.save(function (err) {
+                                            if (err) {
+                                                console.log(err);
+                                            } else {
+                                                like.save(function (err) {
+                                                    if (err) {
+                                                        console.log('err');
+                                                    } else {
+                                                        userIp.save(function () {
+                                                            console.log('bbb');
+                                                            res.send(200, {likes: likes, active: true});
+                                                        })
+                                                    }
+                                                });
+                                            }
+                                        });
+                                    } else {
+                                        console.log('aaa');
+                                        res.send(200, {likes: like.likes, active: userIp.likes[i].active});
+                                    }
+                                }
+                            }
+                            if (i >= userIp.likes.length) {
+                                var album = new Album({id: id, active: true});
+                                var likes = like.likes + 1;
+                                userIp.likes.push(album);
+                                like.set('likes', likes);
+                                album.save(function (err) {
+                                    if (err) {
+                                        console.log(err);
+                                    } else {
+                                        like.save(function (err) {
+                                            if (err) {
+                                                console.log('err');
+                                            } else {
+                                                userIp.save(function () {
+                                                    console.log('bbb');
+                                                    res.send(200, {likes: likes, active: true});
+                                                })
+                                            }
+                                        });
+                                    }
+                                });
+                            }
+                            /*Album.findOne({id: id})
                                 .exec(function(err, album){
                                     if (!album) {
                                         console.log('post');
@@ -130,7 +187,7 @@ exports.addLikes = function(req, res) {
                                         })
 
                                     }
-                                })
+                                })*/
                         }
                     })
             }

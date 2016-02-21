@@ -252,7 +252,7 @@ page.directive('mobileClick', ['$http', function($http){
                 var urlArr = url.split('/');
                 var photoName = urlArr[urlArr.length - 1];
                 var id = photoName.match(/^\d+/);
-
+                console.log('post');
                 $http.post('/photo/'+id)
                     .then(function(resp){
                         console.log(resp.data.likes);
