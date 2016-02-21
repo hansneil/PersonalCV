@@ -106,6 +106,10 @@
       color: $color7;
       padding-left: 1em;
     }
+    & .comment {
+      color: $color3;
+      text-decoration: none;
+    }
     & small {
       color: $color2;
     }

@@ -44,6 +44,10 @@ page.config(['$routeProvider', 'securityProvider', 'hammerDefaultOptsProvider', 
         .when('/wechat', {
             templateUrl: '/pages/wechat.html'
         })
+        .when('/photo/:id', {
+            templateUrl: '/pages/photo.html',
+            controller: 'photoController'
+        })
         .otherwise({
             redirectTo: '/'
         });
@@ -167,6 +171,14 @@ page.factory('albumInfo', function(){
                 }
             }
             return selectedAlbum;
+        },
+        get: function(type, id){
+            var allTypes = photography.types;
+            for (var i in allTypes){
+                if (allTypes[i].type == type) {
+                    return allTypes[i].album[id];
+                }
+            }
         }
     }
 })
@@ -206,6 +218,7 @@ page.directive('like', ['$http', '$timeout', function($http, $timeout) {
                 var urlArr = url.split('/');
                 var photoName = urlArr[urlArr.length - 1];
                 var id = photoName.match(/^\d+/);
+                $scope.id = id.toString();
 
                 $http.get('/photo/'+id)
                     .then(function(resp){
@@ -262,4 +275,13 @@ page.directive('mobileClick', ['$http', function($http){
             });
         }]
     }
-}])
+}]);
+page.controller('photoController', ['$scope', '$routeParams', 'albumInfo',
+    function($scope, $routeParams, albumInfo){
+        var regExp = /([a-zA-z]+)(\d+)/,
+            id = Number($routeParams.id.match(regExp)[2]),
+            type = $routeParams.id.match(regExp)[1],
+            selectedPhoto;
+        selectedPhoto = albumInfo.get(type, id);
+        $scope.photo = selectedPhoto;
+    }]);

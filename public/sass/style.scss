@@ -5,6 +5,7 @@
 @import "./partials/homeLayout";
 @import "./partials/albumLayout";
 @import "./partials/blogLayout";
+@import "./partials/photoLayout";
 @charset "UTF-8";
 
 //avoid
@@ -327,4 +328,8 @@ ng\:form{
 
 .glyphicon-heart-empty:before {
   content: "\e143";
+}
+
+.glyphicon-comment:before {
+  content: "\e111";
 }

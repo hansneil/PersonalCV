@@ -1,0 +1,46 @@
+#photo-header.header {
+  font-size: .8em;
+  @include at-breakpoint($M) {
+    font-size: 1em;
+  }
+}
+#photo {
+  @include container;
+  //@include susy-grid-background;
+  &.content {
+    max-width: 80em;
+    width: 90%;
+  }
+}
+.content p.title {
+  margin-top: 0;
+  font-size: 2em;
+  & span {
+    color: $color2;
+  }
+  & small {
+    font-size: .5em;
+    display: none;
+    @include at-breakpoint($M) {
+      display: inline-block;
+    }
+  }
+}
+.img-container {
+  @include at-breakpoint($M) {
+    @include span-columns(8, 12);
+  }
+  & img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    @include at-breakpoint($M) {
+      border-radius: 15px;
+    }
+  }
+}
+.comment-container {
+  @include at-breakpoint($M) {
+    @include span-columns(4 omega, 12);
+  }
+}

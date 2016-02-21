@@ -1,0 +1,13 @@
+<div id="photo-header" class="header">
+    <p><span>P</span>hotography</p>
+</div>
+<div id="photo" class="content" ng-controller="photoController">
+    <p class="title"><span>{{photo.type}}</span> <small>{{photo.city}}</small></p>
+    <div class="img-container">
+        <img ng-src="{{photo.src}}">
+    </div>
+    <div class="comment-container">
+        <div id="disqus_thread"></div>
+    </div>
+
+</div>

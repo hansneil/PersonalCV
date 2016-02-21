@@ -69,18 +69,6 @@ exports.getLikes = function(req, res) {
                     })
             }
         });
-
-
-    /*if (ips[ip]) {
-        console.log('aaa');
-        for (var i = 0; i < ips[ip].likes.length; i++) {
-            if (ips[ip].likes[i].id == id) {
-                active = ips[ip].likes[i].active;
-            }
-        }
-    }*/
-
-    //res.send(200, {likes: photos[id].likes, active: active});
 };
 exports.addLikes = function(req, res) {
     var id = 'p' + req.param('id');
@@ -156,61 +144,9 @@ exports.addLikes = function(req, res) {
                                     }
                                 });
                             }
-                            /*Album.findOne({id: id})
-                                .exec(function(err, album){
-                                    if (!album) {
-                                        console.log('post');
-                                        var album = new Album({id: id, active: true});
-                                        var likes = like.likes + 1;
-                                        like.set('likes', likes);
-                                        album.save(function(err){
-                                            if (err) {
-                                                console.log(err);
-                                            } else {
-                                                like.save(function(err){
-                                                    if (err) {
-                                                        console.log('err');
-                                                    } else {
-                                                        res.send(200, {likes: likes, active: true});
-                                                    }
-                                                });
-                                            }
-                                        });
-                                    } else {
-                                        console.log('bbbbbbbbbb');
-                                        var likes = like.likes + 1;
-                                        like.set('likes', likes);
-                                        album.set('active', true);
-                                        album.save(function(err){
-                                            like.save(function(err){
-                                                res.send(200, {likes: likes, active: true});
-                                            })
-                                        })
 
-                                    }
-                                })*/
                         }
                     })
             }
         });
-
-/*    if (!ips[ip]) {
-        ips[ip] = {
-            visit: true,
-            likes: [{id: id, active: true}]
-        };
-        photos[id].likes += 1;
-    } else {
-        var tmp = ips[ip];
-        for (var i = 0; i < tmp.likes.length; i++) {
-            if (tmp.likes[i].id == id) {
-                break;
-            }
-        }
-        if (i >= tmp.likes.length) {
-            ips[ip].likes.push({id: id, active: true});
-            photos[id].likes += 1;
-        }
-    }*/
-    //res.send(200, {likes: photos[id].likes});
 }
