@@ -65,12 +65,12 @@
   @include at-breakpoint($S) {
     width: 48%;
     padding-left: .5%;
-    font-size: .6em;
+    font-size: .5em;
   }
   @include at-breakpoint($SPlus) {
     width: 31%;
     padding-left: 1%;
-    font-size: .6em;
+    font-size: .4em;
   }
   @include at-breakpoint($M) {
     width: 24%;
