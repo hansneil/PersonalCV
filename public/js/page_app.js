@@ -44,10 +44,6 @@ page.config(['$routeProvider', 'securityProvider', 'hammerDefaultOptsProvider', 
         .when('/wechat', {
             templateUrl: '/pages/wechat.html'
         })
-        .when('/photo/:id', {
-            templateUrl: '/pages/photo.html',
-            controller: 'photoController'
-        })
         .otherwise({
             redirectTo: '/'
         });
@@ -189,6 +185,12 @@ page.controller('AlbumController', ['$scope', 'albumInfo', function($scope, albu
         console.log($scope.photography.selectedAlbum);
         $scope.photography.activeType = albumType.type;
         $scope.photography.selectedAlbum = albumInfo.setActive(albumType, $scope.photography.types);
+    };
+
+    $scope.setComments = function(params){
+        console.log(params);
+        $rootScope.photoComments.type = params.type;
+        $rootScope.photoComments.id = params.id;
     }
 }]);
 page.directive('progressGroup', function(){
@@ -238,19 +240,6 @@ page.directive('like', ['$http', '$timeout', function($http, $timeout) {
                         $scope.active = true;
                     });
             });
-            /*$scope.add_like = function($e){
-                var url = $attrs.ngSrc;
-                var urlArr = url.split('/');
-                var photoName = urlArr[urlArr.length - 1];
-                var id = photoName.match(/^\d+/);
-                $e.preventDefault();
-
-                $http.post('/photo/'+id)
-                    .then(function(resp){
-                        $scope.likes = resp.data.likes;
-                        $scope.active = true;
-                    });
-            }*/
         }]
     }
 }]);
@@ -276,31 +265,10 @@ page.directive('mobileClick', ['$http', function($http){
         }]
     }
 }]);
-page.controller('photoController', ['$scope', '$routeParams', '$window', 'albumInfo',
-    function($scope, $routeParams, $window, albumInfo){
-        var regExp = /([a-zA-z]+)(\d+)/,
-            id = Number($routeParams.id.match(regExp)[2]),
-            type = $routeParams.id.match(regExp)[1],
-            selectedPhoto;
-        selectedPhoto = albumInfo.get(type, id);
-        $scope.photo = selectedPhoto;
+page.controller('backController', ['$scope', '$http', '$location', 'albumInfo',
+    function($scope, $http, $location, albumInfo){
+        $http.get('/newpage').then(function(resp){
+            selectedPhoto = albumInfo.get(resp.data.type, resp.data.id);
+            $scope.photo = selectedPhoto;
+        });
     }]);
-page.directive('diHref', ['$location', '$window', '$location', '$timeout',
-    function($location, $window, $location, $timeout) {
-        return function(scope, element, attrs) {
-            scope.$watch('diHref', function() {
-                if(attrs.diHref) {
-                    element.attr('href', attrs.diHref);
-                    element.bind('click', function(event) {
-                        console.log($location.path());
-                        if($location.path() != attrs.diHref) {
-                            $timeout(function(){
-                                $window.location.reload();
-                            }, 1);
-                        }
-                    });
-                }
-            });
-        }
-    }]);
-

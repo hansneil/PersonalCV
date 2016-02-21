@@ -14,6 +14,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var login = require('./routes/login');
 var photo = require('./routes/photo');
+var comment = require('./routes/comment');
 
 //var db = mongoose.connect("mongodb://hansneil:111_zzz@ds047335.mongolab.com:47335/hansneil");
 var db = mongoose.connect("mongodb://localhost/photo");
@@ -42,6 +43,8 @@ app.use(express.static(path.join(__dirname, 'views')));
 app.post('/login', login.authen);
 app.get('/photo/:id', photo.getLikes);
 app.post('/photo/:id', photo.addLikes);
+app.get('/comment/:id', comment.getComments);
+app.get('/newpage', comment.newComment);
 app.use('/', routes);
 app.use('/users', users);
 
