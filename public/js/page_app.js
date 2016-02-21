@@ -255,6 +255,7 @@ page.directive('mobileClick', ['$http', function($http){
 
                 $http.post('/photo/'+id)
                     .then(function(resp){
+                        console.log(resp.data.likes);
                         $scope.likes = resp.data.likes;
                         $scope.active = true;
                     });

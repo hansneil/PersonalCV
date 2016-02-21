@@ -14,5 +14,10 @@
     "morgan": "~1.6.1",
     "node-sass-middleware": "0.8.0",
     "serve-favicon": "~2.3.0"
+  },
+  "devDependencies": {
+    "connect-mongo": "^1.1.0",
+    "express-session": "^1.13.0",
+    "mongoose": "^4.4.4"
   }
 }

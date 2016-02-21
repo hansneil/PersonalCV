@@ -4,12 +4,19 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var expressSession = require('express-session');
+var mongoStore = require('connect-mongo')({session: expressSession});
+var mongoose = require('mongoose');
+require('./models/like_models');
+require('./models/photo_models');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var login = require('./routes/login');
 var photo = require('./routes/photo');
 
+//var db = mongoose.connect("mongodb://hansneil:111_zzz@ds047335.mongolab.com:47335/hansneil");
+var db = mongoose.connect("mongodb://localhost/photo");
 var app = express();
 
 // view engine setup
