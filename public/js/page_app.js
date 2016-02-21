@@ -276,8 +276,8 @@ page.directive('mobileClick', ['$http', function($http){
         }]
     }
 }]);
-page.controller('photoController', ['$scope', '$routeParams', 'albumInfo',
-    function($scope, $routeParams, albumInfo){
+page.controller('photoController', ['$scope', '$routeParams', '$window', 'albumInfo',
+    function($scope, $routeParams, $window, albumInfo){
         var regExp = /([a-zA-z]+)(\d+)/,
             id = Number($routeParams.id.match(regExp)[2]),
             type = $routeParams.id.match(regExp)[1],
@@ -285,3 +285,24 @@ page.controller('photoController', ['$scope', '$routeParams', 'albumInfo',
         selectedPhoto = albumInfo.get(type, id);
         $scope.photo = selectedPhoto;
     }]);
+page.directive('diHref', ['$location', '$window', '$timeout',
+    function($location, $window, $timeout) {
+        return function(scope, element, attrs) {
+            scope.$watch('diHref', function() {
+                if(attrs.diHref) {
+                    element.attr('href', attrs.diHref);
+                    element.bind('click', function(event) {
+                        console.log('click');
+                        console.log($location.path());
+                        console.log(attrs.diHref);
+                        if($location.path() != attrs.diHref) {
+                            $timeout(function(){
+                                $window.location.reload();
+                            }, 100);
+                        }
+                    });
+                }
+            });
+        }
+    }]);
+

@@ -1,7 +1,7 @@
 <div id="photo-header" class="header">
     <p><span>P</span>hotography</p>
 </div>
-<div id="photo" class="content" ng-controller="photoController">
+<div id="photo" class="content" ng-controller="photoController" refresh>
     <p class="title"><span>{{photo.type}}</span> <small>{{photo.city}}</small></p>
     <div class="img-container">
         <img ng-src="{{photo.src}}">
