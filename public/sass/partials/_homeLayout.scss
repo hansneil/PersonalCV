@@ -93,19 +93,31 @@ ul {
 li {
   font-family: 'axis';
   color: $color5;
-  padding-right: .5em;
-  padding-bottom: 1em;
+  /*padding-right: .5em;
+  padding-bottom: 1em;*/
   list-style: none;
+  margin-bottom: .5em;
+  padding-top: .2em;
+  padding-bottom: .2em;
   .page & {
     @include at-breakpoint($M) {
       display: inline-block;
       padding-right: 1em;
+      border: 0px solid $color5;
     }
     font-size: 1.5em;
     &:hover {
-      color: $color6;
+      color: $color3;
+      background-color: $color5;
+      border-radius: 5px;
+      @include at-breakpoint($M) {
+        color: $color6;
+        background-color: inherit;
+        border-radius: 0;
+      }
     }
-    &:before {
+    border: 1px solid $color5;
+    /*&:before {
       @include at-breakpoint($M) {
         content: '';
         padding-right: 0;
@@ -120,7 +132,7 @@ li {
       }
       content: '>';
       padding-left: 1.5em;
-    }
+    }*/
   }
   .footer & {
     display: inline-block;
