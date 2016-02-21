@@ -285,20 +285,18 @@ page.controller('photoController', ['$scope', '$routeParams', '$window', 'albumI
         selectedPhoto = albumInfo.get(type, id);
         $scope.photo = selectedPhoto;
     }]);
-page.directive('diHref', ['$location', '$window', '$timeout',
-    function($location, $window, $timeout) {
+page.directive('diHref', ['$location', '$window', '$location', '$timeout',
+    function($location, $window, $location, $timeout) {
         return function(scope, element, attrs) {
             scope.$watch('diHref', function() {
                 if(attrs.diHref) {
                     element.attr('href', attrs.diHref);
                     element.bind('click', function(event) {
-                        console.log('click');
                         console.log($location.path());
-                        console.log(attrs.diHref);
                         if($location.path() != attrs.diHref) {
                             $timeout(function(){
                                 $window.location.reload();
-                            }, 100);
+                            }, 1);
                         }
                     });
                 }

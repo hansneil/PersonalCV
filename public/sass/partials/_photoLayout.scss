@@ -25,6 +25,10 @@
       display: inline-block;
     }
   }
+  & a {
+    padding-left: 1em;
+    font-size: .5em;
+  }
 }
 .img-container {
   @include at-breakpoint($M) {
