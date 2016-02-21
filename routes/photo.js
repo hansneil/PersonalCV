@@ -131,6 +131,7 @@ exports.addLikes = function(req, res) {
                                         console.log('aaa');
                                         res.send(200, {likes: like.likes, active: userIp.likes[i].active});
                                     }
+                                    break;
                                 }
                             }
                             if (i >= userIp.likes.length) {
