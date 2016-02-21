@@ -1,7 +1,9 @@
 #photo-header.header {
   font-size: .8em;
+  margin-bottom: -2em;
   @include at-breakpoint($M) {
     font-size: 1em;
+    margin-bottom: 0;
   }
 }
 #photo {
@@ -14,6 +16,7 @@
 }
 .content p.title {
   margin-top: 0;
+  margin-bottom: .5em;
   font-size: 2em;
   & span {
     color: $color2;
