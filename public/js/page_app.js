@@ -28,7 +28,7 @@ angular.module('security', [])
         ]
     });
 
-angular.module('ownPage', ['ngRoute', 'ngAnimate', 'security'])
+angular.module('ownPage', ['ngRoute', 'security'])
     .config(['$routeProvider', 'securityProvider', function($routeProvider, security){
         $routeProvider
             .when('/home', {
