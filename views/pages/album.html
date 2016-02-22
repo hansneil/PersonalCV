@@ -1,7 +1,7 @@
 <div class="header">
     <p><span>P</span>hotography</p>
 </div>
-<div class="content" ng-controller="AlbumController">
+<div class="content">
     <ul>
         <li ng-repeat="photo in photography.types">
             <a ng-class="{'selected': photo.active}" ng-click="chooseAlbum(photo)">{{photo.type | uppercase}}</a>
