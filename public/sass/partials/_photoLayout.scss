@@ -71,8 +71,8 @@
     margin-left: .5em;
     margin-right: .5em;
     @include at-breakpoint($M) {
-      margin-left: 0;
-      margin-right: 2em;
+      margin-left: 1em;
+      margin-right: 1em;
     }
     background-color: $color5;
     font-size: 1.5em;
