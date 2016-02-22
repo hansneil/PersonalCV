@@ -43,7 +43,9 @@
   }
 }
 .img-container {
+  margin-top: 2em;
   @include at-breakpoint($M) {
+    margin-top: auto;
     @include span-columns(8, 12);
   }
   & img {
@@ -61,35 +63,65 @@
   }
 }
 .photo-button {
-  margin-top: 2em;
+  margin-top: -.5em;
+  //margin-bottom: 1em;
+  @include at-breakpoint($M) {
+    margin-top: 2em;
+  }
   text-align: center;
   & div {
     display: inline-block;
     position: relative;
     width: 2em;
     height: 2em;
-    margin-left: .5em;
-    margin-right: .5em;
+    font-size: .8em;
+    /*margin-left: .5em;
+    margin-right: .5em;*/
     @include at-breakpoint($M) {
+      width: 2em;
+      height: 2em;
       margin-left: 1em;
       margin-right: 1em;
+      font-size: 1.5em;
+      color: $color3;
     }
-    background-color: $color5;
-    font-size: 1.5em;
+    &.prev {
+      float: left;
+      background-color: $color3;
+    }
+    &.next {
+      float: right;
+      background-color: $color9;
+    }
+    &.prev, &.next {
+      @include at-breakpoint($M) {
+        float: none;
+        background-color: $color5;
+      }
+    }
+    &.forbid {
+      background-color: $color2;
+      @include at-breakpoint($M) {
+        background-color: $color5;
+      }
+    }
     border-radius: 50%;
     opacity: 0.8;
     @include transition(all .5s ease-in-out);
     &:hover {
       opacity: 1;
     }
-    color: $color3;
+    color: $color5;
     cursor: pointer;
     & a {
       display: block;
       width: 100%;
       height: 100%;
       &.forbid {
-        color: $color2;
+        color: $color5;
+        @include at-breakpoint($M) {
+          color: $color2;
+        }
       }
     }
     & i {
@@ -104,5 +136,17 @@
       left: 0;
       margin: auto;
     }
+  }
+}
+.small-scale {
+  display: block;
+  @include at-breakpoint($M) {
+    display: none;
+  }
+}
+.large-scale {
+  display: none;
+  @include at-breakpoint($M) {
+    display: block;
   }
 }

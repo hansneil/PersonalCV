@@ -315,6 +315,7 @@ angular.module('ownPage', ['ngRoute', 'ngAnimate', 'security'])
                         element.attr('href', url);
                     } else {
                         element.addClass('forbid');
+                        element.parent().addClass('forbid');
                     }
                 });
             }
@@ -328,10 +329,11 @@ angular.module('ownPage', ['ngRoute', 'ngAnimate', 'security'])
                 var id = scope.resp.id + 1;
                 var resp = scope.resp.type + id.toString();
                 var url = '/comment/' + resp;
-                if (id < scope.resp.length - 1) {
+                if (id <= scope.resp.length - 1) {
                     element.attr('href', url);
                 } else {
                     element.addClass('forbid');
+                    element.parent().addClass('forbid');
                 }
             });
         }
