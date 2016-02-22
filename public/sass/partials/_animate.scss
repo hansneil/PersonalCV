@@ -1,0 +1,28 @@
+.glyphicon.glyphicon-heart-add,
+.glyphicon.glyphicon-heart-empty-remove {
+  opacity: 0;
+  @include transform(scale(2));
+  @include transition(all .5s ease-in-out);
+}
+
+.glyphicon.glyphicon-heart-add.glyphicon-heart-add-active {
+  opacity: 1;
+  @include transform(scale(1));
+}
+
+.view-container.ng-enter {
+  opacity: 0;
+  @include transition(all .5s ease-in-out);
+}
+
+.view-container.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+.view-container.ng-leave {
+  display: none;
+}
+.album-wrapper {
+  &.ng-leave {
+    display: none;
+  }
+}

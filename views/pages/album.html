@@ -7,7 +7,7 @@
             <a ng-class="{'selected': photo.active}" ng-click="chooseAlbum(photo)">{{photo.type | uppercase}}</a>
         </li>
     </ul>
-    <div class="album-wrapper fade-in" ng-repeat="photo in photography.selectedAlbum">
+    <div class="album-wrapper" ng-repeat="photo in photography.selectedAlbum">
         <p>
             <span>{{photo.type}}</span> {{photo.city}}
             <span class="likes">
