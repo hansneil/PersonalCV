@@ -15,9 +15,14 @@
   }
 }
 .content p.title {
-  margin-top: 0;
+  margin-top: .5em;
   margin-bottom: .5em;
-  font-size: 2em;
+  font-size: 1em;
+  @include at-breakpoint($M) {
+    font-size: 1.5em;
+  }
+  padding-bottom: .5em;
+  border-bottom: 1.5px solid $color6;
   & span {
     color: $color2;
   }
@@ -29,8 +34,12 @@
     }
   }
   & a {
-    padding-left: 1em;
-    font-size: .5em;
+    display: inline-block;
+    margin-left: 1em;
+    font-size: .8em;
+    &:hover {
+      color: $color9;
+    }
   }
 }
 .img-container {
