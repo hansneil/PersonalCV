@@ -6,11 +6,11 @@
     <link rel='stylesheet' href='/css/style.css' />
     <link rel="SHORTCUT ICON" href="/img/icon.ico" />
 </head>
-<body>
+<body ng-controller="backController">
 <div id="photo-header" class="header">
     <p><span>P</span>hotography</p>
 </div>
-<div id="photo" class="content" ng-controller="backController">
+<div id="photo" class="content">
     <div class="img-container">
         <img ng-src="{{photo.src}}">
     </div>
@@ -21,6 +21,10 @@
         </p>
         <div id="disqus_thread"></div>
     </div>
+</div>
+<div class="photo-button">
+    <div class="prev"><a prev-photo><i class="glyphicon glyphicon-chevron-left"></i></a></div>
+    <div class="next"><a next-photo><i class="glyphicon glyphicon-chevron-right"></i></a></div>
 </div>
 <script>
     /**

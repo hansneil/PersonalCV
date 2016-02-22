@@ -175,11 +175,11 @@ angular.module('ownPage', ['ngRoute', 'ngAnimate', 'security'])
                 }
                 return selectedAlbum;
             },
-            get: function(type, id){
+            get: function(type){
                 var allTypes = photography.types;
                 for (var i in allTypes){
                     if (allTypes[i].type == type) {
-                        return allTypes[i].album[id];
+                        return allTypes[i].album;
                     }
                 }
             }
@@ -212,9 +212,16 @@ angular.module('ownPage', ['ngRoute', 'ngAnimate', 'security'])
     .controller('backController', ['$scope', '$http', '$location', 'albumInfo',
         function($scope, $http, $location, albumInfo){
             $http.get('/newpage').then(function(resp){
-                selectedPhoto = albumInfo.get(resp.data.type, resp.data.id);
+                var selectedAlbum = albumInfo.get(resp.data.type),
+                    selectedPhoto = selectedAlbum[resp.data.id];
                 $scope.photo = selectedPhoto;
+                $scope.resp = {
+                    type: resp.data.type,
+                    id: resp.data.id,
+                    length: selectedAlbum.length
+                }
             });
+
     }])
     .controller('blogController', ['$scope', '$timeout', function($scope, $timeout){
         $scope.alternative = {
@@ -295,5 +302,39 @@ angular.module('ownPage', ['ngRoute', 'ngAnimate', 'security'])
                 });
             }]
         }
-    }]);
+    }])
+    .directive('prevPhoto', ['$location', 'albumInfo', function($location){
+        return {
+            restrict: 'A',
+            link: function(scope, element, attr){
+                element.on('click', function(){
+                    var id = scope.resp.id - 1;
+                    var resp = scope.resp.type + id.toString();
+                    var url = '/comment/' + resp;
+                    if (id >= 0) {
+                        element.attr('href', url);
+                    } else {
+                        element.addClass('forbid');
+                    }
+                });
+            }
+        }
+    }])
+    .directive('nextPhoto', ['$location', function($location){
+    return {
+        restrict: 'A',
+        link: function(scope, element, attr){
+            element.on('click', function(){
+                var id = scope.resp.id + 1;
+                var resp = scope.resp.type + id.toString();
+                var url = '/comment/' + resp;
+                if (id < scope.resp.length - 1) {
+                    element.attr('href', url);
+                } else {
+                    element.addClass('forbid');
+                }
+            });
+        }
+    }
+}]);
 

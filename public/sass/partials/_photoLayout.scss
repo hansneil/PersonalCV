@@ -60,3 +60,44 @@
     @include span-columns(4 omega, 12);
   }
 }
+.photo-button {
+  margin-top: 2em;
+  text-align: center;
+  & div {
+    display: inline-block;
+    position: relative;
+    width: 2em;
+    height: 2em;
+    margin-right: 2em;
+    background-color: $color5;
+    font-size: 1.5em;
+    border-radius: 50%;
+    opacity: 0.8;
+    @include transition(all .5s ease-in-out);
+    &:hover {
+      opacity: 1;
+    }
+    color: $color3;
+    cursor: pointer;
+    & a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      &.forbid {
+        color: $color2;
+      }
+    }
+    & i {
+      display: block;
+      position: absolute;
+      width: 1.5em;
+      height: 1.5em;
+      text-align: center;
+      top: 20%;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+    }
+  }
+}
