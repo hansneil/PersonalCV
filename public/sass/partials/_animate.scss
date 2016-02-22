@@ -1,0 +1,23 @@
+.animateView.ng-enter,
+.animateView.ng-leave {
+  opacity: 0;
+  @include transition(all .5s ease-in-out)
+}
+
+.animateView.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+.fade-in.ng-enter {
+  opacity: 0;
+  @include transform(scale(1.05));
+  @include transition(all .2s ease-in-out);
+}
+.fade-in.ng-enter-active {
+  @include transform(scale(1));
+  opacity: 1;
+}
+.fade-in.ng-leave,
+.fade-in.ng-leave.ng-leave-active {
+  display: none;
+}

@@ -28,8 +28,8 @@ angular.module('security', [])
         ]
     });
 
-angular.module('ownPage', ['ngRoute', 'angular-gestures', 'security'])
-    .config(['$routeProvider', 'securityProvider', 'hammerDefaultOptsProvider', function($routeProvider, security, hammerDefaultOptsProvider){
+angular.module('ownPage', ['ngRoute', 'ngAnimate', 'security'])
+    .config(['$routeProvider', 'securityProvider', function($routeProvider, security){
         $routeProvider
             .when('/home', {
                 templateUrl: '/pages/home.html',
@@ -66,9 +66,6 @@ angular.module('ownPage', ['ngRoute', 'angular-gestures', 'security'])
             .otherwise({
                 redirectTo: '/home'
             });
-        hammerDefaultOptsProvider.set({
-            recognizers: [[Hammer.Tap, {time: 250}], [Hammer.Press, {time: 250}], [Hammer.Swipe, {time: 250}]]
-        });
     }])
     .factory('cvInfo', function(){
         var title = "Hansneil";
@@ -190,7 +187,6 @@ angular.module('ownPage', ['ngRoute', 'angular-gestures', 'security'])
     })
     .controller('homeController', ['$scope', '$location', function($scope, $location){
         console.log($location.path());
-
     }])
     .controller('cvController', ['$scope', 'cvInfo', function($scope, cvInfo){
         $scope.cvInfo = cvInfo.cvInfo;
