@@ -322,21 +322,21 @@ angular.module('ownPage', ['ngRoute', 'ngAnimate', 'security'])
         }
     }])
     .directive('nextPhoto', ['$location', function($location){
-    return {
-        restrict: 'A',
-        link: function(scope, element, attr){
-            element.on('click', function(){
-                var id = scope.resp.id + 1;
-                var resp = scope.resp.type + id.toString();
-                var url = '/comment/' + resp;
-                if (id <= scope.resp.length - 1) {
-                    element.attr('href', url);
-                } else {
-                    element.addClass('forbid');
-                    element.parent().addClass('forbid');
-                }
-            });
+        return {
+            restrict: 'A',
+            link: function(scope, element, attr){
+                element.on('click', function(){
+                    var id = scope.resp.id + 1;
+                    var resp = scope.resp.type + id.toString();
+                    var url = '/comment/' + resp;
+                    if (id <= scope.resp.length - 1) {
+                        element.attr('href', url);
+                    } else {
+                        element.addClass('forbid');
+                        element.parent().addClass('forbid');
+                    }
+                });
+            }
         }
-    }
-}]);
+    }]);
 
