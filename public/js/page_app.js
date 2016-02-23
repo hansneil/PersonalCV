@@ -29,21 +29,66 @@ angular.module('security', [])
     });
 
 angular.module('ownPage', ['ngRoute', 'ngAnimate', 'ui.router', 'security'])
-    .config(['$routeProvider', 'securityProvider', function($routeProvider, security){
-        $routeProvider
-            .when('/home', {
+    .config(['$stateProvider', '$urlRouterProvider', 'securityProvider',
+        function($stateProvider, $urlRouterProvider, security){
+        $stateProvider
+            .state('home', {
+                url: '/home',
                 templateUrl: '/pages/home.html',
                 controller: "homeController"
             })
-            .when('/cv', {
+            .state('cv', {
+                url: '/cv',
                 templateUrl: '/pages/cv.html',
                 controller: "cvController"
             })
-            .when('/album', {
+            .state('album', {
+                url: '/album',
                 templateUrl: '/pages/album.html',
                 controller: 'AlbumController'
             })
-            .when('/blog', {
+            .state('album.all',{
+                url: '/all',
+                templateUrl: '/pages/photo.html',
+                controller: 'PhotoController',
+                resolve: {
+                    type: function(){
+                       return 'all';
+                    }
+                }
+            })
+            .state('album.portrait',{
+                url: '/portrait',
+                templateUrl: '/pages/photo.html',
+                controller: 'PhotoController',
+                resolve: {
+                    type: function(){
+                        return 'portrait';
+                    }
+                }
+            })
+            .state('album.scenery',{
+                url: '/scenery',
+                templateUrl: '/pages/photo.html',
+                controller: 'PhotoController',
+                resolve: {
+                    type: function(){
+                        return 'scenery';
+                    }
+                }
+            })
+            .state('album.travel',{
+                url: '/travel',
+                templateUrl: '/pages/photo.html',
+                controller: 'PhotoController',
+                resolve: {
+                    type: function(){
+                        return 'travel';
+                    }
+                }
+            })
+            .state('blog', {
+                url: '/blog',
                 templateUrl: '/pages/blog.html',
                 controller: 'blogController',
                 resolve: {
@@ -60,12 +105,13 @@ angular.module('ownPage', ['ngRoute', 'ngAnimate', 'ui.router', 'security'])
                     }
                 }
             })
-            .when('/wechat', {
+            .state('wechat', {
+                url: '/wechat',
                 templateUrl: '/pages/wechat.html'
             })
-            .otherwise({
+            /*.otherwise({
                 redirectTo: '/home'
-            });
+            });*/
     }])
     .factory('cvInfo', function(){
         var title = "Hansneil";
@@ -163,10 +209,10 @@ angular.module('ownPage', ['ngRoute', 'ngAnimate', 'ui.router', 'security'])
         };
         return {
             photography: photography,
-            setActive: function (album, albums) {
+            setActive: function (albumType, albums) {
                 var selectedAlbum;
                 for (var i in albums){
-                    if (albums[i].type == album.type) {
+                    if (albums[i].type == albumType) {
                         albums[i].active = true;
                         selectedAlbum = albums[i].album;
                     } else {
@@ -196,18 +242,10 @@ angular.module('ownPage', ['ngRoute', 'ngAnimate', 'ui.router', 'security'])
     }])
     .controller('AlbumController', ['$scope', 'albumInfo', function($scope, albumInfo){
         $scope.photography = albumInfo.photography;
-
-        $scope.chooseAlbum = function (albumType) {
-            console.log($scope.photography.selectedAlbum);
-            $scope.photography.activeType = albumType.type;
-            $scope.photography.selectedAlbum = albumInfo.setActive(albumType, $scope.photography.types);
-        };
-
-        $scope.setComments = function(params){
-            console.log(params);
-            $rootScope.photoComments.type = params.type;
-            $rootScope.photoComments.id = params.id;
-        }
+    }])
+    .controller('PhotoController', ['$scope', 'albumInfo', 'type', function($scope, albumInfo, type){
+        $scope.photography.selectedAlbum = albumInfo.setActive(type, $scope.photography.types);
+        $scope.photography.activeType = type;
     }])
     .controller('backController', ['$scope', '$http', '$location', 'albumInfo',
         function($scope, $http, $location, albumInfo){

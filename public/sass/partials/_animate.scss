@@ -10,15 +10,15 @@
   @include transform(scale(1));
 }
 
-.view-container.ng-enter {
+.animateView.ng-enter {
   opacity: 0;
   @include transition(all .5s ease-in-out);
 }
 
-.view-container.ng-enter.ng-enter-active {
+.animateView.ng-enter.ng-enter-active {
   opacity: 1;
 }
-.view-container.ng-leave {
+.animateView.ng-leave {
   display: none;
 }
 .album-wrapper {

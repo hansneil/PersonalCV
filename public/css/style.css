@@ -22,7 +22,7 @@
 }
 
 /* line 13, ../sass/partials/_animate.scss */
-.view-container.ng-enter {
+.animateView.ng-enter {
   opacity: 0;
   -moz-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
@@ -31,12 +31,12 @@
 }
 
 /* line 18, ../sass/partials/_animate.scss */
-.view-container.ng-enter.ng-enter-active {
+.animateView.ng-enter.ng-enter-active {
   opacity: 1;
 }
 
 /* line 21, ../sass/partials/_animate.scss */
-.view-container.ng-leave {
+.animateView.ng-leave {
   display: none;
 }
 
@@ -1418,7 +1418,7 @@ li {
 }
 /* line 12, ../sass/partials/_photoLayout.scss */
 #photo.content {
-  max-width: 110em;
+  max-width: 100em;
   width: 90%;
 }
 

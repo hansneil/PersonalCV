@@ -4,22 +4,10 @@
 <div class="content">
     <ul>
         <li ng-repeat="photo in photography.types">
-            <a ng-class="{'selected': photo.active}" ng-click="chooseAlbum(photo)">{{photo.type | uppercase}}</a>
+            <a ng-class="{'selected': photo.active}" ui-sref="album.{{photo.type}}">{{photo.type | uppercase}}</a>
         </li>
     </ul>
-    <div class="album-wrapper" ng-repeat="photo in photography.selectedAlbum">
-        <p>
-            <span>{{photo.type}}</span> {{photo.city}}
-            <span class="likes">
-                <i class="glyphicon" ng-class="{'glyphicon-heart': active, 'glyphicon-heart-empty': !active}"
-                   source="{{photo.src}}" mobile-click=""></i> {{likes}}
-            </span>
-            <span class="likes comment">
-                <a class="glyphicon glyphicon-comment comment" ng-href="/comment/{{photography.activeType + $index}}"></a> ...
-            </span>
-        </p>
-        <img ng-src="{{photo.src}}" like>
-    </div>
+    <div class="animateView" ui-view></div>
     <p>FOR MORE PHOTOS : <a href="http://hansneil.lofter.com">LOFTER</a></p>
     <p>GO BACK: <a href="#/home">HOME</a></p>
 </div>
