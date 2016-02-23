@@ -14,7 +14,7 @@ a {
 .home-wrapper {
   @include at-breakpoint($M) {
     position: absolute;
-    width: 45em;
+    width: 50em;
     height: 20em;
     margin: auto;
     top: 0;

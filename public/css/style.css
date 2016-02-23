@@ -1043,7 +1043,7 @@ a {
   /* line 14, ../sass/partials/_homeLayout.scss */
   .home-wrapper {
     position: absolute;
-    width: 45em;
+    width: 50em;
     height: 20em;
     margin: auto;
     top: 0;
@@ -1645,18 +1645,58 @@ li {
   }
 }
 
-/* line 13, ../sass/style.scss */
+/* line 1, ../sass/partials/_plugins.scss */
+.content .bar-name {
+  font-size: 10em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+/* line 6, ../sass/partials/_plugins.scss */
+.process-bar {
+  position: relative;
+  width: 50em;
+  height: .5em;
+  margin: 5em auto;
+  background-color: #6e6e6e;
+  border-radius: 10px;
+}
+/* line 13, ../sass/partials/_plugins.scss */
+.process-bar:hover {
+  cursor: pointer;
+}
+/* line 16, ../sass/partials/_plugins.scss */
+.process-bar .process-bar-inside {
+  width: 0;
+  height: 100%;
+  background-color: #00c3ab;
+  border-radius: 10px;
+  cursor: pointer;
+}
+/* line 23, ../sass/partials/_plugins.scss */
+.process-bar .round-point {
+  position: absolute;
+  width: 1.5em;
+  height: 1.5em;
+  margin-top: -.5em;
+  left: 0px;
+  background-color: #da0760;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* line 14, ../sass/style.scss */
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak],
 .ng-cloak, .x-ng-cloak, .ng-hide:not(.ng-hide-animate) {
   display: none !important;
 }
 
-/* line 18, ../sass/style.scss */
+/* line 19, ../sass/style.scss */
 ng\:form {
   display: block;
 }
 
-/* line 22, ../sass/style.scss */
+/* line 23, ../sass/style.scss */
 .name, .main-page, .circle-shadow, .circle, .img-circle.active, .gray-circle.active {
   position: absolute;
   margin: auto;
@@ -1970,7 +2010,7 @@ ng\:form {
     transform: scale(0);
   }
 }
-/* line 202, ../sass/style.scss */
+/* line 203, ../sass/style.scss */
 .name {
   color: #00c3ab;
   font-family: 'axis';
@@ -1991,7 +2031,7 @@ ng\:form {
   box-shadow: 3px 3px 2px #c7fa5a;
 }
 
-/* line 218, ../sass/style.scss */
+/* line 219, ../sass/style.scss */
 .main-page {
   color: #ffffff;
   width: 4em;
@@ -2001,16 +2041,16 @@ ng\:form {
   text-align: center;
   top: 7em;
 }
-/* line 227, ../sass/style.scss */
+/* line 228, ../sass/style.scss */
 .main-page span {
   color: #c7fa5a;
 }
-/* line 230, ../sass/style.scss */
+/* line 231, ../sass/style.scss */
 .main-page.gray {
   color: #c7fa5a;
 }
 
-/* line 234, ../sass/style.scss */
+/* line 235, ../sass/style.scss */
 .circle-shadow {
   width: 6em;
   height: 6em;
@@ -2023,7 +2063,7 @@ ng\:form {
   animation: shadow 1.2s infinite ease-out;
 }
 
-/* line 242, ../sass/style.scss */
+/* line 243, ../sass/style.scss */
 .circle {
   width: 6em;
   height: 6em;
@@ -2034,7 +2074,7 @@ ng\:form {
   border: 2px solid #ffffff;
   cursor: pointer;
 }
-/* line 250, ../sass/style.scss */
+/* line 251, ../sass/style.scss */
 .circle.active {
   -moz-animation: larger 0.2s ease-out;
   -webkit-animation: larger 0.2s ease-out;
@@ -2045,7 +2085,7 @@ ng\:form {
   cursor: default;
 }
 
-/* line 256, ../sass/style.scss */
+/* line 257, ../sass/style.scss */
 .img-circle.active {
   width: 6em;
   height: 6em;
@@ -2058,7 +2098,7 @@ ng\:form {
   animation: gray-larger 0.2s ease-out;
 }
 
-/* line 264, ../sass/style.scss */
+/* line 265, ../sass/style.scss */
 .gray-circle.active {
   width: 3em;
   height: 3em;
@@ -2074,7 +2114,7 @@ ng\:form {
   animation-fill-mode: forwards;
 }
 
-/* line 273, ../sass/style.scss */
+/* line 274, ../sass/style.scss */
 #my-cv {
   width: 100%;
   overflow: visible;
@@ -2093,25 +2133,25 @@ ng\:form {
   box-shadow: 1px 1px 10px #636363;
 }
 @media (min-width: 47em) {
-  /* line 273, ../sass/style.scss */
+  /* line 274, ../sass/style.scss */
   #my-cv {
     width: 90%;
   }
 }
 @media (min-width: 64em) {
-  /* line 273, ../sass/style.scss */
+  /* line 274, ../sass/style.scss */
   #my-cv {
     width: 90%;
   }
 }
 @media (min-width: 75em) {
-  /* line 273, ../sass/style.scss */
+  /* line 274, ../sass/style.scss */
   #my-cv {
     width: 80%;
   }
 }
 
-/* line 294, ../sass/style.scss */
+/* line 295, ../sass/style.scss */
 .view-container {
   width: 100%;
   height: 100%;
@@ -2130,7 +2170,7 @@ ng\:form {
   src: url("/css/fonts/glyphicons-halflings-regular.eot");
   src: url("/css/fonts/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("/css/fonts/glyphicons-halflings-regular.woff2") format("woff2"), url("/css/fonts/glyphicons-halflings-regular.woff") format("woff"), url("/css/fonts/glyphicons-halflings-regular.ttf") format("truetype"), url("/css/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg");
 }
-/* line 313, ../sass/style.scss */
+/* line 314, ../sass/style.scss */
 .glyphicon {
   position: relative;
   top: 1px;
@@ -2143,32 +2183,32 @@ ng\:form {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* line 326, ../sass/style.scss */
+/* line 327, ../sass/style.scss */
 .glyphicon-heart:before {
   content: "\e005";
 }
 
-/* line 330, ../sass/style.scss */
+/* line 331, ../sass/style.scss */
 .glyphicon-heart-empty:before {
   content: "\e143";
 }
 
-/* line 334, ../sass/style.scss */
+/* line 335, ../sass/style.scss */
 .glyphicon-comment:before {
   content: "\e111";
 }
 
-/* line 337, ../sass/style.scss */
+/* line 338, ../sass/style.scss */
 .glyphicon-home:before {
   content: "\e021";
 }
 
-/* line 341, ../sass/style.scss */
+/* line 342, ../sass/style.scss */
 .glyphicon-chevron-left:before {
   content: "\e079";
 }
 
-/* line 344, ../sass/style.scss */
+/* line 345, ../sass/style.scss */
 .glyphicon-chevron-right:before {
   content: "\e080";
 }

@@ -1,0 +1,33 @@
+.content .bar-name {
+  font-size: 10em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.process-bar {
+  position: relative;
+  width: 50em;
+  height: .5em;
+  margin: 5em auto;
+  background-color: $color2;
+  border-radius: 10px;
+  &:hover {
+    cursor: pointer;
+  }
+  & .process-bar-inside {
+    width: 0;
+    height: 100%;
+    background-color: $color3;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  & .round-point {
+    position: absolute;
+    width: 1.5em;
+    height: 1.5em;
+    margin-top: -.5em;
+    left: 0px;
+    background-color: $color7;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+}

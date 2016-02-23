@@ -88,6 +88,11 @@ angular.module('ownPage', ['ngRoute', 'ngAnimate', 'ui.router', 'security'])
                     }
                 }
             })
+            /*.state('plugins', {
+                url: '/plugins',
+                templateUrl: '/pages/plugins.html',
+                controller: 'PluginController'
+            })*/
             .state('blog', {
                 url: '/blog',
                 templateUrl: '/pages/blog.html',
@@ -262,6 +267,9 @@ angular.module('ownPage', ['ngRoute', 'ngAnimate', 'ui.router', 'security'])
             });
 
     }])
+    .controller('PluginController', ['$scope', function(){
+
+    }])
     .controller('blogController', ['$scope', '$timeout', function($scope, $timeout){
         $scope.alternative = {
             text: 'Coming soon...'
@@ -377,5 +385,81 @@ angular.module('ownPage', ['ngRoute', 'ngAnimate', 'ui.router', 'security'])
                 });
             }
         }
+    }])
+    .directive('dragBar', function(){
+        return {
+            restrict: 'A',
+            link: function(scope, element, attr){
+                var markStart = 0, dist, prevDist = 0;
+                console.log(element);
+                var eventHandler = function($event) {
+                    var markEnd = $event.pageX;
+                    if (markStart) {
+                        dist = markEnd - markStart;
+                        dist = prevDist + dist;
+                        if (dist <= 0) {
+                            dist = 0;
+                        } else if (dist >= 700) {
+                            dist = 700;
+                        }
+                        scope.bar.width = dist;
+                        element.css('left', dist + 'px');
+                    }
+                };
+
+                element.on('mousedown', function($event){
+                    markStart = $event.pageX;
+                    element.bind('mousemove', eventHandler);
+                    element.parent().bind('mousemove', eventHandler);
+                });
+                scope.$on('status', function(evt){
+                    console.log(evt.targetScope.status);
+                    if (!evt.targetScope.status) {
+                        markStart = 0;
+                        prevDist = dist;
+                        element.unbind('mousemove');
+                        element.parent().unbind('mousemove');
+                    }
+                })
+            }
+        }
+    })
+    .directive('dragWrapper', function(){
+        return {
+            restrict: 'A',
+            link: function(scope, element, attr) {
+                scope.status = true;
+                element.on('mouseup', function($event){
+                    scope.status = false;
+                    scope.$broadcast('status', status);
+                });
+                element.on('mousedown', function($event){
+                    scope.status = true;
+                    scope.$broadcast('status', status);
+                })
+            }
+        }
+    })
+    .directive('dragVis', function(){
+        return {
+            restrict: 'A',
+            link: function(scope, element, attr) {
+                var evtHandler = function($event) {
+                    element.css('width', scope.bar.width + 'px');
+                };
+                scope.$on('status', function(evt){
+                    if (evt.targetScope.status) {
+                        element.parent().bind('mousemove', evtHandler);
+                    }
+                });
+                element.parent().on('mousemove', evtHandler);
+            }
+        }
+    })
+    .controller('DragController', ['$scope', function($scope){
+        $scope.bar = {
+            width: 0,
+            name: 'XXS'
+        };
     }]);
 
