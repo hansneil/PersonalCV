@@ -43,6 +43,7 @@ angular.module('ownPage', ['ngRoute', 'ngAnimate', 'ui.router', 'security'])
                 controller: "cvController"
             })
             .state('album', {
+                abstract: true,
                 url: '/album',
                 templateUrl: '/pages/album.html',
                 controller: 'AlbumController'
