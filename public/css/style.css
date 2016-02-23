@@ -1417,7 +1417,7 @@ li {
   font-size: .8em;
   margin-bottom: -2em;
 }
-@media (min-width: 47em) {
+@media (min-width: 60em) {
   /* line 1, ../sass/partials/_photoLayout.scss */
   #photo-header.header {
     font-size: 1em;
@@ -1455,7 +1455,7 @@ li {
   padding-bottom: .5em;
   border-bottom: 1.5px solid #461d45;
 }
-@media (min-width: 47em) {
+@media (min-width: 60em) {
   /* line 17, ../sass/partials/_photoLayout.scss */
   .content p.title {
     font-size: 1.5em;
@@ -1470,7 +1470,7 @@ li {
   font-size: .5em;
   display: none;
 }
-@media (min-width: 47em) {
+@media (min-width: 60em) {
   /* line 29, ../sass/partials/_photoLayout.scss */
   .content p.title small {
     display: inline-block;
@@ -1491,7 +1491,7 @@ li {
 .img-container {
   margin-top: 2em;
 }
-@media (min-width: 47em) {
+@media (min-width: 60em) {
   /* line 45, ../sass/partials/_photoLayout.scss */
   .img-container {
     margin-top: auto;
@@ -1506,14 +1506,14 @@ li {
   margin: 0 auto;
   width: 100%;
 }
-@media (min-width: 47em) {
+@media (min-width: 60em) {
   /* line 51, ../sass/partials/_photoLayout.scss */
   .img-container img {
     border-radius: 15px;
   }
 }
 
-@media (min-width: 47em) {
+@media (min-width: 60em) {
   /* line 60, ../sass/partials/_photoLayout.scss */
   .comment-container {
     width: 32.39437%;
@@ -1527,7 +1527,7 @@ li {
   margin-top: -.5em;
   text-align: center;
 }
-@media (min-width: 47em) {
+@media (min-width: 60em) {
   /* line 65, ../sass/partials/_photoLayout.scss */
   .photo-button {
     margin-top: 2em;
@@ -1551,7 +1551,7 @@ li {
   color: #ffffff;
   cursor: pointer;
 }
-@media (min-width: 47em) {
+@media (min-width: 60em) {
   /* line 72, ../sass/partials/_photoLayout.scss */
   .photo-button div {
     width: 2em;
@@ -1572,7 +1572,7 @@ li {
   float: right;
   background-color: #ff3f68;
 }
-@media (min-width: 47em) {
+@media (min-width: 60em) {
   /* line 96, ../sass/partials/_photoLayout.scss */
   .photo-button div.prev, .photo-button div.next {
     float: none;
@@ -1583,7 +1583,7 @@ li {
 .photo-button div.forbid {
   background-color: #6e6e6e;
 }
-@media (min-width: 47em) {
+@media (min-width: 60em) {
   /* line 102, ../sass/partials/_photoLayout.scss */
   .photo-button div.forbid {
     background-color: #ffffff;
@@ -1603,7 +1603,7 @@ li {
 .photo-button div a.forbid {
   color: #ffffff;
 }
-@media (min-width: 47em) {
+@media (min-width: 60em) {
   /* line 120, ../sass/partials/_photoLayout.scss */
   .photo-button div a.forbid {
     color: #6e6e6e;
@@ -1627,7 +1627,7 @@ li {
 .small-scale {
   display: block;
 }
-@media (min-width: 47em) {
+@media (min-width: 60em) {
   /* line 141, ../sass/partials/_photoLayout.scss */
   .small-scale {
     display: none;
@@ -1638,7 +1638,7 @@ li {
 .large-scale {
   display: none;
 }
-@media (min-width: 47em) {
+@media (min-width: 60em) {
   /* line 147, ../sass/partials/_photoLayout.scss */
   .large-scale {
     display: block;

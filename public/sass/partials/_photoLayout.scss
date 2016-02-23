@@ -1,7 +1,7 @@
 #photo-header.header {
   font-size: .8em;
   margin-bottom: -2em;
-  @include at-breakpoint($M) {
+  @include at-breakpoint($MPlus) {
     font-size: 1em;
     margin-bottom: 0;
   }
@@ -18,7 +18,7 @@
   margin-top: .5em;
   margin-bottom: .5em;
   font-size: 1em;
-  @include at-breakpoint($M) {
+  @include at-breakpoint($MPlus) {
     font-size: 1.5em;
   }
   padding-bottom: .5em;
@@ -29,7 +29,7 @@
   & small {
     font-size: .5em;
     display: none;
-    @include at-breakpoint($M) {
+    @include at-breakpoint($MPlus) {
       display: inline-block;
     }
   }
@@ -44,7 +44,7 @@
 }
 .img-container {
   margin-top: 2em;
-  @include at-breakpoint($M) {
+  @include at-breakpoint($MPlus) {
     margin-top: auto;
     @include span-columns(8, 12);
   }
@@ -52,20 +52,20 @@
     display: block;
     margin: 0 auto;
     width: 100%;
-    @include at-breakpoint($M) {
+    @include at-breakpoint($MPlus) {
       border-radius: 15px;
     }
   }
 }
 .comment-container {
-  @include at-breakpoint($M) {
+  @include at-breakpoint($MPlus) {
     @include span-columns(4 omega, 12);
   }
 }
 .photo-button {
   margin-top: -.5em;
   //margin-bottom: 1em;
-  @include at-breakpoint($M) {
+  @include at-breakpoint($MPlus) {
     margin-top: 2em;
   }
   text-align: center;
@@ -77,7 +77,7 @@
     font-size: .8em;
     /*margin-left: .5em;
     margin-right: .5em;*/
-    @include at-breakpoint($M) {
+    @include at-breakpoint($MPlus) {
       width: 2em;
       height: 2em;
       margin-left: 1em;
@@ -94,14 +94,14 @@
       background-color: $color9;
     }
     &.prev, &.next {
-      @include at-breakpoint($M) {
+      @include at-breakpoint($MPlus) {
         float: none;
         background-color: $color5;
       }
     }
     &.forbid {
       background-color: $color2;
-      @include at-breakpoint($M) {
+      @include at-breakpoint($MPlus) {
         background-color: $color5;
       }
     }
@@ -119,7 +119,7 @@
       height: 100%;
       &.forbid {
         color: $color5;
-        @include at-breakpoint($M) {
+        @include at-breakpoint($MPlus) {
           color: $color2;
         }
       }
@@ -140,13 +140,13 @@
 }
 .small-scale {
   display: block;
-  @include at-breakpoint($M) {
+  @include at-breakpoint($MPlus) {
     display: none;
   }
 }
 .large-scale {
   display: none;
-  @include at-breakpoint($M) {
+  @include at-breakpoint($MPlus) {
     display: block;
   }
 }
