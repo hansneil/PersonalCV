@@ -52,6 +52,8 @@ app.use('/users', users);
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
+  console.log('4040404040404004040');
+  res.render('error');
   next(err);
 });
 

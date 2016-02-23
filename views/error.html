@@ -1,4 +1,29 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
-<pre><%= error.stack %></pre>
+<!DOCTYPE html>
+<html lang="en" ng-app="ownPage">
+<head>
+    <title>hansneil</title>
+    <meta name="viewport" content="initial-scale=1.0,width=device-width,user-scalable=0" />
+    <link rel='stylesheet' href='/css/style.css' />
+    <link rel="SHORTCUT ICON" href="/img/icon.ico" />
+</head>
+<body ng-controller="backController">
+<div class="wrapper">
+    404 Not Found.
+    <p class="redirect">
+         You are lost, maybe go to :
+    </p>
+    <ul class="redirect">
+        <li><a href="/#/home">home</a></li>
+        <li><a href="/#/cv">cv</a></li>
+        <li><a href="/#/album">album</a></li>
+        <li><a href="/#/blog">blog</a></li>
+    </ul>
+</div>
+<script src="/js/angular.min.js"></script>
+<script src="/js/angular-route.min.js"></script>
+<script src="/js/angular-animate.min.js"></script>
+<script src="/js/angular-ui-router.js"></script>
+<script src="/js/page_app.js"></script>
+<script id="dsq-count-scr" src="//hansneil.disqus.com/count.js" async></script>
+</body>
+</html>

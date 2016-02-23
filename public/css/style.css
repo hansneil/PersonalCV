@@ -1392,6 +1392,25 @@ li {
     font-size: 4em;
   }
 }
+/* line 19, ../sass/partials/_blogLayout.scss */
+.wrapper .redirect {
+  font-size: .4em;
+}
+/* line 21, ../sass/partials/_blogLayout.scss */
+.wrapper .redirect a {
+  color: #da0760;
+  text-decoration: underline;
+}
+/* line 25, ../sass/partials/_blogLayout.scss */
+.wrapper .redirect li {
+  display: inline-block;
+  padding: 0 .5em;
+}
+/* line 30, ../sass/partials/_blogLayout.scss */
+.wrapper ul {
+  text-align: center;
+  margin: 0 auto;
+}
 
 /* line 1, ../sass/partials/_photoLayout.scss */
 #photo-header.header {
