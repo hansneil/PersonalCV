@@ -108,10 +108,10 @@ angular.module('ownPage', ['ngRoute', 'ngAnimate', 'ui.router', 'security'])
             .state('wechat', {
                 url: '/wechat',
                 templateUrl: '/pages/wechat.html'
-            })
-            /*.otherwise({
-                redirectTo: '/home'
-            });*/
+            });
+        $urlRouterProvider
+            .when('/album', '/album/all')
+            .otherwise('/home');
     }])
     .factory('cvInfo', function(){
         var title = "Hansneil";
