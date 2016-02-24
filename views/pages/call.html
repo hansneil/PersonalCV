@@ -1,10 +1,64 @@
 <div class="header">
-    <p>Call</p>
+    <p>Get <span class="span">24</span> to Enter Fantastic World</p>
 </div>
 <div class="call-content">
-    <div class="button-wrapper">
-        <div class="call-button" ng-click="change($index)" ng-class="{active: num.active, visible: num.checkActive}" ng-repeat="num in list.views">
+    <div class="button-wrapper" ng-class="{forbid: list.completed}">
+        <div class="call-button" ng-click="!list.completed && select($index)" ng-class="{active: num.active, visible: num.checkActive, shadow: num.shadowActive}" ng-repeat="num in list.views">
             <a>{{num.number}}</a>
+        </div>
+        <div class="alert animateIf" ng-if="!list.trueCount && !list.completed && !list.times">
+            Please choose <span>4</span> numbers only!
+        </div>
+        <div class="alert animateIf" ng-if="!!list.times && !list.completed && !list.trueCount">
+            Try another <span>4</span> numbers to meet another fantastic world!
+        </div>
+        <div class="success animateIf" ng-if="list.trueCount == 4">
+            <a ng-click="complete()">OK !</a>
+        </div>
+        <div class="animateIf" ng-if="!list.passed">
+            <div class="select-number animateIf" ng-if="list.completed">
+                <p>You've selected:</p>
+            </div>
+            <div class="call-button active no-forbid shadow animateIf" ng-repeat="num in list.selectedNumber" ng-if="list.completed">
+                <span>{{num.number}}</span>
+            </div>
+            <div ng-if="list.completed" class="calc animateIf">
+                <input ng-model='list.result' type="text" class="input">
+                <i class="glyphicon glyphicon-send" ng-click="calc()"></i>
+                <p class="msg">{{list.msg}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content plugin-content animateIf" ng-if="!list.trueCount && list.passed">
+    <div ng-switch on="chooseView">
+        <div ng-switch-when="1" class="spinner">
+            <div class="rotating-plane plane1"></div>
+            <div class="rotating-plane plane2"></div>
+        </div>
+        <div ng-switch-when="2">
+            <p>Here comes the animation-2!</p>
+        </div>
+        <div ng-switch-when="3">
+            <p>Here comes the animation-3!</p>
+        </div>
+        <div ng-switch-when="4">
+            <p>Here comes the animation-4!</p>
+        </div>
+        <div ng-switch-when="5">
+            <p>Here comes the animation-5!</p>
+        </div>
+        <div ng-switch-when="6">
+            <p>Here comes the animation-6!</p>
+        </div>
+        <div ng-switch-when="7">
+            <p>Here comes the animation-7!</p>
+        </div>
+        <div ng-switch-when="8">
+            <p>Here comes the animation-8!</p>
+        </div>
+        <div ng-switch-when="9">
+            <p>Here comes the animation-9!</p>
         </div>
     </div>
 </div>

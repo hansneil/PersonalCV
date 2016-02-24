@@ -63,11 +63,25 @@
     cursor: pointer;
   }
 }
+
+//call plugins
+.header .span {
+  color: $color7;
+}
 .call-content {
   margin: 2em auto;
   text-align: center;
   & .button-wrapper {
     margin-bottom: 1em;
+  }
+}
+.forbid .call-button {
+  &:hover {
+    cursor: default;
+    opacity: 0.5;
+  }
+  &.no-forbid:hover {
+    opacity: 1;
   }
 }
 .call-button {
@@ -80,11 +94,11 @@
   color: $color3;
   border-radius: 50%;
   opacity: 0.5;
-  &:hover, &.active{
+  &:hover, &.active {
     opacity: 1;
     cursor: pointer;
   }
-  & a {
+  & a, & span {
     display: block;
     position: absolute;
     width: 1em;
@@ -104,5 +118,77 @@
   &:hover {
     opacity: 0;
     cursor: default;
+  }
+}
+.shadow {
+  @include box-shadow(3px 3px 15px lighten($color2, 20%));
+}
+.alert, .success, .select-number {
+  margin-top: 2em;
+  font-family: 'axis';
+  color: $color5;
+  & span {
+    color: $color9;
+  }
+  & a {
+    display: inline-block;
+    width: 4em;
+    height: 1em;
+    padding: .5em .5em;
+    border-radius: 10px;
+    background-color: $color5;
+    color: $color3;
+    cursor: pointer;
+    opacity: .8;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  & p {
+    font-size: 4em;
+  }
+}
+.input {
+  padding: .5em .5em;
+  font-size: 1em;
+  font-family: 'axis';
+  text-align: center;
+  &:focus {
+    outline: none;
+  }
+  border: none;
+  border-radius: 10px;
+  color: $color7;
+}
+.calc {
+  margin: 3em auto;
+  & i {
+    margin-left: 1em;
+    color: $color5;
+    padding: .5em;
+    border-radius: 50%;
+    border: 2px solid $color5;
+    &:hover {
+      cursor: pointer;
+      color: $color3;
+      background-color: $color5;
+    }
+  }
+}
+p.msg {
+  font-size: 1em;
+  font-family: 'axis';
+  margin-top: 1em;
+  color: $color7;
+}
+div.content.plugin-content {
+  background-color: inherit;
+  border: 3px solid $color5;
+  @include box-shadow(3px 3px 15px lighten($color2, 20%));
+  & p {
+    text-align: center;
+    font-family: 'axis';
+    font-size: 3em;
+    color: $color5;
   }
 }
