@@ -1729,6 +1729,59 @@ li {
   }
 }
 
+/* line 66, ../sass/partials/_plugins.scss */
+.call-content {
+  margin: 2em auto;
+  text-align: center;
+}
+/* line 69, ../sass/partials/_plugins.scss */
+.call-content .button-wrapper {
+  margin-bottom: 1em;
+}
+
+/* line 73, ../sass/partials/_plugins.scss */
+.call-button {
+  position: relative;
+  display: inline-block;
+  width: 5em;
+  height: 5em;
+  margin-right: 1em;
+  background-color: #ffffff;
+  color: #00c3ab;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+/* line 83, ../sass/partials/_plugins.scss */
+.call-button:hover, .call-button.active {
+  opacity: 1;
+  cursor: pointer;
+}
+/* line 87, ../sass/partials/_plugins.scss */
+.call-button a {
+  display: block;
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  font-family: 'axis';
+  font-size: 2.5em;
+}
+
+/* line 102, ../sass/partials/_plugins.scss */
+.visible {
+  opacity: 0;
+}
+/* line 104, ../sass/partials/_plugins.scss */
+.visible:hover {
+  opacity: 0;
+  cursor: default;
+}
+
 /* line 14, ../sass/style.scss */
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak],
 .ng-cloak, .x-ng-cloak, .ng-hide:not(.ng-hide-animate) {

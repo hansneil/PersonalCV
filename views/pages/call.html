@@ -1,0 +1,10 @@
+<div class="header">
+    <p>Call</p>
+</div>
+<div class="call-content">
+    <div class="button-wrapper">
+        <div class="call-button" ng-click="change($index)" ng-class="{active: num.active, visible: num.checkActive}" ng-repeat="num in list.views">
+            <a>{{num.number}}</a>
+        </div>
+    </div>
+</div>

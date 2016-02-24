@@ -63,3 +63,46 @@
     cursor: pointer;
   }
 }
+.call-content {
+  margin: 2em auto;
+  text-align: center;
+  & .button-wrapper {
+    margin-bottom: 1em;
+  }
+}
+.call-button {
+  position: relative;
+  display: inline-block;
+  width: 5em;
+  height: 5em;
+  margin-right: 1em;
+  background-color: $color5;
+  color: $color3;
+  border-radius: 50%;
+  opacity: 0.5;
+  &:hover, &.active{
+    opacity: 1;
+    cursor: pointer;
+  }
+  & a {
+    display: block;
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    font-family: 'axis';
+    font-size: 2.5em;
+  }
+}
+.visible {
+  opacity: 0;
+  &:hover {
+    opacity: 0;
+    cursor: default;
+  }
+}

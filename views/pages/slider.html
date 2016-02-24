@@ -1,0 +1,10 @@
+<div class="header">
+    <p>Slider</p>
+</div>
+<div class="content" ng-controller="DragController">
+    <p class="bar-name">{{bar.name}}</p>
+    <div class="process-bar" drag-wrapper>
+        <div class="round-point" drag-bar="{{width}}"></div>
+        <div class="process-bar-inside" drag-vis="{{width}}"></div>
+    </div>
+</div>

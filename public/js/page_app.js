@@ -28,7 +28,7 @@ angular.module('security', [])
         ]
     });
 
-angular.module('ownPage', ['ngRoute', 'ngAnimate', 'ui.router', 'security', 'drag'])
+angular.module('ownPage', ['ngRoute', 'ngAnimate', 'ui.router', 'security', 'drag', 'call'])
     .config(['$stateProvider', '$urlRouterProvider', 'securityProvider',
         function($stateProvider, $urlRouterProvider, security){
         $stateProvider
@@ -92,6 +92,16 @@ angular.module('ownPage', ['ngRoute', 'ngAnimate', 'ui.router', 'security', 'dra
                 url: '/plugins',
                 templateUrl: '/pages/plugins.html',
                 controller: 'PluginController'
+            })
+            .state('plugins.show', {
+                url: '/slider',
+                templateUrl: '/pages/slider.html',
+                //controller: 'PluginController'
+            })
+            .state('plugins.call', {
+                url: '/call',
+                templateUrl: '/pages/call.html',
+                controller: 'CallController'
             })
             .state('blog', {
                 url: '/blog',
