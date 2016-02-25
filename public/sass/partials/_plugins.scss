@@ -224,6 +224,9 @@ div.content.plugin-content {
     &.home-link {
       font-size: 1em;
     }
+    & a {
+      cursor: pointer;
+    }
     color: $color5;
   }
 }

@@ -95,6 +95,15 @@ angular.module('call', [])
             }
         };
         $scope.complete = viewList.complete;
+        $scope.redirectHome = function(){
+            $scope.list.trueCount = 0;
+            $scope.list.selectedNumber = [];
+            $scope.list.completed = false;
+            $scope.list.result = '';
+            $scope.list.passed = false;
+            $scope.list.times = 0;
+            $location.path('/home');
+        };
         console.log($location.path());
         $scope.calc = function(){
             var expr = $scope.list.result,

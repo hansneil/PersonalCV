@@ -2927,6 +2927,10 @@ div.content.plugin-content p {
 div.content.plugin-content p.home-link {
   font-size: 1em;
 }
+/* line 227, ../sass/partials/_plugins.scss */
+div.content.plugin-content p a {
+  cursor: pointer;
+}
 
 /* line 14, ../sass/style.scss */
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak],
