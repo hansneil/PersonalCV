@@ -635,10 +635,10 @@
   /*-webkit-transform: rotate(300deg);
   -ms-transform: rotate(300deg);
   transform: rotate(300deg)*/
-  -moz-transform: rotate(270deg);
-  -ms-transform: rotate(270deg);
-  -webkit-transform: rotate(270deg);
-  transform: rotate(270deg);
+  -moz-transform: rotate(300deg);
+  -ms-transform: rotate(300deg);
+  -webkit-transform: rotate(300deg);
+  transform: rotate(300deg);
 }
 
 /* line 468, ../sass/partials/_animate.scss */
