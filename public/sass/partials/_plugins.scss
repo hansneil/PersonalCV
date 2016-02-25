@@ -198,11 +198,13 @@
     }
   }
 }
-p.msg {
-  font-size: 1em;
-  font-family: 'axis';
-  margin-top: 1em;
-  color: $color7;
+p {
+  &.msg {
+    font-size: 1em;
+    font-family: 'axis';
+    margin-top: 1em;
+    color: $color7;
+  }
 }
 div.content.plugin-content {
   @include container;
@@ -218,6 +220,9 @@ div.content.plugin-content {
     @include at-breakpoint($M) {
       margin-top: 2em;
       font-size: 3em;
+    }
+    &.home-link {
+      font-size: 1em;
     }
     color: $color5;
   }

@@ -86,6 +86,7 @@ angular.module('call', [])
                 }
                 if ($scope.list.trueCount > 4) {
                     viewList.hideViews($scope.list);
+                    $scope.list.selectedNumber = [];
                 } else {
                     viewList.setActive(index, $scope.list);
                 }

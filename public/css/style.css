@@ -2878,7 +2878,7 @@ li {
   background-color: #ffffff;
 }
 
-/* line 201, ../sass/partials/_plugins.scss */
+/* line 202, ../sass/partials/_plugins.scss */
 p.msg {
   font-size: 1em;
   font-family: 'axis';
@@ -2886,7 +2886,7 @@ p.msg {
   color: #da0760;
 }
 
-/* line 207, ../sass/partials/_plugins.scss */
+/* line 209, ../sass/partials/_plugins.scss */
 div.content.plugin-content {
   *zoom: 1;
   max-width: 73em;
@@ -2908,7 +2908,7 @@ div.content.plugin-content:after {
   display: table;
   clear: both;
 }
-/* line 213, ../sass/partials/_plugins.scss */
+/* line 215, ../sass/partials/_plugins.scss */
 div.content.plugin-content p {
   text-align: center;
   font-family: 'axis';
@@ -2917,11 +2917,15 @@ div.content.plugin-content p {
   color: #ffffff;
 }
 @media (min-width: 47em) {
-  /* line 213, ../sass/partials/_plugins.scss */
+  /* line 215, ../sass/partials/_plugins.scss */
   div.content.plugin-content p {
     margin-top: 2em;
     font-size: 3em;
   }
+}
+/* line 224, ../sass/partials/_plugins.scss */
+div.content.plugin-content p.home-link {
+  font-size: 1em;
 }
 
 /* line 14, ../sass/style.scss */
