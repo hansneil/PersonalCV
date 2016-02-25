@@ -81,6 +81,9 @@ angular.module('call', [])
         $scope.select = function(index) {
             if (!$scope.list.views[index].active) {
                 $scope.list.trueCount += 1;
+                if ($scope.list.passed) {
+                    $scope.list.passed = false;
+                }
                 if ($scope.list.trueCount > 4) {
                     viewList.hideViews($scope.list);
                 } else {

@@ -65,8 +65,14 @@
 }
 
 //call plugins
-.header .span {
-  color: $color7;
+.header {
+  font-size: .8em;
+  @include at-breakpoint($M) {
+    font-size: 1em;
+  }
+  & .span {
+    color: $color7;
+  }
 }
 .call-content {
   margin: 2em auto;
@@ -89,6 +95,10 @@
   display: inline-block;
   width: 5em;
   height: 5em;
+  @include at-breakpoint($M) {
+    width: 5em;
+    height: 5em;
+  }
   margin-right: 1em;
   background-color: $color5;
   color: $color3;
@@ -111,6 +121,16 @@
     text-align: center;
     font-family: 'axis';
     font-size: 2.5em;
+  }
+  &.shadow {
+    width: 4em;
+    height: 4em;
+    font-size: 1em;
+    @include at-breakpoint($S) {
+      width: 5em;
+      height: 5em;
+      font-size: 1em;
+    }
   }
 }
 .visible {
@@ -145,7 +165,10 @@
     }
   }
   & p {
-    font-size: 4em;
+    font-size: 2em;
+    @include at-breakpoint($M) {
+      font-size: 4em;
+    }
   }
 }
 .input {
@@ -182,13 +205,20 @@ p.msg {
   color: $color7;
 }
 div.content.plugin-content {
+  @include container;
+  width: 90%;
   background-color: inherit;
   border: 3px solid $color5;
   @include box-shadow(3px 3px 15px lighten($color2, 20%));
   & p {
     text-align: center;
     font-family: 'axis';
-    font-size: 3em;
+    font-size: 2em;
+    margin-top: 0;
+    @include at-breakpoint($M) {
+      margin-top: 2em;
+      font-size: 3em;
+    }
     color: $color5;
   }
 }
