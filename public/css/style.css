@@ -2076,15 +2076,16 @@ a {
 
 /* line 64, ../sass/partials/_homeLayout.scss */
 .footer {
-  bottom: 1em;
+  margin-top: 1em;
 }
 @media (min-width: 47em) {
   /* line 64, ../sass/partials/_homeLayout.scss */
   .footer {
     position: fixed;
+    bottom: 1em;
   }
 }
-/* line 69, ../sass/partials/_homeLayout.scss */
+/* line 70, ../sass/partials/_homeLayout.scss */
 .footer p {
   font-family: 'axis';
   font-size: 1.5em;
@@ -2094,13 +2095,13 @@ a {
   text-align: center;
 }
 @media (min-width: 47em) {
-  /* line 69, ../sass/partials/_homeLayout.scss */
+  /* line 70, ../sass/partials/_homeLayout.scss */
   .footer p {
     display: inline-block;
   }
 }
 
-/* line 81, ../sass/partials/_homeLayout.scss */
+/* line 82, ../sass/partials/_homeLayout.scss */
 ul {
   width: 80%;
   text-align: center;
@@ -2108,7 +2109,7 @@ ul {
   padding-left: .5em;
 }
 @media (min-width: 47em) {
-  /* line 81, ../sass/partials/_homeLayout.scss */
+  /* line 82, ../sass/partials/_homeLayout.scss */
   ul {
     display: inline-block;
     width: auto;
@@ -2116,7 +2117,7 @@ ul {
   }
 }
 
-/* line 93, ../sass/partials/_homeLayout.scss */
+/* line 94, ../sass/partials/_homeLayout.scss */
 li {
   font-family: 'axis';
   color: #ffffff;
@@ -2127,7 +2128,7 @@ li {
   padding-top: .2em;
   padding-bottom: .2em;
 }
-/* line 102, ../sass/partials/_homeLayout.scss */
+/* line 103, ../sass/partials/_homeLayout.scss */
 .page li {
   font-size: 1.5em;
   border: 1px solid #ffffff;
@@ -2149,33 +2150,33 @@ li {
   }*/
 }
 @media (min-width: 47em) {
-  /* line 102, ../sass/partials/_homeLayout.scss */
+  /* line 103, ../sass/partials/_homeLayout.scss */
   .page li {
     display: inline-block;
     padding-right: 1em;
     border: 0px solid #ffffff;
   }
 }
-/* line 109, ../sass/partials/_homeLayout.scss */
+/* line 110, ../sass/partials/_homeLayout.scss */
 .page li:hover {
   color: #00c3ab;
   background-color: #ffffff;
   border-radius: 5px;
 }
 @media (min-width: 47em) {
-  /* line 109, ../sass/partials/_homeLayout.scss */
+  /* line 110, ../sass/partials/_homeLayout.scss */
   .page li:hover {
     color: #461d45;
     background-color: inherit;
     border-radius: 0;
   }
 }
-/* line 137, ../sass/partials/_homeLayout.scss */
+/* line 138, ../sass/partials/_homeLayout.scss */
 .footer li {
   display: inline-block;
 }
 @media (min-width: 47em) {
-  /* line 137, ../sass/partials/_homeLayout.scss */
+  /* line 138, ../sass/partials/_homeLayout.scss */
   .footer li {
     padding-right: 1em;
   }

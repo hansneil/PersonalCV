@@ -62,10 +62,11 @@ a {
 }
 
 .footer {
+  margin-top: 1em;
   @include at-breakpoint($M) {
     position: fixed;
+    bottom: 1em;
   }
-  bottom: 1em;
   & p {
     font-family: 'axis';
     font-size: 1.5em;
