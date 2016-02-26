@@ -251,11 +251,10 @@ angular.module('ownPage', ['ngRoute', 'ngAnimate', 'ui.router', 'security', 'dra
         console.log($location.path());
         $scope.show = $window.innerWidth > 752;
         $window.onresize = function(){
-            console.log('aaa');
             $scope.$apply(function(){
                 $scope.show = $window.innerWidth > 752;
             })
-        }
+        };
     }])
     .controller('cvController', ['$scope', 'cvInfo', function($scope, cvInfo){
         $scope.cvInfo = cvInfo.cvInfo;

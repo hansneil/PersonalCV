@@ -77,7 +77,6 @@ angular.module('call', [])
     })
     .controller('CallController', ['$scope', 'viewList', '$timeout', '$location', function($scope, viewList, $timeout, $location){
         $scope.list = viewList.views;
-        $scope.list.msg = "If no response after submitted, maybe you input an illegal expression";
         $scope.select = function(index) {
             if (!$scope.list.views[index].active) {
                 $scope.list.trueCount += 1;
@@ -107,7 +106,8 @@ angular.module('call', [])
         console.log($location.path());
         $scope.calc = function(){
             var expr = $scope.list.result,
-                regExp = /(\d)[\(\)\+\-\*\/]+(\d)[\(\)\+\-\*\/]+(\d)[\(\)\+\-\*\/]+(\d)/;
+                regExp = /(\d).+(\d).+(\d).+(\d)/;
+                /*regExp = /(\d)[\(\)\+\-\*\/]+(\d)[\(\)\+\-\*\/]+(\d)[\(\)\+\-\*\/]+(\d)/;*/
             var matchRes = expr ? expr.match(regExp) : [];
             var arr = (matchRes && matchRes.length == 5) ? [matchRes[1], matchRes[2], matchRes[3], matchRes[4]] : [];
             var comparedArr = [];
@@ -125,27 +125,28 @@ angular.module('call', [])
             }
             if (!comparedArr.length) {
                 console.log('right');
-                if ($scope.$eval(expr) == 24) {
-                    $scope.list.passed = true;
-                    $scope.list.trueCount = 0;
-                    $scope.chooseView = $scope.list.selectedNumber[0].number;
-                    $scope.list.selectedNumber = [];
-                    $scope.list.completed = false;
+                //这里首先说明输入了所选的四个数,至于表达式是否合法需要交给$eval判断,如果不合法会触发调用异常
+                //这时用过try...catch来捕获异常
+                try {
+                    if ($scope.$eval(expr) == 24) {
+                        $scope.list.passed = true;
+                        $scope.list.trueCount = 0;
+                        $scope.chooseView = $scope.list.selectedNumber[0].number;
+                        $scope.list.selectedNumber = [];
+                        $scope.list.completed = false;
+                        $scope.list.result = '';
+                        $scope.list.times += 1;
+                    } else {
+                        $scope.list.result = '';
+                        $scope.list.msg = 'wrong answer, please try again';
+                    }
+                } catch(ex) {
+                    $scope.list.msg = "an illegal expression, please input a valid one";
                     $scope.list.result = '';
-                    $scope.list.times += 1;
-                } else {
-                    $scope.list.result = '';
-                    $scope.list.msg = 'wrong answer, please try again';
-                    $timeout(function(){
-                        $scope.list.msg = "If no response after submitted, maybe you input an illegal expression";
-                    }, 5000);
                 }
             } else {
                 $scope.list.result = '';
                 $scope.list.msg = 'please use the selected 4 numbers to get 24';
-                $timeout(function(){
-                    $scope.list.msg = "If no response after submitted, maybe you input an illegal expression";
-                }, 5000);
             }
         }
     }]);
