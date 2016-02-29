@@ -112,6 +112,7 @@ angular.module('call', [])
             var arr = (matchRes && matchRes.length == 5) ? [matchRes[1], matchRes[2], matchRes[3], matchRes[4]] : [];
             var comparedArr = [];
             console.log(arr);
+            $scope.list.msg = '';
             for (var i in $scope.list.selectedNumber) {
                 comparedArr[i] = $scope.list.selectedNumber[i].number;
             }
