@@ -15,6 +15,14 @@ exports.getLikes = function(req, res) {
         req.connection.remoteAddress ||
         req.socket.remoteAddress ||
         req.connection.socket.remoteAddress;
+    console.log(req.cookies);
+    if (!req.cookies.hasVisited) {
+        res.cookie('hasVisited', '1', {
+            maxAge: 60*60*1000*24*365,
+            httpOnly: true,
+            path: '/photo'
+        });
+    }
     Photo.findOne({ip: ip})
         .exec(function(err, userIp){
             if (!userIp) {
