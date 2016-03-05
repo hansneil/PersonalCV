@@ -43,7 +43,8 @@ app.use(express.static(path.join(__dirname, 'views')));
 app.post('/login', login.authen);
 app.get('/photo/:id', photo.getLikes);
 app.post('/photo/:id', photo.addLikes);
-app.get('/comment/:id', comment.getComments);
+/*app.get('/comment/:id', comment.getComments);*/
+app.get(/^\/comment\/([a-zA-z]+)(\d+)$/, comment.getComments);
 app.get('/newpage', comment.newComment);
 app.use('/', routes);
 app.use('/users', users);
@@ -54,7 +55,7 @@ app.use(function(req, res, next) {
   err.status = 404;
   /*console.log('4040404040404004040');
   next(err);*/
-  res.render('error');
+  res.status(404).render('error');
 });
 
 // error handlers

@@ -129,7 +129,12 @@ angular.module('ownPage', ['ngRoute', 'ngAnimate', 'ui.router', 'security', 'dra
             .when('/album', '/album/all')
             .otherwise('/home');
     }])
-    .factory('cvInfo', function(){
+    .config(['cvInfoProvider', function(cvInfoProvider){
+        var skill = ['HTML'];
+        cvInfoProvider.setTitle('Hansnathan');
+        cvInfoProvider.setSkill(skill);
+    }])
+/*    .factory('cvInfo', function(){
         var title = "Hansneil";
         var left_tags = [
             {area: 'Web Design', style: 'web-design'},
@@ -171,6 +176,76 @@ angular.module('ownPage', ['ngRoute', 'ngAnimate', 'ui.router', 'security', 'dra
             },
             enableClass: function(){
                 return true;
+            }
+        }
+    })*/
+    .provider('cvInfo', function(){
+        var information = {
+            title: "Hansneil",
+            left_tags: [
+                {area: 'Web Design', style: 'web-design'},
+                {area: 'Web Develop', style: 'web-develop'}
+            ],
+            right_tags: [
+                {area: 'Flat Design', style: 'flat-design'},
+                {area: 'Photoshop', style: 'photoshop'},
+                {area: 'Illustrate', style: 'illustrate'},
+            ],
+            progressLeft: [
+                {number: '1', skill: 'HTML5'},
+                {number: '2', skill: 'CSS'},
+                {number: '3', skill: 'SCSS'},
+                {number: '4', skill: 'JavaScript'}
+            ],
+            progressRight: [
+                {number: '5', skill: 'JQuery'},
+                {number: '6', skill: 'Bootstrap'},
+                {number: '7', skill: 'AngularJS'},
+                {number: '8', skill: 'NodeJs'}
+            ],
+            webLink: [
+                {name: 'github', link: 'https://github.com/hansneil'},
+                {name: 'weibo', link: 'http://weibo.com/2434892144/profile?rightmod=1&wvr=6&mod=personinfo'},
+                {name: 'linkedin', link: 'http://www.linkedin.com/in/先波-余-8b658695?trk=nav_responsive_tab_profile_pic'},
+                {name: 'google', link: 'https://plus.google.com/109007860879929993270'},
+                {name: 'stackoverflow', link: 'http://stackoverflow.com/users/5835253/hansneil'},
+                {name: 'facebook', link: 'https://www.facebook.com/profile.php?id=100004108532958'}
+            ]
+        };
+
+        return {
+            setTitle: function(title) {
+                information.title = title || information.title;
+            },
+            setSkill: function(skill) {
+                console.log(skill);
+                if (skill && skill.length <= 4) {
+                    for (var i = 0; i < skill.length; i++) {
+                        information.progressLeft[i].skill = skill[i].toUpperCase() || information.progressLeft[i].skill;
+                    }
+                } else {
+                    for (var i = 0; i < 4; i++) {
+                        information.progressLeft[i].skill = skill[i].toUpperCase() || information.progressLeft[i].skill;
+                    }
+                    for (var i = 4; i < skill.length; i++) {
+                        information.progressRight[i - 4].skill = skill[i].toUpperCase() || information.progressRight[i - 4].skill;
+                    }
+                }
+            },
+            $get: function(){
+                return {
+                    cvInfo: {
+                        title: information.title,
+                        leftTags: information.left_tags,
+                        rightTags: information.right_tags,
+                        progressLeft: information.progressLeft,
+                        progressRight: information.progressRight,
+                        webLink: information.webLink
+                    },
+                    enableClass: function(){
+                        return true;
+                    }
+                }
             }
         }
     })

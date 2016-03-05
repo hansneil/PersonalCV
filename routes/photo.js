@@ -11,11 +11,11 @@ var mongoose = require('mongoose'),
 exports.getLikes = function(req, res) {
     var id = 'p' + req.param('id');
     var active = false;
+    console.log(req.cookies);
     var ip = req.headers['x-forwarded-for'] ||
         req.connection.remoteAddress ||
         req.socket.remoteAddress ||
         req.connection.socket.remoteAddress;
-    console.log(req.cookies);
     if (!req.cookies.hasVisited) {
         res.cookie('hasVisited', '1', {
             maxAge: 60*60*1000*24*365,
@@ -85,6 +85,7 @@ exports.addLikes = function(req, res) {
         req.socket.remoteAddress ||
         req.connection.socket.remoteAddress;
     console.log('post start');
+    console.log(req.headers);
 
     Photo.findOne({ip: ip})
         .exec(function(err, userIp){
