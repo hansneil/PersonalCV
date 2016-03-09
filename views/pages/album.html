@@ -2,11 +2,13 @@
     <p><span>P</span>hotography</p>
 </header>
 <div class="content">
-    <ul>
-        <li ng-repeat="photo in photography.types">
-            <a ng-class="{'selected': photo.active}" ui-sref="album.{{photo.type}}">{{photo.type | uppercase}}</a>
-        </li>
-    </ul>
+    <nav>
+        <ul>
+            <li ng-repeat="photo in photography.types">
+                <a ng-class="{'selected': photo.active}" ui-sref="album.{{photo.type}}">{{photo.type | uppercase}}</a>
+            </li>
+        </ul>
+    </nav>
     <div class="animateView" ui-view></div>
     <p>FOR MORE PHOTOS : <a href="http://hansneil.lofter.com">LOFTER</a></p>
     <p>GO BACK: <a href="#/home">HOME</a></p>
