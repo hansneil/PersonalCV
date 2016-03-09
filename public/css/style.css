@@ -2075,18 +2075,18 @@ a {
 }
 
 /* line 64, ../sass/partials/_homeLayout.scss */
-.footer {
+footer {
   margin-top: 1em;
 }
 @media (min-width: 47em) {
   /* line 64, ../sass/partials/_homeLayout.scss */
-  .footer {
+  footer {
     position: fixed;
     bottom: 1em;
   }
 }
 /* line 70, ../sass/partials/_homeLayout.scss */
-.footer p {
+footer p {
   font-family: 'axis';
   font-size: 1.5em;
   color: #303030;
@@ -2096,7 +2096,7 @@ a {
 }
 @media (min-width: 47em) {
   /* line 70, ../sass/partials/_homeLayout.scss */
-  .footer p {
+  footer p {
     display: inline-block;
   }
 }
@@ -2172,23 +2172,23 @@ li {
   }
 }
 /* line 138, ../sass/partials/_homeLayout.scss */
-.footer li {
+footer li {
   display: inline-block;
 }
 @media (min-width: 47em) {
   /* line 138, ../sass/partials/_homeLayout.scss */
-  .footer li {
+  footer li {
     padding-right: 1em;
   }
 }
 
 /* line 4, ../sass/partials/_albumLayout.scss */
-.header {
+header {
   font-family: 'axis';
   margin-top: 1em;
 }
 /* line 7, ../sass/partials/_albumLayout.scss */
-.header p {
+header p {
   font-size: 3em;
   color: #ffffff;
   margin: 0 auto;
@@ -2385,13 +2385,13 @@ li {
 }
 
 /* line 1, ../sass/partials/_photoLayout.scss */
-#photo-header.header {
+header#photo-header {
   font-size: .8em;
   margin-bottom: -2em;
 }
 @media (min-width: 60em) {
   /* line 1, ../sass/partials/_photoLayout.scss */
-  #photo-header.header {
+  header#photo-header {
     font-size: 1em;
     margin-bottom: 0;
   }
@@ -2702,17 +2702,17 @@ li {
 }
 
 /* line 68, ../sass/partials/_plugins.scss */
-.header {
+header {
   font-size: .8em;
 }
 @media (min-width: 47em) {
   /* line 68, ../sass/partials/_plugins.scss */
-  .header {
+  header {
     font-size: 1em;
   }
 }
 /* line 73, ../sass/partials/_plugins.scss */
-.header .span {
+header .span {
   color: #da0760;
 }
 

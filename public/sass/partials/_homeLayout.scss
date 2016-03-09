@@ -61,7 +61,7 @@ a {
   }
 }
 
-.footer {
+footer {
   margin-top: 1em;
   @include at-breakpoint($M) {
     position: fixed;
@@ -135,7 +135,7 @@ li {
       padding-left: 1.5em;
     }*/
   }
-  .footer & {
+  footer & {
     display: inline-block;
     @include at-breakpoint($M) {
       padding-right: 1em;

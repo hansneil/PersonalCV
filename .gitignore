@@ -6,3 +6,6 @@
 
 # SASS
 **/.sass-cache/
+
+# HTML
+**/test.html

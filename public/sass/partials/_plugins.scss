@@ -65,7 +65,7 @@
 }
 
 //call plugins
-.header {
+header {
   font-size: .8em;
   @include at-breakpoint($M) {
     font-size: 1em;
