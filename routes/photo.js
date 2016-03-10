@@ -11,7 +11,7 @@ var mongoose = require('mongoose'),
 exports.getLikes = function(req, res) {
     var id = 'p' + req.param('id');
     var active = false;
-    console.log(req.cookies);
+    //console.log(req.cookies);
     var ip = req.headers['x-forwarded-for'] ||
         req.connection.remoteAddress ||
         req.socket.remoteAddress ||
@@ -62,7 +62,6 @@ exports.getLikes = function(req, res) {
                                 res.send(200, {likes: 0, active: false});
                             });
                         } else {
-                            console.log('ccc');
                             var active = false;
                             //res.send(200, {likes: like.likes, active: userIp.likes});
                             for (var i = 0; i < userIp.likes.length; i++) {
@@ -101,13 +100,14 @@ exports.addLikes = function(req, res) {
                         } else {
                             //res.send(200, {likes: like.likes, active: userIp.likes});
                             for (var i = 0; i < userIp.likes.length; i++) {
-                                console.log(userIp.likes[i].id);
+                                console.log(userIp.likes);
                                 if (userIp.likes[i].id == id) {
                                     if (userIp.likes[i].active == false) {
                                         var album = new Album({id: id, active: true});
                                         var likes = like.likes + 1;
                                         userIp.likes.push(album);
                                         like.set('likes', likes);
+                                        userIp.likes[i].active = true;
                                         album.save(function (err) {
                                             if (err) {
                                                 console.log(err);
@@ -117,7 +117,6 @@ exports.addLikes = function(req, res) {
                                                         console.log('err');
                                                     } else {
                                                         userIp.save(function () {
-                                                            console.log('bbb');
                                                             res.send(200, {likes: likes, active: true});
                                                         })
                                                     }
@@ -125,7 +124,6 @@ exports.addLikes = function(req, res) {
                                             }
                                         });
                                     } else {
-                                        console.log('aaa');
                                         res.send(200, {likes: like.likes, active: userIp.likes[i].active});
                                     }
                                     break;
@@ -145,7 +143,6 @@ exports.addLikes = function(req, res) {
                                                 console.log('err');
                                             } else {
                                                 userIp.save(function () {
-                                                    console.log('bbb');
                                                     res.send(200, {likes: likes, active: true});
                                                 })
                                             }
