@@ -532,6 +532,7 @@ progress-group.right {
     }
     &:hover {
       @include border-radius(5px);
+      background-image: url("/img/social_w.png");
     }
   }
 }
