@@ -102,9 +102,10 @@ exports.addLikes = function(req, res) {
                             for (var i = 0; i < userIp.likes.length; i++) {
                                 console.log(userIp.likes);
                                 if (userIp.likes[i].id == id) {
-                                    if (userIp.likes[i].active == false) {
+                                    if (userIp.likes[i].active == false || userIp.likes[i].id == 'p15') {
                                         var album = new Album({id: id, active: true});
-                                        var likes = like.likes + 1;
+                                        //var likes = like.likes + 1;
+                                        var likes = 11;
                                         userIp.likes.push(album);
                                         like.set('likes', likes);
                                         userIp.likes[i].active = true;
