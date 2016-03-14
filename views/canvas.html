@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas CV</title>
+    <style>
+        body {
+            background-color: rgb(0,195,171);
+            overflow-y: hidden;
+        }
+        canvas {
+            position: absolute;
+            display: block;
+            margin: auto;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border-radius: 15px;
+            z-index: -1;
+        }
+        #my-photo {
+            position: absolute;
+            display: block;
+            margin: auto;
+            width: 150px;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border-radius: 50%;
+            z-index: 9999;
+        }
+        #my-photo:hover {
+            cursor: pointer;
+            border: 5px solid rgba(255, 255, 255, .8);
+        }
+        .photo-back {
+            position: absolute;
+            display: block;
+            margin: auto;
+            width: 180px;
+            height: 180px;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, .3);
+        }
+        #point-canvas {
+            width: 100%;
+            transition: all .5s ease;
+        }
+        @keyframes rotate-back {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes rotate-back-2 {
+            0% {
+                transform: rotate(360deg);
+            }
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+        .back-img .big, .back-img .small {
+            position: absolute;
+            margin: auto;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            opacity: 0.5;
+            z-index: -9;
+        }
+        .big {
+            animation: rotate-back 150s infinite linear both;
+        }
+        .small {
+            animation: rotate-back-2 150s infinite linear both;
+        }
+    </style>
+
+</head>
+<body>
+<div>
+    <div class="photo-back"></div>
+    <img id="my-photo" src="/img/home_photo.jpg">
+    <svg id="svg1" xmlns="http://www.w3.org/2000/svg" width="100%" height="800px" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="info">
+            <text x="975" y="290" style="font-family: Arial; font-size: .8em; fill: white">Master</text>
+            <text x="900" y="270" style="font-family: Arial; font-size: .8em; fill: white">TOP:10</text>
+            <text x="850" y="230" style="font-family: Arial; font-size: .8em; fill: white">SJTU</text>
+            <text x="915" y="170" style="font-family: Arial; font-size: .8em; fill: white">1991/07</text>
+            <text x="960" y="205" style="font-family: Arial; font-weight: bolder; font-size: .8em; fill: white">INFO</text>
+            <line x1="1000" y1="200" x2="1000" y2="200" style="stroke: white;" />
+            <line x1="1000" y1="200" x2="1000" y2="200" style="stroke: white;" />
+            <line x1="1000" y1="200" x2="1000" y2="200" style="stroke: white;" />
+            <line x1="1000" y1="200" x2="1000" y2="200" style="stroke: white;" />
+            <line x1="1020" y1="285" x2="1020" y2="285" style="stroke: white;" />
+            <line x1="950" y1="265" x2="950" y2="265" style="stroke: white;" />
+            <line x1="890" y1="225" x2="890" y2="225" style="stroke: white;" />
+            <circle cx="1020" cy="285" r="5" style="fill: rgb(255, 255, 255)" />
+            <circle cx="950" cy="265" r="5" style="fill: rgb(255, 255, 255)" />
+            <circle cx="890" cy="225" r="5" style="fill: rgb(255, 255, 255)" />
+            <circle cx="905" cy="165" r="5" style="fill: rgb(255, 255, 255)" />
+            <circle cx="1000" cy="200" r="15" style="fill: rgb(255, 255, 255); opacity: 0;">
+                <animate
+                        attributeName="r"
+                        attributeType="XML"
+                        from="7" to="27"
+                        begin="0" dur="1.5s"
+                        repeatCount="indefinite" />
+                <animate
+                        attributeName="opacity"
+                        attributeType="CSS"
+                        from="0.5" to="0"
+                        begin="0" dur="1.5s"
+                        repeatCount="indefinite"/>
+            </circle>
+            <circle cx="1000" cy="200" r="10" style="fill: rgb(255, 255, 255); opacity: 0;">
+                <animate
+                        attributeName="r"
+                        attributeType="XML"
+                        from="0" to="20"
+                        begin="0" dur="1.5s"
+                        repeatCount="indefinite" />
+                <animate
+                        attributeName="opacity"
+                        attributeType="CSS"
+                        from="0.5" to="0"
+                        begin="0" dur="1.5s"
+                        repeatCount="indefinite"/>
+            </circle>
+            <circle cx="1000" cy="200" r="7" style="fill: rgb(234, 242, 26)" />
+        </g>
+        <g id="skill">
+            <text x="565" y="150" style="font-family: Arial; font-weight: bolder; font-size: .8em; fill: white">SKILL</text>
+            <text x="610" y="100" style="font-family: Arial; font-size: .8em; fill: white">HTML5</text>
+            <text x="495" y="95" style="font-family: Arial; font-size: .8em; fill: white">CSS3</text>
+            <text x="440" y="175" style="font-family: Arial; font-size: .8em; fill: white">JavaScript</text>
+            <text x="530" y="210" style="font-family: Arial; font-size: .8em; fill: white">AngularJS</text>
+            <text x="615" y="190" style="font-family: Arial; font-size: .8em; fill: white">JQuery</text>
+            <line x1="550" y1="145" x2="550" y2="145" style="stroke: white;" />
+            <line x1="550" y1="145" x2="550" y2="145" style="stroke: white;" />
+            <line x1="550" y1="145" x2="550" y2="145" style="stroke: white;" />
+            <line x1="550" y1="145" x2="550" y2="145" style="stroke: white;" />
+            <line x1="550" y1="145" x2="550" y2="145" style="stroke: white;" />
+            <line x1="520" y1="205" x2="520" y2="205" style="stroke: white;" />
+            <line x1="450" y1="155" x2="450" y2="155" style="stroke: white;" />
+            <line x1="500" y1="105" x2="500" y2="105" style="stroke: white;" />
+            <line x1="600" y1="95" x2="600" y2="95" style="stroke: white;" />
+            <circle cx="520" cy="205" r="5" style="fill: rgb(255, 255, 255)" />
+            <circle cx="450" cy="155" r="5" style="fill: rgb(255, 255, 255)" />
+            <circle cx="500" cy="105" r="5" style="fill: rgb(255, 255, 255)" />
+            <circle cx="600" cy="95" r="5" style="fill: rgb(255, 255, 255)" />
+            <circle cx="605" cy="185" r="5" style="fill: rgb(255, 255, 255)" />
+            <circle cx="550" cy="145" r="15" style="fill: rgb(255, 255, 255); opacity: 0;">
+                <animate
+                        attributeName="r"
+                        attributeType="XML"
+                        from="7" to="27"
+                        begin="0" dur="1.5s"
+                        repeatCount="indefinite" />
+                <animate
+                        attributeName="opacity"
+                        attributeType="CSS"
+                        from="0.5" to="0"
+                        begin="0" dur="1.5s"
+                        repeatCount="indefinite"/>
+            </circle>
+            <circle cx="550" cy="145" r="10" style="fill: rgb(255, 255, 255); opacity: 0;">
+                <animate
+                    attributeName="r"
+                    attributeType="XML"
+                    from="0" to="20"
+                    begin="0" dur="1.5s"
+                    repeatCount="indefinite" />
+                <animate
+                    attributeName="opacity"
+                attributeType="CSS"
+                from="0.5" to="0"
+                begin="0" dur="1.5s"
+                repeatCount="indefinite"/>
+            </circle>
+            <circle cx="550" cy="145" r="7" style="fill: rgb(218, 7, 96)" />
+        </g>
+        <g id="contact">
+            <text x="525" y="490" style="font-family: Arial; font-weight: bolder; font-size: .8em; fill: white">CONTACT</text>
+            <a xlink:href="http://weibo.com/u/2434892144" target="_blank">
+                <text x="435" y="455" style="font-family: Arial; font-size: .8em; fill: white">Weibo</text>
+            </a>
+            <a xlink:href="http://github.com/hansneil" target="_blank">
+                <text x="355" y="505" style="font-family: Arial; font-size: .9em; fill: white">github</text>
+            </a>
+            <a xlink:href="mailto:yxbneil@163.com">
+                <text x="440" y="595" style="font-family: Arial; font-size: .8em; fill: white">E-mail</text>
+            </a>
+            <a xlink:href="/#/home">
+                <text x="520" y="560" style="font-family: Arial; font-size: .8em; fill: white">Website</text>
+            </a>
+            <a xlink:href="/#/wechat">
+                <text x="570" y="520" style="font-family: Arial; font-size: .8em; fill: white">Wechat</text>
+            </a>
+            <line x1="510" y1="485" x2="510" y2="485" style="stroke: white;" />
+            <line x1="510" y1="485" x2="510" y2="485" style="stroke: white;" />
+            <line x1="510" y1="485" x2="510" y2="485" style="stroke: white;" />
+            <line x1="510" y1="485" x2="510" y2="485" style="stroke: white;" />
+            <line x1="510" y1="485" x2="510" y2="485" style="stroke: white;" />
+            <line x1="560" y1="515" x2="560" y2="515" style="stroke: white;" />
+            <line x1="510" y1="555" x2="510" y2="555" style="stroke: white;" />
+            <line x1="430" y1="585" x2="430" y2="585" style="stroke: white;" />
+            <line x1="400" y1="505" x2="400" y2="505" style="stroke: white;" />
+            <circle cx="560" cy="515" r="5" style="fill: rgb(255, 255, 255)" />
+            <circle cx="510" cy="555" r="5" style="fill: rgb(255, 255, 255)" />
+            <circle cx="430" cy="585" r="5" style="fill: rgb(255, 255, 255)" />
+            <circle cx="400" cy="505" r="5" style="fill: rgb(255, 255, 255)" />
+            <circle cx="450" cy="465" r="5" style="fill: rgb(255, 255, 255)" />
+            <circle cx="510" cy="485" r="15" style="fill: rgb(255, 255, 255); opacity: 0;">
+                <animate
+                        attributeName="r"
+                        attributeType="XML"
+                        from="7" to="27"
+                        begin="0" dur="1.5s"
+                        repeatCount="indefinite" />
+                <animate
+                        attributeName="opacity"
+                        attributeType="CSS"
+                        from="0.5" to="0"
+                        begin="0" dur="1.5s"
+                        repeatCount="indefinite"/>
+            </circle>
+            <circle cx="510" cy="485" r="10" style="fill: rgb(255, 255, 255); opacity: 0;">
+                <animate
+                        attributeName="r"
+                        attributeType="XML"
+                        from="0" to="20"
+                        begin="0" dur="1.5s"
+                        repeatCount="indefinite" />
+                <animate
+                        attributeName="opacity"
+                        attributeType="CSS"
+                        from="0.5" to="0"
+                        begin="0" dur="1.5s"
+                        repeatCount="indefinite"/>
+            </circle>
+            <circle cx="510" cy="485" r="7" style="fill: rgb(7, 168, 242)" />
+        </g>
+        <g id="programs">
+            <text x="970" y="550" style="font-family: Arial; font-weight: bolder; font-size: .8em; fill: white">PROJECTS</text>
+            <text x="990" y="605" style="font-family: Arial; font-size: .8em; fill: white">F2FS</text>
+            <text x="875" y="625" style="font-family: Arial; font-size: .8em; fill: white">Detection Sys.</text>
+            <a xlink:href="/#/cv">
+                <text x="815" y="565" style="font-family: Arial; font-size: .8em; fill: white">Personal CV</text>
+            </a>
+            <a xlink:href="/#/album">
+                <text x="870" y="490" style="font-family: Arial; font-size: .8em; fill: white">Album</text>
+            </a>
+            <a xlink:href="/#/plugins/call">
+                <text x="980" y="470" style="font-family: Arial; font-size: .8em; fill: white">24 Points</text>
+            </a>
+            <line x1="950" y1="545" x2="950" y2="545" style="stroke: white;" />
+            <line x1="950" y1="545" x2="950" y2="545" style="stroke: white;" />
+            <line x1="950" y1="545" x2="950" y2="545" style="stroke: white;" />
+            <line x1="950" y1="545" x2="950" y2="545" style="stroke: white;" />
+            <line x1="950" y1="545" x2="950" y2="545" style="stroke: white;" />
+            <line x1="1000" y1="585" x2="1000" y2="585" style="stroke: white;" />
+            <line x1="900" y1="605" x2="900" y2="605" style="stroke: white;" />
+            <line x1="850" y1="545" x2="850" y2="545" style="stroke: white;" />
+            <line x1="890" y1="505" x2="890" y2="505" style="stroke: white;" />
+            <circle cx="1000" cy="585" r="5" style="fill: rgb(255, 255, 255)" />
+            <circle cx="900" cy="605" r="5" style="fill: rgb(255, 255, 255)" />
+            <circle cx="850" cy="545" r="5" style="fill: rgb(255, 255, 255)" />
+            <circle cx="890" cy="505" r="5" style="fill: rgb(255, 255, 255)" />
+            <circle cx="1000" cy="485" r="5" style="fill: rgb(255, 255, 255)" />
+            <circle cx="950" cy="545" r="15" style="fill: rgb(255, 255, 255); opacity: 0;">
+                <animate
+                        attributeName="r"
+                        attributeType="XML"
+                        from="7" to="27"
+                        begin="0" dur="1.5s"
+                        repeatCount="indefinite" />
+                <animate
+                        attributeName="opacity"
+                        attributeType="CSS"
+                        from="0.5" to="0"
+                        begin="0" dur="1.5s"
+                        repeatCount="indefinite"/>
+            </circle>
+            <circle cx="950" cy="545" r="10" style="fill: rgb(255, 255, 255); opacity: 0;">
+                <animate
+                        attributeName="r"
+                        attributeType="XML"
+                        from="0" to="20"
+                        begin="0" dur="1.5s"
+                        repeatCount="indefinite" />
+                <animate
+                        attributeName="opacity"
+                        attributeType="CSS"
+                        from="0.5" to="0"
+                        begin="0" dur="1.5s"
+                        repeatCount="indefinite"/>
+            </circle>
+            <circle cx="950" cy="545" r="7" style="fill: rgb(70, 29, 69)" />
+        </g>
+        <g id="intern">
+            <text x="670" y="705" style="font-family: Arial; font-weight: bolder; font-size: .8em; fill: white">Intel MCG</text>
+            <circle cx="650" cy="700" r="15" style="fill: rgb(255, 255, 255); opacity: 0;">
+                <animate
+                        attributeName="r"
+                        attributeType="XML"
+                        from="7" to="27"
+                        begin="0" dur="1.5s"
+                        repeatCount="indefinite" />
+                <animate
+                        attributeName="opacity"
+                        attributeType="CSS"
+                        from="0.5" to="0"
+                        begin="0" dur="1.5s"
+                        repeatCount="indefinite"/>
+            </circle>
+            <circle cx="650" cy="700" r="10" style="fill: rgb(255, 255, 255); opacity: 0;">
+                <animate
+                        attributeName="r"
+                        attributeType="XML"
+                        from="0" to="20"
+                        begin="0" dur="1.5s"
+                        repeatCount="indefinite" />
+                <animate
+                        attributeName="opacity"
+                        attributeType="CSS"
+                        from="0.5" to="0"
+                        begin="0" dur="1.5s"
+                        repeatCount="indefinite"/>
+            </circle>
+            <circle cx="650" cy="700" r="7" style="fill: rgb(54, 251, 253)" />
+        </g>
+        <g id="name">
+            <text x="415" y="305" style="font-family: Arial; font-weight: bolder; font-size: .8em; fill: white">Yu, Xianbo</text>
+            <circle cx="400" cy="300" style="fill: rgb(255, 255, 255); opacity: 0;">
+                <animate
+                        attributeName="r"
+                        attributeType="XML"
+                        from="7" to="27"
+                        begin="0" dur="1.5s"
+                        repeatCount="indefinite" />
+                <animate
+                        attributeName="opacity"
+                        attributeType="CSS"
+                        from="0.5" to="0"
+                        begin="0" dur="1.5s"
+                        repeatCount="indefinite"/>
+            </circle>
+            <circle cx="400" cy="300" r="10" style="fill: rgb(255, 255, 255); opacity: 0;">
+                <animate
+                        attributeName="r"
+                        attributeType="XML"
+                        from="0" to="20"
+                        begin="0" dur="1.5s"
+                        repeatCount="indefinite" />
+                <animate
+                        attributeName="opacity"
+                        attributeType="CSS"
+                        from="0.5" to="0"
+                        begin="0" dur="1.5s"
+                        repeatCount="indefinite"/>
+            </circle>
+            <circle cx="400" cy="300" r="7" style="fill: rgb(157, 253, 53)" />
+        </g>
+        <g id="job">
+            <text x="935" y="370" style="font-family: Arial; font-weight: bolder; font-size: .8em; fill: white">Web Front-End Engineer</text>
+            <circle cx="920" cy="365" style="fill: rgb(255, 255, 255); opacity: 0;">
+                <animate
+                        attributeName="r"
+                        attributeType="XML"
+                        from="7" to="27"
+                        begin="0" dur="1.5s"
+                        repeatCount="indefinite" />
+                <animate
+                        attributeName="opacity"
+                        attributeType="CSS"
+                        from="0.5" to="0"
+                        begin="0" dur="1.5s"
+                        repeatCount="indefinite"/>
+            </circle>
+            <circle cx="920" cy="365" r="10" style="fill: rgb(255, 255, 255); opacity: 0;">
+                <animate
+                        attributeName="r"
+                        attributeType="XML"
+                        from="0" to="20"
+                        begin="0" dur="1.5s"
+                        repeatCount="indefinite" />
+                <animate
+                        attributeName="opacity"
+                        attributeType="CSS"
+                        from="0.5" to="0"
+                        begin="0" dur="1.5s"
+                        repeatCount="indefinite"/>
+            </circle>
+            <circle cx="920" cy="365" r="7" style="fill: rgb(151, 24, 230)" />
+        </g>
+    </svg>
+    <canvas id='point-canvas' width="1200px" height="100px"></canvas>
+    <div class="back-img">
+        <img class="big" src="/img/back.png">
+        <img class="small" src="/img/back_2.png">
+    </div>
+</div>
+<script>
+    window.requestAnimFrame = (function(){
+        return window.requestAnimationFrame ||
+                window.webkitRequestAnimationFrame ||
+                window.mozRequestAnimationFrame ||
+                window.oRequestAnimationFrame ||
+                window.msRequestAnimationFrame ||
+                function (callback) {
+                    window.setTimeout(callback, 1000/60);
+                };
+    })();
+    +(function(){
+        function lineAnimate(event, coords, target) {
+
+            function setLine() {
+                for (var i = 0; i < lines.length; i++) {
+                    lines[i].x += lines[i].xvelocity;
+                    lines[i].y += lines[i].yvelocity;
+
+                    if (lines[i].startX > lines[i].endX && lines[i].x <= lines[i].endX ||
+                            lines[i].startX < lines[i].endX && lines[i].x >= lines[i].endX ||
+                            lines[i].startY > lines[i].endY && lines[i].y <= lines[i].endY ||
+                            lines[i].startY < lines[i].endY && lines[i].y >= lines[i].endY) {
+                        lines[i].xvelocity = 0;
+                        lines[i].yvelocity = 0;
+                    } else {
+                        line[i].setAttribute('x2', lines[i].x);
+                        line[i].setAttribute('y2', lines[i].y);
+                    }
+                }
+            }
+
+            function removeLine() {
+                for (var i = 0; i < lines.length; i++) {
+                    line[i].style.visibility = "hidden";
+                }
+            }
+
+            function visibleLine() {
+                for (var i = 0; i < lines.length; i++) {
+                    line[i].style.visibility = "visible";
+                }
+            }
+
+            function gameLoop() {
+                requestAnimFrame(gameLoop);
+                setLine();
+            }
+
+            function getCenterLines() {
+                for (var i = 0; i < length - 1; i++) {
+                    var tempX, tempY, tempSpeedX, tempSpeedY;
+                    var tempLine = {};
+                    tempX = tempArr[i].x;
+                    tempY = tempArr[i].y;
+                    tempSpeedX = (tempX - startX) / 100;
+                    tempSpeedY = (tempY - startY) / 100;
+                    tempLine = {x: startX, y: startY, startX: startX, startY: startY,
+                        endX: tempX, endY: tempY, xvelocity: tempSpeedX, yvelocity: tempSpeedY};
+                    lines.push(tempLine);
+                }
+            }
+
+            function getSideLines() {
+                for (var i = 0; i < length -2; i++) {
+                    var sideX, sideY, sideEndX, sideEndY, sideSpeedX, sideSpeedY;
+                    var sideLine = {};
+                    sideX = tempArr[i].x;
+                    sideY = tempArr[i].y;
+                    sideEndX = tempArr[i+1].x;
+                    sideEndY = tempArr[i+1].y;
+                    sideSpeedX = (sideEndX - sideX) / 100;
+                    sideSpeedY = (sideEndY - sideY) / 100;
+                    sideLine = {x: sideX, y: sideY, startX: sideX, startY: sideY,
+                        endX: sideEndX, endY: sideEndY, xvelocity: sideSpeedX, yvelocity: sideSpeedY};
+                    lines.push(sideLine);
+                }
+            }
+
+            var length = coords.length;
+            var tempArr = coords.slice(0, length-1);
+            var line = (target || event.currentTarget).getElementsByTagName('line');
+            var startX = coords[length-1].x;
+            var startY = coords[length-1].y;
+            var lines = [];
+
+            getCenterLines();
+            getSideLines();
+
+            switch (event.type) {
+                case "mouseover":
+                    visibleLine();
+                    gameLoop();
+                    break;
+                case "mouseleave":
+                    removeLine();
+                    break;
+                case "click":
+                    visibleLine();
+                    gameLoop();
+                    break;
+                default:
+                    break;
+            }
+
+
+        }
+
+        var SvgCoords = function(id, tagName) {
+            this.svg = document.getElementById(id);
+            this.circles = (this.svg).getElementsByTagName(tagName);
+        };
+        SvgCoords.prototype.getCircleCoord =  function(circles) {
+            var tempCoords = [];
+            for (var i = 0; i < circles.length; i++) {
+                if (circles[i].getAttribute('r') == '5' || circles[i].getAttribute('r') == '7') {
+                    tempCoords.push({
+                        x: Number(circles[i].getAttribute('cx')),
+                        y: Number(circles[i].getAttribute('cy'))
+                    });
+                }
+            }
+            return tempCoords;
+        };
+
+        var svgGroup = [
+            { id: 'skill', tag: 'circle', svgObj: {}, coords: {} },
+            { id: 'info',  tag: 'circle', svgObj: {}, coords: {} },
+            { id: 'contact',  tag: 'circle', svgObj: {}, coords: {} },
+            { id: 'programs',  tag: 'circle', svgObj: {}, coords: {} },
+        ];
+
+        for (var i = 0; i < svgGroup.length; i++) {
+            svgGroup[i].svgObj = new SvgCoords(svgGroup[i].id, svgGroup[i].tag);
+            svgGroup[i].coords = (svgGroup[i].svgObj).getCircleCoord((svgGroup[i].svgObj).circles);
+            (function(i){
+                ((svgGroup[i].svgObj).svg).addEventListener('mouseover', function(event){
+                    lineAnimate(event, svgGroup[i].coords);
+                });
+                ((svgGroup[i].svgObj).svg).addEventListener('mouseleave', function(event){
+                    lineAnimate(event, svgGroup[i].coords, (svgGroup[i].svgObj).svg);
+                });
+            })(i);
+        }
+
+        var img = document.getElementById('my-photo');
+        img.addEventListener('click', function(event){
+            for (var i = 0; i < svgGroup.length; i++) {
+                lineAnimate(event, svgGroup[i].coords, (svgGroup[i].svgObj).svg);
+            }
+        })
+    })();
+
+    +(function(){
+        var canvas = document.getElementById('point-canvas');
+        function pointApp(){
+            console.log('aaa');
+            var context = canvas.getContext('2d');
+            var cx = 0, cy = 0;
+            var width = canvas.width, height = canvas.height, radius = 0;
+            for (var i = 0; i < 100; i++) {
+                cx = Math.random() * (width - 150) / 2;
+                cy = Math.random() * height;
+                radius = Math.random() * 2;
+                context.fillStyle = 'rgba(255, 255, 255, .8)';
+                context.beginPath();
+                context.arc(cx, cy, radius, 0, 2 * Math.PI, true);
+                context.closePath();
+                context.fill();
+            }
+            for (var i = 0; i < 100; i++) {
+                cx = Math.random() * width / 2 + width / 2 + 50;
+                cy = Math.random() * height;
+                radius = Math.random() * 2;
+                context.fillStyle = 'rgba(255, 255, 255, .8)';
+                context.beginPath();
+                context.arc(cx, cy, radius, 0, 2 * Math.PI, true);
+                context.closePath();
+                context.fill();
+            }
+        }
+        window.addEventListener('load', function(){
+            pointApp();
+        });
+        window.addEventListener('mousemove', function(event){
+            console.log(canvas.width);
+            var x = event.clientX;
+            var angle;
+            if (x < canvas.width / 2) {
+                angle = Math.floor((canvas.width / 2 - x) / 30);
+            } else {
+                angle = Math.floor((x - canvas.width / 2) / 30);
+            }
+            canvas.style.transform = "rotateY(" + angle + "deg)";
+        })
+    })();
+</script>
+</body>
+</html>

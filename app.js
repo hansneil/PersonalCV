@@ -15,6 +15,7 @@ var users = require('./routes/users');
 var login = require('./routes/login');
 var photo = require('./routes/photo');
 var comment = require('./routes/comment');
+var canvas = require('./routes/canvas');
 
 //var db = mongoose.connect("mongodb://hansneil:111_zzz@ds047335.mongolab.com:47335/hansneil");
 var db = mongoose.connect("mongodb://localhost/photo");
@@ -46,6 +47,7 @@ app.post('/photo/:id', photo.addLikes);
 /*app.get('/comment/:id', comment.getComments);*/
 app.get(/^\/comment\/([a-zA-z]+)(\d+)$/, comment.getComments);
 app.get('/newpage', comment.newComment);
+app.get('/canvas/cv', canvas.getCanvas);
 app.use('/', routes);
 app.use('/users', users);
 
