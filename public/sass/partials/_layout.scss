@@ -678,6 +678,7 @@ progress-group.right {
     display: inline-block;
     top: 1rem;
     right: 2rem;
+    z-index: 9999;
   }
   & li {
     display: inline-block;
