@@ -671,4 +671,21 @@ progress-group.right {
     }
   }
 }
+.checkout {
+  position: fixed;
+  display: inline-block;
+  top: 1rem;
+  right: 2rem;
+  & li {
+    display: inline-block;
+    &:first-child {
+      padding-right: .5rem;
+      border-right: 1px solid $color5;
+    }
+    & .active, &:hover {
+      color: $color1;
+      text-decoration: underline;
+    }
+  }
+}
 

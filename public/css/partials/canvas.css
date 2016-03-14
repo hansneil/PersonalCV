@@ -1,0 +1,81 @@
+/* line 1, ../../sass/partials/canvas.scss */
+.overhidden {
+  background-color: #00c3ab;
+  overflow-y: hidden;
+}
+
+/* line 5, ../../sass/partials/canvas.scss */
+canvas, #my-photo, .photo-back, .back-img .big, .back-img .small, #svg1 {
+  position: absolute;
+  display: block;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/* line 14, ../../sass/partials/canvas.scss */
+canvas {
+  border-radius: 15px;
+  z-index: -1;
+}
+
+/* line 19, ../../sass/partials/canvas.scss */
+#my-photo {
+  width: 150px;
+  border-radius: 50%;
+  z-index: 9999;
+}
+
+/* line 25, ../../sass/partials/canvas.scss */
+#my-photo:hover {
+  cursor: pointer;
+  border: 5px solid rgba(255, 255, 255, 0.8);
+}
+
+/* line 29, ../../sass/partials/canvas.scss */
+.photo-back {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* line 36, ../../sass/partials/canvas.scss */
+#point-canvas {
+  width: 100%;
+  transition: all .5s ease;
+}
+
+@keyframes rotate-back {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate-back-2 {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+/* line 56, ../../sass/partials/canvas.scss */
+.back-img .big, .back-img .small {
+  opacity: 0.5;
+  z-index: -9;
+}
+
+/* line 61, ../../sass/partials/canvas.scss */
+.big {
+  animation: rotate-back 150s infinite linear both;
+}
+
+/* line 64, ../../sass/partials/canvas.scss */
+.small {
+  animation: rotate-back-2 150s infinite linear both;
+}

@@ -1997,6 +1997,28 @@ progress-group.right .bar-container {
   }
 }
 
+/* line 674, ../sass/partials/_layout.scss */
+.checkout {
+  position: fixed;
+  display: inline-block;
+  top: 1rem;
+  right: 2rem;
+}
+/* line 679, ../sass/partials/_layout.scss */
+.checkout li {
+  display: inline-block;
+}
+/* line 681, ../sass/partials/_layout.scss */
+.checkout li:first-child {
+  padding-right: .5rem;
+  border-right: 1px solid #ffffff;
+}
+/* line 685, ../sass/partials/_layout.scss */
+.checkout li .active, .checkout li:hover {
+  color: #303030;
+  text-decoration: underline;
+}
+
 @font-face {
   font-family: 'axis';
   src: url("/css/fonts/axis.otf");
@@ -2933,18 +2955,110 @@ div.content.plugin-content p a {
   cursor: pointer;
 }
 
-/* line 14, ../sass/style.scss */
+/* line 1, ../sass/partials/canvas.scss */
+.overhidden {
+  background-color: #00c3ab;
+  overflow-y: hidden;
+}
+
+/* line 5, ../sass/partials/canvas.scss */
+canvas, #my-photo, .photo-back, .back-img .big, .back-img .small {
+  position: absolute;
+  display: block;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/* line 14, ../sass/partials/canvas.scss */
+canvas {
+  border-radius: 15px;
+  z-index: -1;
+}
+
+/* line 19, ../sass/partials/canvas.scss */
+#my-photo {
+  width: 150px;
+  border-radius: 50%;
+  z-index: 9999;
+}
+
+/* line 25, ../sass/partials/canvas.scss */
+#my-photo:hover {
+  cursor: pointer;
+  border: 5px solid rgba(255, 255, 255, 0.8);
+}
+
+/* line 29, ../sass/partials/canvas.scss */
+.photo-back {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* line 36, ../sass/partials/canvas.scss */
+#point-canvas {
+  width: 100%;
+  transition: all .5s ease;
+}
+
+@keyframes rotate-back {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate-back-2 {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+/* line 56, ../sass/partials/canvas.scss */
+.back-img .big, .back-img .small {
+  opacity: 0.5;
+  z-index: -9;
+}
+
+/* line 61, ../sass/partials/canvas.scss */
+.big {
+  animation: rotate-back 150s infinite linear both;
+}
+
+/* line 64, ../sass/partials/canvas.scss */
+.small {
+  animation: rotate-back-2 150s infinite linear both;
+}
+
+/* line 67, ../sass/partials/canvas.scss */
+#svg1 {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/* line 15, ../sass/style.scss */
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak],
 .ng-cloak, .x-ng-cloak, .ng-hide:not(.ng-hide-animate) {
   display: none !important;
 }
 
-/* line 19, ../sass/style.scss */
+/* line 20, ../sass/style.scss */
 ng\:form {
   display: block;
 }
 
-/* line 23, ../sass/style.scss */
+/* line 24, ../sass/style.scss */
 .name, .main-page, .circle-shadow, .circle, .img-circle.active, .gray-circle.active {
   position: absolute;
   margin: auto;
@@ -3258,7 +3372,7 @@ ng\:form {
     transform: scale(0);
   }
 }
-/* line 203, ../sass/style.scss */
+/* line 204, ../sass/style.scss */
 .name {
   color: #00c3ab;
   font-family: 'axis';
@@ -3279,7 +3393,7 @@ ng\:form {
   box-shadow: 3px 3px 2px #c7fa5a;
 }
 
-/* line 219, ../sass/style.scss */
+/* line 220, ../sass/style.scss */
 .main-page {
   color: #ffffff;
   width: 4em;
@@ -3289,16 +3403,16 @@ ng\:form {
   text-align: center;
   top: 7em;
 }
-/* line 228, ../sass/style.scss */
+/* line 229, ../sass/style.scss */
 .main-page span {
   color: #c7fa5a;
 }
-/* line 231, ../sass/style.scss */
+/* line 232, ../sass/style.scss */
 .main-page.gray {
   color: #c7fa5a;
 }
 
-/* line 235, ../sass/style.scss */
+/* line 236, ../sass/style.scss */
 .circle-shadow {
   width: 6em;
   height: 6em;
@@ -3311,7 +3425,7 @@ ng\:form {
   animation: shadow 1.2s infinite ease-out;
 }
 
-/* line 243, ../sass/style.scss */
+/* line 244, ../sass/style.scss */
 .circle {
   width: 6em;
   height: 6em;
@@ -3322,7 +3436,7 @@ ng\:form {
   border: 2px solid #ffffff;
   cursor: pointer;
 }
-/* line 251, ../sass/style.scss */
+/* line 252, ../sass/style.scss */
 .circle.active {
   -moz-animation: larger 0.2s ease-out;
   -webkit-animation: larger 0.2s ease-out;
@@ -3333,7 +3447,7 @@ ng\:form {
   cursor: default;
 }
 
-/* line 257, ../sass/style.scss */
+/* line 258, ../sass/style.scss */
 .img-circle.active {
   width: 6em;
   height: 6em;
@@ -3346,7 +3460,7 @@ ng\:form {
   animation: gray-larger 0.2s ease-out;
 }
 
-/* line 265, ../sass/style.scss */
+/* line 266, ../sass/style.scss */
 .gray-circle.active {
   width: 3em;
   height: 3em;
@@ -3362,7 +3476,7 @@ ng\:form {
   animation-fill-mode: forwards;
 }
 
-/* line 274, ../sass/style.scss */
+/* line 275, ../sass/style.scss */
 #my-cv {
   width: 100%;
   overflow: visible;
@@ -3381,25 +3495,25 @@ ng\:form {
   box-shadow: 1px 1px 10px #636363;
 }
 @media (min-width: 47em) {
-  /* line 274, ../sass/style.scss */
+  /* line 275, ../sass/style.scss */
   #my-cv {
     width: 90%;
   }
 }
 @media (min-width: 64em) {
-  /* line 274, ../sass/style.scss */
+  /* line 275, ../sass/style.scss */
   #my-cv {
     width: 90%;
   }
 }
 @media (min-width: 75em) {
-  /* line 274, ../sass/style.scss */
+  /* line 275, ../sass/style.scss */
   #my-cv {
     width: 80%;
   }
 }
 
-/* line 295, ../sass/style.scss */
+/* line 296, ../sass/style.scss */
 .view-container {
   width: 100%;
   height: 100%;
@@ -3418,7 +3532,7 @@ ng\:form {
   src: url("/css/fonts/glyphicons-halflings-regular.eot");
   src: url("/css/fonts/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("/css/fonts/glyphicons-halflings-regular.woff2") format("woff2"), url("/css/fonts/glyphicons-halflings-regular.woff") format("woff"), url("/css/fonts/glyphicons-halflings-regular.ttf") format("truetype"), url("/css/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg");
 }
-/* line 314, ../sass/style.scss */
+/* line 315, ../sass/style.scss */
 .glyphicon {
   position: relative;
   top: 1px;
@@ -3431,37 +3545,37 @@ ng\:form {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* line 327, ../sass/style.scss */
+/* line 328, ../sass/style.scss */
 .glyphicon-heart:before {
   content: "\e005";
 }
 
-/* line 331, ../sass/style.scss */
+/* line 332, ../sass/style.scss */
 .glyphicon-heart-empty:before {
   content: "\e143";
 }
 
-/* line 335, ../sass/style.scss */
+/* line 336, ../sass/style.scss */
 .glyphicon-comment:before {
   content: "\e111";
 }
 
-/* line 338, ../sass/style.scss */
+/* line 339, ../sass/style.scss */
 .glyphicon-home:before {
   content: "\e021";
 }
 
-/* line 342, ../sass/style.scss */
+/* line 343, ../sass/style.scss */
 .glyphicon-chevron-left:before {
   content: "\e079";
 }
 
-/* line 345, ../sass/style.scss */
+/* line 346, ../sass/style.scss */
 .glyphicon-chevron-right:before {
   content: "\e080";
 }
 
-/* line 348, ../sass/style.scss */
+/* line 349, ../sass/style.scss */
 .glyphicon-send:before {
   content: "\e171";
 }
