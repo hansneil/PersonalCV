@@ -1999,21 +1999,27 @@ progress-group.right .bar-container {
 
 /* line 674, ../sass/partials/_layout.scss */
 .checkout {
-  position: fixed;
-  display: inline-block;
-  top: 1rem;
-  right: 2rem;
+  display: none;
 }
-/* line 679, ../sass/partials/_layout.scss */
+@media (min-width: 47em) {
+  /* line 674, ../sass/partials/_layout.scss */
+  .checkout {
+    position: fixed;
+    display: inline-block;
+    top: 1rem;
+    right: 2rem;
+  }
+}
+/* line 682, ../sass/partials/_layout.scss */
 .checkout li {
   display: inline-block;
 }
-/* line 681, ../sass/partials/_layout.scss */
+/* line 684, ../sass/partials/_layout.scss */
 .checkout li:first-child {
   padding-right: .5rem;
   border-right: 1px solid #ffffff;
 }
-/* line 685, ../sass/partials/_layout.scss */
+/* line 688, ../sass/partials/_layout.scss */
 .checkout li .active, .checkout li:hover {
   color: #303030;
   text-decoration: underline;
@@ -2955,14 +2961,14 @@ div.content.plugin-content p a {
   cursor: pointer;
 }
 
-/* line 1, ../sass/partials/canvas.scss */
+/* line 1, ../sass/partials/_canvas.scss */
 .overhidden {
   background-color: #00c3ab;
   overflow-y: hidden;
 }
 
-/* line 5, ../sass/partials/canvas.scss */
-canvas, #my-photo, .photo-back, .back-img .big, .back-img .small {
+/* line 5, ../sass/partials/_canvas.scss */
+canvas, #my-photo, .photo-back, .back-img .big, .back-img .small, #svg1 {
   position: absolute;
   display: block;
   margin: auto;
@@ -2972,26 +2978,26 @@ canvas, #my-photo, .photo-back, .back-img .big, .back-img .small {
   left: 0;
 }
 
-/* line 14, ../sass/partials/canvas.scss */
+/* line 14, ../sass/partials/_canvas.scss */
 canvas {
   border-radius: 15px;
   z-index: -1;
 }
 
-/* line 19, ../sass/partials/canvas.scss */
+/* line 19, ../sass/partials/_canvas.scss */
 #my-photo {
   width: 150px;
   border-radius: 50%;
   z-index: 9999;
 }
 
-/* line 25, ../sass/partials/canvas.scss */
+/* line 25, ../sass/partials/_canvas.scss */
 #my-photo:hover {
   cursor: pointer;
   border: 5px solid rgba(255, 255, 255, 0.8);
 }
 
-/* line 29, ../sass/partials/canvas.scss */
+/* line 29, ../sass/partials/_canvas.scss */
 .photo-back {
   width: 180px;
   height: 180px;
@@ -2999,7 +3005,7 @@ canvas {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-/* line 36, ../sass/partials/canvas.scss */
+/* line 36, ../sass/partials/_canvas.scss */
 #point-canvas {
   width: 100%;
   transition: all .5s ease;
@@ -3021,30 +3027,20 @@ canvas {
     transform: rotate(0deg);
   }
 }
-/* line 56, ../sass/partials/canvas.scss */
+/* line 56, ../sass/partials/_canvas.scss */
 .back-img .big, .back-img .small {
   opacity: 0.5;
   z-index: -9;
 }
 
-/* line 61, ../sass/partials/canvas.scss */
+/* line 61, ../sass/partials/_canvas.scss */
 .big {
   animation: rotate-back 150s infinite linear both;
 }
 
-/* line 64, ../sass/partials/canvas.scss */
+/* line 64, ../sass/partials/_canvas.scss */
 .small {
   animation: rotate-back-2 150s infinite linear both;
-}
-
-/* line 67, ../sass/partials/canvas.scss */
-#svg1 {
-  position: absolute;
-  margin: auto;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
 }
 
 /* line 15, ../sass/style.scss */

@@ -672,10 +672,13 @@ progress-group.right {
   }
 }
 .checkout {
-  position: fixed;
-  display: inline-block;
-  top: 1rem;
-  right: 2rem;
+  display: none;
+  @include at-breakpoint($M) {
+    position: fixed;
+    display: inline-block;
+    top: 1rem;
+    right: 2rem;
+  }
   & li {
     display: inline-block;
     &:first-child {
