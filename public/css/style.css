@@ -2964,13 +2964,11 @@ div.content.plugin-content p a {
 
 /* line 1, ../sass/partials/_canvas.scss */
 .overhidden {
-  /*background-color: rgb(10,187,181);*/
-  min-height: 780px;
-  background-image: radial-gradient(#00c3ab, #079994);
+  background-color: #00c3ab;
   overflow-y: hidden;
 }
 
-/* line 7, ../sass/partials/_canvas.scss */
+/* line 5, ../sass/partials/_canvas.scss */
 canvas, #my-photo, .photo-back, .back-img .big, .back-img .small, #svg1 {
   position: absolute;
   display: block;
@@ -2981,26 +2979,26 @@ canvas, #my-photo, .photo-back, .back-img .big, .back-img .small, #svg1 {
   left: 0;
 }
 
-/* line 16, ../sass/partials/_canvas.scss */
+/* line 14, ../sass/partials/_canvas.scss */
 canvas {
   border-radius: 15px;
   z-index: -1;
 }
 
-/* line 21, ../sass/partials/_canvas.scss */
+/* line 19, ../sass/partials/_canvas.scss */
 #my-photo {
   width: 150px;
   border-radius: 50%;
   z-index: 9999;
 }
 
-/* line 27, ../sass/partials/_canvas.scss */
+/* line 25, ../sass/partials/_canvas.scss */
 #my-photo:hover {
   cursor: pointer;
   border: 5px solid rgba(255, 255, 255, 0.8);
 }
 
-/* line 31, ../sass/partials/_canvas.scss */
+/* line 29, ../sass/partials/_canvas.scss */
 .photo-back {
   width: 180px;
   height: 180px;
@@ -3008,7 +3006,7 @@ canvas {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-/* line 38, ../sass/partials/_canvas.scss */
+/* line 36, ../sass/partials/_canvas.scss */
 #point-canvas {
   width: 100%;
   transition: all .5s ease;
@@ -3030,18 +3028,18 @@ canvas {
     transform: rotate(0deg);
   }
 }
-/* line 58, ../sass/partials/_canvas.scss */
+/* line 56, ../sass/partials/_canvas.scss */
 .back-img .big, .back-img .small {
   opacity: 0.5;
   z-index: -9;
 }
 
-/* line 63, ../sass/partials/_canvas.scss */
+/* line 61, ../sass/partials/_canvas.scss */
 .big {
   animation: rotate-back 150s infinite linear both;
 }
 
-/* line 66, ../sass/partials/_canvas.scss */
+/* line 64, ../sass/partials/_canvas.scss */
 .small {
   animation: rotate-back-2 150s infinite linear both;
 }
