@@ -89,9 +89,14 @@ angular.module('ownPage', ['ngRoute', 'ngAnimate', 'ui.router', 'security', 'dra
                 }
             })
             .state('plugins', {
+                abstract: true,
                 url: '/plugins',
                 templateUrl: '/pages/plugins.html',
                 controller: 'PluginController'
+            })
+            .state('plugins.overview', {
+                url: "/overview",
+                templateUrl: '/pages/overview.html'
             })
             .state('plugins.show', {
                 url: '/slider',

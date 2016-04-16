@@ -2962,6 +2962,34 @@ div.content.plugin-content p a {
   cursor: pointer;
 }
 
+/* line 235, ../sass/partials/_plugins.scss */
+.overview {
+  width: 80%;
+  margin: 10% auto;
+  text-align: center;
+}
+/* line 239, ../sass/partials/_plugins.scss */
+.overview div {
+  margin-top: 20px;
+  display: inline-block;
+}
+/* line 243, ../sass/partials/_plugins.scss */
+.overview a {
+  display: inline-block;
+  width: 80%;
+  line-height: 30px;
+  font-family: 'axis';
+  color: #00c3ab;
+  background-color: #ffffff;
+  margin: 10px auto;
+  border-radius: 5px;
+  opacity: .8;
+}
+/* line 253, ../sass/partials/_plugins.scss */
+.overview a:hover {
+  opacity: 1;
+}
+
 /* line 1, ../sass/partials/_canvas.scss */
 .overhidden {
   background-color: #00c3ab;

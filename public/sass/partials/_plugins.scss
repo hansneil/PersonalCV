@@ -230,3 +230,28 @@ div.content.plugin-content {
     color: $color5;
   }
 }
+
+//overview
+.overview {
+  width: 80%;
+  margin: 10% auto;
+  text-align: center;
+  & div {
+    margin-top: 20px;
+    display: inline-block;
+  }
+  & a {
+    display: inline-block;
+    width: 80%;
+    line-height: 30px;
+    font-family: 'axis';
+    color: $color3;
+    background-color: $color5;
+    margin: 10px auto;
+    border-radius: 5px;
+    opacity: .8;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
