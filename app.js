@@ -16,6 +16,7 @@ var login = require('./routes/login');
 var photo = require('./routes/photo');
 var comment = require('./routes/comment');
 var canvas = require('./routes/canvas');
+var gallery = require('./routes/gallery');
 
 //var db = mongoose.connect("mongodb://hansneil:111_zzz@ds047335.mongolab.com:47335/hansneil");
 var db = mongoose.connect("mongodb://localhost/photo");
@@ -50,6 +51,7 @@ app.get('/newpage', comment.newComment);
 app.get('/canvas/cv', canvas.getCanvas);
 app.use('/', routes);
 app.use('/users', users);
+app.get('/gallery', gallery.getPhotos);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
