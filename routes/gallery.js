@@ -11,7 +11,11 @@ Database.prototype.get = function(page) {
     var that = this;
     return promise(function(resolve){
         request.get(that.getUrl(page), function(error, response){
-            resolve(JSON.parse(response.body)[that.selectedField].map(that.fieldMap));
+            if (error) {
+                resolve("");
+            } else {
+                resolve(JSON.parse(response.body)[that.selectedField].map(that.fieldMap));
+            }
         })
     });
 };
