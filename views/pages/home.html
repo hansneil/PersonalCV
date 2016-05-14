@@ -11,7 +11,6 @@
             <li><a ng-href="#/cv">CV</a></li>
             <li><a ng-href="#/album">ALBUM</a></li>
             <li><a href="#/plugins/overview">GADGETS</a></li>
-            <!--<li><a ng-href="#/blog">BLOG</a></li>-->
             <li><a ng-href="http://hansneil.github.io">IFE</a></li>
         </ul>
     </section>
@@ -21,7 +20,10 @@
             <li><a ng-href="#/wechat" name="bottom">WECHAT</a></li>
             <li><a ng-href="http://weibo.com/p/1005052434892144?is_all=1">WEIBO</a></li>
             <li><a ng-href="mailto:yxbneil@163.com">EMAIL</a></li>
-            <li><a ng-href="#/">QQ</a></li>
+            <li>
+                <a ng-click="isShown=!isShown">QQ</a>
+                <div class="tip-box" ng-class="{'tipbox-show': isShown}">532039299</div>
+            </li>
         </ul>
     </footer>
 </div>

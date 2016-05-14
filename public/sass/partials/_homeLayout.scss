@@ -142,3 +142,32 @@ li {
     }
   }
 }
+footer li:last-child {
+  position: relative;
+  cursor: pointer;
+}
+.tip-box {
+  display: none;
+  position: absolute;
+  width: 100px;
+  line-height: 30px;
+  bottom: 2rem;
+  border-radius: 2px;
+  background-color: $color5;
+  transform: translateX(-50px);
+  transition: none 0s linear;
+  color: $color6;
+  &:after {
+    position: absolute;
+    border: 5px solid transparent;
+    content: '';
+    width: 0;
+    height: 0;
+    top: 30px;
+    right: 30px;
+    border-top-color: $color5;
+  }
+}
+.tipbox-show {
+  display: block;
+}

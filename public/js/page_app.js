@@ -338,8 +338,8 @@ angular.module('ownPage', ['ngRoute', 'ngAnimate', 'ui.router', 'security', 'dra
         }
     })
     .controller('homeController', ['$scope', '$location', '$window', function($scope, $location, $window){
-        console.log($location.path());
         $scope.show = $window.innerWidth > 752;
+        $scope.isShown = false;
         $window.onresize = function(){
             $scope.$apply(function(){
                 $scope.show = $window.innerWidth > 752;

@@ -2212,6 +2212,42 @@ footer li {
   }
 }
 
+/* line 145, ../sass/partials/_homeLayout.scss */
+footer li:last-child {
+  position: relative;
+  cursor: pointer;
+}
+
+/* line 149, ../sass/partials/_homeLayout.scss */
+.tip-box {
+  display: none;
+  position: absolute;
+  width: 100px;
+  line-height: 30px;
+  bottom: 2rem;
+  border-radius: 2px;
+  background-color: #ffffff;
+  transform: translateX(-50px);
+  transition: none 0s linear;
+  color: #461d45;
+}
+/* line 160, ../sass/partials/_homeLayout.scss */
+.tip-box:after {
+  position: absolute;
+  border: 5px solid transparent;
+  content: '';
+  width: 0;
+  height: 0;
+  top: 30px;
+  right: 30px;
+  border-top-color: #ffffff;
+}
+
+/* line 171, ../sass/partials/_homeLayout.scss */
+.tipbox-show {
+  display: block;
+}
+
 /* line 4, ../sass/partials/_albumLayout.scss */
 header {
   font-family: 'axis';
