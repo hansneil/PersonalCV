@@ -92,11 +92,11 @@ angular.module('ownPage', ['ngRoute', 'ngAnimate', 'ui.router', 'security', 'dra
                 abstract: true,
                 url: '/plugins',
                 templateUrl: '/pages/plugins.html',
-                controller: 'PluginController'
             })
             .state('plugins.overview', {
                 url: "/overview",
-                templateUrl: '/pages/overview.html'
+                templateUrl: '/pages/overview.html',
+                controller: 'PluginController'
             })
             .state('plugins.show', {
                 url: '/slider',
@@ -327,6 +327,16 @@ angular.module('ownPage', ['ngRoute', 'ngAnimate', 'ui.router', 'security', 'dra
             }
         }
     })
+    .factory('pluginsUrl', function(){
+        var plugins = [
+            { name: "24-Point", url: "#/plugins/call", desp: "Calculate 24 using the selected 4 numbers"},
+            { name: "Space Craft", url: "http://hansneil.github.io/baidu_ife/2-26/index.html", desp: "A game which the commander controls the crafts"},
+            { name: "Transition Editor", url: "http://hansneil.github.io/plugin/transition/index.html", desp: "An online CSS transition editor"}
+        ];
+        return {
+            plugins: plugins
+        }
+    })
     .controller('homeController', ['$scope', '$location', '$window', function($scope, $location, $window){
         console.log($location.path());
         $scope.show = $window.innerWidth > 752;
@@ -363,8 +373,8 @@ angular.module('ownPage', ['ngRoute', 'ngAnimate', 'ui.router', 'security', 'dra
             });
 
     }])
-    .controller('PluginController', ['$scope', function(){
-
+    .controller('PluginController', ['$scope', 'pluginsUrl', function($scope, pluginsUrl){
+        $scope.pluginsUrl = pluginsUrl.plugins;
     }])
     .controller('blogController', ['$scope', '$timeout', function($scope, $timeout){
         $scope.alternative = {
@@ -482,6 +492,19 @@ angular.module('ownPage', ['ngRoute', 'ngAnimate', 'ui.router', 'security', 'dra
             }
         }
     }])
+    .directive('pluginDir', function(){
+        return {
+            restrict: 'E',
+            replace: true,
+            transclude: true,
+            templateUrl: "/tpls/plugin.html",
+            scope: {
+                url: "=",
+                order: "=",
+                desp: "="
+            }
+        }
+    })
     .controller('DragController', ['$scope', '$window', function($scope, $window){
         $scope.bar = {
             width: 0,

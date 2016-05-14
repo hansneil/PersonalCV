@@ -2964,30 +2964,94 @@ div.content.plugin-content p a {
 
 /* line 235, ../sass/partials/_plugins.scss */
 .overview {
-  width: 80%;
-  margin: 10% auto;
+  width: 90%;
+  margin: 0 auto;
   text-align: center;
+  font-family: 'axis';
 }
-/* line 239, ../sass/partials/_plugins.scss */
-.overview div {
-  margin-top: 20px;
-  display: inline-block;
+@media (min-width: 47em) {
+  /* line 235, ../sass/partials/_plugins.scss */
+  .overview {
+    width: 85%;
+  }
 }
 /* line 243, ../sass/partials/_plugins.scss */
 .overview a {
   display: inline-block;
-  width: 80%;
-  line-height: 30px;
-  font-family: 'axis';
-  color: #00c3ab;
-  background-color: #ffffff;
-  margin: 10px auto;
-  border-radius: 5px;
-  opacity: .8;
+  text-align: center;
+  margin: 1rem auto;
+  font-size: 1.5rem;
+  color: #ffffff;
 }
-/* line 253, ../sass/partials/_plugins.scss */
+/* line 249, ../sass/partials/_plugins.scss */
 .overview a:hover {
-  opacity: 1;
+  color: #c7fa5a;
+  text-shadow: 5px 0px 1px #ffffff;
+}
+/* line 252, ../sass/partials/_plugins.scss */
+.overview a:hover + .plugin-underline {
+  width: 50%;
+}
+
+/* line 258, ../sass/partials/_plugins.scss */
+.flex-box {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 3rem auto;
+}
+
+/* line 263, ../sass/partials/_plugins.scss */
+.plugin-wrapper {
+  flex: 1 1 200px;
+}
+
+/* line 266, ../sass/partials/_plugins.scss */
+.plugin-icon {
+  margin: 0 auto;
+  background-image: url("/img/icon_sprite.png");
+  width: 200px;
+  height: 200px;
+  background-size: 200px;
+}
+
+/* line 275, ../sass/partials/_plugins.scss */
+.plugin-1 {
+  background-position: 0 -400px;
+}
+
+/* line 278, ../sass/partials/_plugins.scss */
+.plugin-2 {
+  background-position: 0 -200px;
+}
+
+/* line 281, ../sass/partials/_plugins.scss */
+.plugin-underline {
+  display: block;
+  margin: 0 auto;
+  width: 20%;
+  height: 2px;
+  background-color: #ffffff;
+}
+
+/* line 288, ../sass/partials/_plugins.scss */
+.plugin-description {
+  width: 90%;
+  text-align: left;
+  margin: 1rem auto;
+  color: #ffffff;
+  opacity: .5;
+}
+@media (min-width: 23em) {
+  /* line 288, ../sass/partials/_plugins.scss */
+  .plugin-description {
+    width: 80%;
+  }
+}
+@media (min-width: 47em) {
+  /* line 288, ../sass/partials/_plugins.scss */
+  .plugin-description {
+    width: 55%;
+  }
 }
 
 /* line 1, ../sass/partials/_canvas.scss */

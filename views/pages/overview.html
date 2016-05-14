@@ -2,9 +2,9 @@
     <header>
         <p>OVERVIEW</p>
     </header>
-    <div>
-        <a ng-href="#/plugins/call">24-Point</a>
-        <a ng-href="http://hansneil.github.io/baidu_ife/2-26/index.html">Space Craft</a>
-        <a ng-href="http://hansneil.github.io/plugin/transition/index.html">Transition Eidtor</a>
+    <div class="flex-box">
+        <plugin-dir url="plugin.url" ng-repeat="plugin in pluginsUrl" order="$index" desp="plugin.desp">
+            {{plugin.name}}
+        </plugin-dir>
     </div>
 </section>
