@@ -254,11 +254,14 @@ div.content.plugin-content {
       }
     }
   }
+  & .title {
+    font-size: 3rem;
+  }
 }
 .flex-box {
   display: flex;
   flex-flow: row wrap;
-  margin: 3rem auto;
+  margin: 2rem auto;
 }
 .plugin-wrapper {
   flex: 1 1 200px;

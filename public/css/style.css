@@ -2992,20 +2992,24 @@ div.content.plugin-content p a {
 .overview a:hover + .plugin-underline {
   width: 50%;
 }
+/* line 257, ../sass/partials/_plugins.scss */
+.overview .title {
+  font-size: 3rem;
+}
 
-/* line 258, ../sass/partials/_plugins.scss */
+/* line 261, ../sass/partials/_plugins.scss */
 .flex-box {
   display: flex;
   flex-flow: row wrap;
-  margin: 3rem auto;
+  margin: 2rem auto;
 }
 
-/* line 263, ../sass/partials/_plugins.scss */
+/* line 266, ../sass/partials/_plugins.scss */
 .plugin-wrapper {
   flex: 1 1 200px;
 }
 
-/* line 266, ../sass/partials/_plugins.scss */
+/* line 269, ../sass/partials/_plugins.scss */
 .plugin-icon {
   margin: 0 auto;
   background-image: url("/img/icon_sprite.png");
@@ -3014,17 +3018,17 @@ div.content.plugin-content p a {
   background-size: 200px;
 }
 
-/* line 275, ../sass/partials/_plugins.scss */
+/* line 278, ../sass/partials/_plugins.scss */
 .plugin-1 {
   background-position: 0 -400px;
 }
 
-/* line 278, ../sass/partials/_plugins.scss */
+/* line 281, ../sass/partials/_plugins.scss */
 .plugin-2 {
   background-position: 0 -200px;
 }
 
-/* line 281, ../sass/partials/_plugins.scss */
+/* line 284, ../sass/partials/_plugins.scss */
 .plugin-underline {
   display: block;
   margin: 0 auto;
@@ -3033,7 +3037,7 @@ div.content.plugin-content p a {
   background-color: #ffffff;
 }
 
-/* line 288, ../sass/partials/_plugins.scss */
+/* line 291, ../sass/partials/_plugins.scss */
 .plugin-description {
   width: 90%;
   text-align: left;
@@ -3042,13 +3046,13 @@ div.content.plugin-content p a {
   opacity: .5;
 }
 @media (min-width: 23em) {
-  /* line 288, ../sass/partials/_plugins.scss */
+  /* line 291, ../sass/partials/_plugins.scss */
   .plugin-description {
     width: 80%;
   }
 }
 @media (min-width: 47em) {
-  /* line 288, ../sass/partials/_plugins.scss */
+  /* line 291, ../sass/partials/_plugins.scss */
   .plugin-description {
     width: 55%;
   }
