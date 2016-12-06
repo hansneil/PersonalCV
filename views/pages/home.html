@@ -3,8 +3,8 @@
 <div class="circle-shadow"></div>
 <div class="circle" ng-click="click()"></div>
 <p class="main-page">PRESS <span>TO</span> ENTER...</p>-->
-<div class="home-wrapper">
-    <div class="photo-wrapper" change-radius></div>
+<!--<div class="home-wrapper">-->
+    <!--<div class="photo-wrapper" change-radius></div>
     <section class="info-wrapper">
         <p class="title">HansNeil</p>
         <ul class="page">
@@ -25,5 +25,346 @@
                 <div class="tip-box" ng-class="{'tipbox-show': isShown}">532039299</div>
             </li>
         </ul>
-    </footer>
+    </footer>-->
+<div class="background">
+    <div id="wrapper">
+        <svg width="480" height="320" xmlns="http://www.w3.org/2000/svg" style="background-color: #202a56" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+            <!--Text-->
+            <!---Profile-->
+            <g>
+                <a xlink:href="#/cv">
+                    <text id="profile" x="80" y="320" style="stroke: #fff; stroke-width: 0.5">PROFILE</text>
+                </a>
+                <polyline points="110 300 110 300" stroke="#fff">
+                    <animate
+                            attributeName="points"
+                            attributeType="XML"
+                            from="110 300 110 300"
+                            to="80 300 140 300"
+                            begin="profile.mouseover"
+                            dur="0.5"
+                            end="profile.mouseout"
+                            fill="freeze"
+                    />
+                    <animate
+                            attributeName="points"
+                            attributeType="XML"
+                            from="80 300 140 300"
+                            to="110 300 110 300"
+                            begin="profile.mouseout"
+                            dur="0.5"
+                            fill="freeze"
+                    />
+                </polyline>
+            </g>
+
+            <!--Album-->
+            <g>
+                <a xlink:href="#/album">
+                    <text id="album" x="180" y="320" style="stroke: #fff; stroke-width: 0.5">ALBUM</text>
+                </a>
+                <polyline points="205 300 205 300" stroke="#fff">
+                    <animate
+                            attributeName="points"
+                            attributeType="XML"
+                            from="205 300 205 300"
+                            to="180 300 235 300"
+                            begin="album.mouseover"
+                            dur="0.5"
+                            end="album.mouseout"
+                            fill="freeze"
+                    />
+                    <animate
+                            attributeName="points"
+                            attributeType="XML"
+                            from="180 300 235 300"
+                            to="205 300 205 300"
+                            begin="album.mouseout"
+                            dur="0.5"
+                            fill="freeze"
+                    />
+                </polyline>
+            </g>
+
+
+            <!--Gadgets-->
+            <g>
+                <a xlink:href="#/plugins/overview">
+                    <text id="gadgets"x="275" y="320" style="stroke: #fff; stroke-width: 0.5">GADGETS</text>
+                </a>
+                <polyline points="315 300 315 300" stroke="#fff">
+                    <animate
+                            attributeName="points"
+                            attributeType="XML"
+                            from="315 300 315 300"
+                            to="275 300 350 300"
+                            begin="gadgets.mouseover"
+                            dur="0.5"
+                            end="album.mouseout"
+                            fill="freeze"
+                    />
+                    <animate
+                            attributeName="points"
+                            attributeType="XML"
+                            from="275 300 350 300"
+                            to="315 300 315 300"
+                            begin="gadgets.mouseout"
+                            dur="0.5"
+                            fill="freeze"
+                    />
+                </polyline>
+            </g>
+
+            <!--IFE-->
+            <g>
+                <a xlink:href="http://hansneil.github.io">
+                    <text id="ife" x="390" y="320" style="stroke: #fff; stroke-width: 0.5">IFE</text>
+                </a>
+                <polyline points="400 300 400 300" stroke="#fff">
+                    <animate
+                            attributeName="points"
+                            attributeType="XML"
+                            from="400 300 400 300"
+                            to="390 300 410 300"
+                            begin="ife.mouseover"
+                            dur="0.5"
+                            end="album.mouseout"
+                            fill="freeze"
+                    />
+                    <animate
+                            attributeName="points"
+                            attributeType="XML"
+                            from="390 300 410 300"
+                            to="400 300 400 300"
+                            begin="ife.mouseout"
+                            dur="0.5"
+                            fill="freeze"
+                    />
+                </polyline>
+            </g>
+
+            <defs>
+                <g id="main-tri">
+                    <polyline points="30 20, 30 150, 50 160, 50 55, 110 88.5, 130 78.5, 30 20" style="stroke: #0fdadc; stroke-width: 2; stroke-linejoin: round; fill: none;">
+                        <animate id="first"
+                                 attributeName="points"
+                                 attributeType="XML"
+                                 values="30 20, 30 20, 30 20, 30 20, 30 20, 30 20, 30 20;30 20, 30 150, 30 150, 30 150, 30 150, 30 150, 30 150;
+                    30 20, 30 150, 50 160, 50 160, 50 160, 50 160, 50 160; 30 20, 30 150, 50 160, 50 55, 50 55, 50 55, 50 55;
+                    30 20, 30 150, 50 160, 50 55, 110 88.5, 110 88.5, 110 88.5; 30 20, 30 150, 50 160, 50 55, 110 88.5, 130 78.5, 130 78.5;
+                    30 20, 30 150, 50 160, 50 55, 110 88.5, 130 78.5, 30 20;"
+                                 begin="0"
+                                 dur="2"
+                                 fill="freeze"
+                        ></animate>
+                    </polyline>
+                    <polyline points="50 55, 50 55, 50 55, 50 55, 50 55, 50 55, 50 55" style="stroke: #0fdadc; stroke-width: 2; fill: none; stroke-linejoin: round;">
+                        <animate id="second"
+                                 attributeName="points"
+                                 attributeType="XML"
+                                 values="50 55, 50 160, 50 160, 50 160, 50 160, 50 160, 50 160; 50 55, 50 160, 170 100, 170 100, 170 100, 170 100, 170 100;
+                            50 55, 50 160, 170 100, 170 80, 170 80, 170 80, 170 80; 50 55, 50 160, 170 100, 170 80, 70 130, 70 130, 70 130;
+                            50 55, 50 160, 170 100, 170 80, 70 130, 70 66.5, 70 66.5; 50 55, 50 160, 170 100, 170 80, 70 130, 70 66.5, 50 55;"
+                                 begin="first.end"
+                                 dur="2"
+                                 fill="freeze"
+                        ></animate>
+                    </polyline>
+                    <polyline points="70 130, 70 130, 70 130, 70 130, 70 130, 70 130, 70 130" style="stroke: #0fdadc; stroke-width: 2; fill: none; stroke-linejoin: round;">
+                        <animate
+                                attributeName="points"
+                                attributeType="XML"
+                                values="70 130, 170 80, 170 80, 170 80, 170 80, 170 80, 170 80; 70 130, 170 80, 50 10, 50 10, 50 10, 50 10, 50 10;
+                            70 130, 170 80, 50 10, 30 20, 30 20, 30 20, 30 20; 70 130, 170 80, 50 10, 30 20, 130 78.5, 130 78.5, 130 78.5;
+                            70 130, 170 80, 50 10, 30 20, 130 78.5, 70 108.5, 70 108.5; 70 130, 170 80, 50 10, 30 20, 130 78.5, 70 108.5, 70 130;"
+                                begin="second.end"
+                                dur="2"
+                                fill="freeze"
+                        ></animate>
+                    </polyline>
+                </g>
+                <g id="tri-angle">
+                    <polyline points="30 20, 30 150, 50 160, 50 55, 110 88.5, 130 78.5, 30 20" style="stroke-width: 2; stroke-linejoin: round; fill: none;" />
+                    <polyline points="50 55, 50 160, 170 100, 170 80, 70 130, 70 66.5, 50 55" style="stroke-width: 2; fill: none; stroke-linejoin: round;" />
+                    <polyline points="70 130, 170 80, 50 10, 30 20, 130 78.5, 70 108.5, 70 130;" style="stroke-width: 2; fill: none; stroke-linejoin: round;" />
+                </g>
+            </defs>
+
+            <use xlink:href="#tri-angle" style="stroke: #e31684;" transform="translate(20, 20) scale(0.25)">
+                <animateTransform
+                        attributeName="transform"
+                        attributeType="XML"
+                        type="rotate"
+                        values="0 100 85; 180 100 85; 360 100 85"
+                        begin="0"
+                        dur="15"
+                        additive="sum"
+                        repeatCount="indefinite"
+                ></animateTransform>
+            </use>
+            <use xlink:href="#tri-angle" style="stroke: #0fdadc;" transform="translate(50, 200) scale(0.25)">
+                <animateTransform
+                        attributeName="transform"
+                        attributeType="XML"
+                        type="translate"
+                        values="0 0; 20 0; 0 0"
+                        begin="0"
+                        dur="2"
+                        additive="sum"
+                        repeatCount="indefinite"
+                ></animateTransform>
+            </use>
+            <use xlink:href="#tri-angle" style="stroke: #e31684;" transform="translate(400, 50) scale(0.25)">
+                <animateTransform
+                        attributeName="transform"
+                        attributeType="XML"
+                        type="translate"
+                        values="0 0; 0 20; 0 0"
+                        begin="0"
+                        dur="2"
+                        additive="sum"
+                        repeatCount="indefinite"
+                ></animateTransform>
+            </use>
+            <use xlink:href="#tri-angle" style="stroke: #0fdadc;" transform="translate(350, 230) scale(0.25)">
+                <animateTransform
+                        attributeName="transform"
+                        attributeType="XML"
+                        type="rotate"
+                        values="360 100 85; 180 100 85; 0 100 85"
+                        begin="0"
+                        dur="15"
+                        additive="sum"
+                        repeatCount="indefinite"
+                ></animateTransform>
+            </use>
+
+            <use xlink:href="#tri-angle" style="stroke:#0fdadc; opacity: 0" transform="translate(300, 200) scale(0.15) rotate(30, 100, 85)">
+                <animate attributeName="opacity"
+                         attributeType="CSS"
+                         values="0; 0.5; 0.8; 0"
+                         begin="0"
+                         dur="2"
+                         additive="sum"
+                         fill="freeze"
+                         repeatCount="indefinite"
+                />
+            </use>
+            <use xlink:href="#tri-angle" style="stroke:#0fdadc; opacity: 0" transform="translate(250, 25) scale(0.15) rotate(30, 100, 85)">
+                <animate attributeName="opacity"
+                         attributeType="CSS"
+                         values="0; 0.5; 0.8; 0"
+                         begin="0"
+                         dur="3"
+                         additive="sum"
+                         fill="freeze"
+                         repeatCount="indefinite"
+                />
+            </use>
+            <use xlink:href="#tri-angle" style="stroke:#0fdadc; opacity: 0" transform="translate(180, 40) scale(0.1) rotate(133, 100, 85)">
+                <animate attributeName="opacity"
+                         attributeType="CSS"
+                         values="0; 0.3; 0.6; 0"
+                         begin="0"
+                         dur="2.5"
+                         additive="sum"
+                         fill="freeze"
+                         repeatCount="indefinite"
+                />
+            </use>
+            <use xlink:href="#tri-angle" style="stroke:#0fdadc; opacity: 0" transform="translate(150, 230) scale(0.1) rotate(75, 100, 85)">
+                <animate attributeName="opacity"
+                         attributeType="CSS"
+                         values="0; 0.6; 0.6; 0"
+                         begin="0"
+                         dur="2"
+                         additive="sum"
+                         fill="freeze"
+                         repeatCount="indefinite"
+                />
+            </use>
+            <use xlink:href="#tri-angle" style="stroke:#0fdadc; opacity: 0" transform="translate(350, 50) scale(0.1) rotate(75, 100, 85)">
+                <animate attributeName="opacity"
+                         attributeType="CSS"
+                         values="0; 0.5; 0.2; 0"
+                         begin="0"
+                         dur="5"
+                         additive="sum"
+                         fill="freeze"
+                         repeatCount="indefinite"
+                />
+            </use>
+
+            <use xlink:href="#tri-angle" style="stroke:#e31684; opacity: 0" transform="translate(300, 70) scale(0.1) rotate(175, 100, 85)">
+                <animate attributeName="opacity"
+                         attributeType="CSS"
+                         values="0; 0.4; 0.4; 0"
+                         begin="0"
+                         dur="5"
+                         additive="sum"
+                         fill="freeze"
+                         repeatCount="indefinite"
+                />
+            </use>
+            <use xlink:href="#tri-angle" style="stroke:#e31684; opacity: 0" transform="translate(200, 250) scale(0.15) rotate(-30, 100, 85)">
+                <animate attributeName="opacity"
+                         attributeType="CSS"
+                         values="0; 0.8; 0.4; 0"
+                         begin="0"
+                         dur="3.5"
+                         additive="sum"
+                         fill="freeze"
+                         repeatCount="indefinite"
+                />
+            </use>
+            <use xlink:href="#tri-angle" style="stroke:#e31684; opacity: 0" transform="translate(120, 50) scale(0.15) rotate(-30, 100, 85)">
+                <animate attributeName="opacity"
+                         attributeType="CSS"
+                         values="0; 0.8; 0.8; 0"
+                         begin="0"
+                         dur="2"
+                         additive="sum"
+                         fill="freeze"
+                         repeatCount="indefinite"
+                />
+            </use>
+            <use xlink:href="#tri-angle" style="stroke:#e31684; opacity: 0" transform="translate(100, 150) scale(0.1) rotate(-70, 100, 85)">
+                <animate attributeName="opacity"
+                         attributeType="CSS"
+                         values="0; 0.5; 0.6; 0"
+                         begin="0"
+                         dur="3"
+                         additive="sum"
+                         fill="freeze"
+                         repeatCount="indefinite"
+                />
+            </use>
+            <use xlink:href="#tri-angle" style="stroke:#e31684; opacity: 0" transform="translate(300, 150) scale(0.1) rotate(-110, 100, 85)">
+                <animate attributeName="opacity"
+                         attributeType="CSS"
+                         values="0; 0.5; 0.6; 0.3; 0"
+                         begin="0"
+                         dur="4"
+                         additive="sum"
+                         fill="freeze"
+                         repeatCount="indefinite"
+                />
+            </use>
+            <use xlink:href="#tri-angle" style="stroke:#e31684; opacity: 0" transform="translate(350, 120) scale(0.1) rotate(-130, 100, 85)">
+                <animate attributeName="opacity"
+                         attributeType="CSS"
+                         values="0; 0.4; 0.4; 0"
+                         begin="0"
+                         dur="5"
+                         additive="sum"
+                         fill="freeze"
+                         repeatCount="indefinite"
+                />
+            </use>
+            <use xlink:href="#main-tri" transform="translate(140, 50)"></use>
+        </svg>
+    </div>
 </div>
+<!--
+</div>-->
