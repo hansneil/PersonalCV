@@ -1027,14 +1027,9 @@ body {
   overflow: scroll;
 }
 
-/* line 16, ../sass/partials/_layout.scss */
-* {
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
-
+/** {
+  @include transition(all .2s ease-in-out);
+}*/
 /* line 19, ../sass/partials/_layout.scss */
 #my-cv .basic-info-container {
   *zoom: 1;
