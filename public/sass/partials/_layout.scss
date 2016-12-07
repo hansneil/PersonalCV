@@ -11,7 +11,8 @@ $border-box-sizing: true;
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: $color3;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 /** {
   @include transition(all .2s ease-in-out);
