@@ -176,7 +176,7 @@ footer li:last-child {
   position: absolute;
   top: 50%;
   left: 50%;
-  margin: 0;
+  margin: auto;
   transform: translate(-50%, -50%);
 }
 * {
@@ -188,6 +188,8 @@ html, body {
   padding: 0;
 }
 .background {
+  position: relative;
   height: 100%;
   background-color: #202a56;
+  overflow: hidden;
 }
